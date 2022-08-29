@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="-cbd8858.182d2d22f5a.146e" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-26&#47;1661513820293.pdf" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="单一来源协商邀请书.pdf" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">云南开放大学云南省干部在线学习学院党政数字图书馆项目单一来源协商邀请书</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-26</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">云南开放大学云南省干部在线学习学院党政数字图书馆项目</td>                                </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">云南开放大学</td>                                           </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">省级</td>                                      <td class="title" width="128">公告时间</td>                                                               <td width="168">2022-08-26</td>                                              </tr>                                                                                                       <tr>                                                                                                            <td class="title">拟采定唯一供应商</td>                                                                      <td colspan="3">武汉鼎森电子科技有限公司</td>                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥8.2万元（人民币）</td>                             </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">任皓、张冬丽</td>                                        </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">0871-65895558</td>                                      </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">云南开放大学</td>                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">昆明市学府路113号</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                      <td colspan="3">杨老师0871-65196605</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">云南通拓招标有限公司</td>                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">昆明市同德昆明广场B区4栋501</td>                                             </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">0871-65895558</td>                                          </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                  <head>                                                                                  <style type="text/css">                                                               body {text-align:center;}                                                           p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}              h2 {text-align:center;}                                                             h4 {text-align:left;margin-left: 30px}                                              .divcss5{width:900px; align:center;margin:0 auto}                               </style>                                                                        </head>                                                                             <body>                                                                              <div class="divcss5">                                                                 <br>                                                                                <h2><b>单一来源采购公示</b></h2>                                                    <br>                                                                                <h4><b>一、项目信息</b></h4>                                                        <br>                                                                                    <p><font size="4px">采购人：云南开放大学</font></p>                                           <p><font size="4px">项目名称：云南开放大学云南省干部在线学习学院党政数字图书馆项目</font></p>                                         <p><font size="4px">拟采购的货物或服务的说明：提供20000种以上的博看电子图书，保障学员能够正常浏览电子图书；由供货方负责提供运行服务器和存储设备及相应的技术支持和售后服务；提供单点登录功能，确保学院注册学员在IP地址不受限的情况下单点登录，学员无需重复登录，IP地址不受限，使用流量不受限；简便易操作，不需要用户下载安装专用的浏览器即可以阅读使用；提供7*24日的常运维服务和应急事故处理服务。</font></p>                         <p><font size="4px">拟采购的货物或服务的预算金额(万元)：8.2</font></p>                     <p><font size="4px">采用单一来源采购方式的原因及说明：学院由中共云南省委组织部依托云南开放大学成立，主要任务是利用数字技术为全省参学干部提供在线学习服务。学院从2020年开始采用“博看电子期刊阅览系统”作为学习平台的“党政数字图书馆”，为引导干部养成读书学习的良好习惯，在读书中增强党性修养、坚定共产主义理想信念和素质能力提升。为保证2022年“党政数字图书馆”使用的延续性，保证学员可以及时浏览数字图书，满足个性化学习需求，提升自身素质，需续订该资源库。</font></p>             <br>                                                                                <h4><b>二、拟定供应商信息</b></h4>                                                  <br>                                                                                    <p><font size="4px">名称：武汉鼎森电子科技有限公司</font></p>                                             <p><font size="4px">地址：湖北省武汉市江汉区江旺路8号红T时尚创意街区5号楼3层</font></p>                                         <br>                                                                                <h4><b>三、公示期限</b></h4>                                                        <br>                                                                                    <p><font size="4px">2022-08-29至2022-09-02</font></p>                   <br>                                                                                <h4><b>四、其他补充事宜：</b></h4>                                                  <br>                                                                                    <p><font size="4px">开标方式：现场开标 </br>是否需要缴纳投标保证金：是 </br>（/）云南开放大学云南省干部在线学习学院党政数字图书馆项目:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：1500.00（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函、银行转账或电汇等非现金方式</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-06 09:30</br></font></p>                                                                                 <br>                                                                                <h4><b>五、联系方式</b></h4>                                                        <br>                                                                                    <p><font size="4px">1.采购人信息</font></p>                                       <p><font size="4px">联 系 人：云南开放大学</font></p>                                         <p><font size="4px">联系地址：昆明市学府路113号</font></p>                                         <p><font size="4px">联系电话：杨老师0871-65196605</font></p>                                         <p><font size="4px">2.财政部门</font></p>                                         <p><font size="4px">联 系 人：云南省财政厅政府采购管理处</font></p>                                         <p><font size="4px">联系地址：昆明市华山南路130号四楼4006-4009办公室</font></p>                                         <p><font size="4px">联系电话：0871-63956099</font></p>                                         <p><font size="4px">3.采购代理机构</font></p>                                     <p><font size="4px">联 系 人：云南通拓招标有限公司</font></p>                                         <p><font size="4px">联系地址：昆明市同德昆明广场B区4栋501</font></p>                                         <p><font size="4px">联系电话：0871-65895558</font></p>                                     <br>                                                                            </div>                                                                              </body>                                                                         </html>                                                                             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">单一来源协商邀请书.pdf</td>
+                                    <td style="text-align:center">2022-08-26</td>
+                                    <td style="text-align:center"><a href="javascript:download('-cbd8858.182d2d22f5a.146f','/bulletinfiles/2022-08-26/1661513820293.pdf','单一来源协商邀请书.pdf')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

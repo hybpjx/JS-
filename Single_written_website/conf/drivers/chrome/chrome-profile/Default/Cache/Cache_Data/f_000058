@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="-1c3d8818.182b5bd2d7b.-707" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-23&#47;1661246741830.ZCZBJ" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="(招标)昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）.ZCZBJ" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）公开招标公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-23</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">昆明冶金高等专科学校</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">省级</td>                                                  <td class="title" width="128">公告时间</td>                                                                 <td width="168">2022-08-23</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取招标文件时间</td>                                                                       <td colspan="3">2022-08-24 09:00:00至2022-08-31 17:00:00<br>每日上午:09:00至12:00&nbsp;&nbsp;下午:14:00至17:00（北京时间，法定节假日除外）</td>      </tr>                                                                                                    <tr>                                                                                                            <td class="title">招标文件售价</td>                                                                       <td colspan="3">￥0</td>                                               </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取招标文件的地点</td>                                                                     <td colspan="3">云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage）</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">开标时间</td>                                                                           <td colspan="3">2022-09-13 11:00:00</td>                                                      </tr>                                                                                                       <tr>                                                                                                            <td class="title">开标地点</td>                                                                             <td colspan="3">云南省昆明市科高路799交易大厦开标厅4</td>                                                    </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥240万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">冯丽、陈学敏、武江艳、张正举、杨云惠、闾富蓉</td>                                                    </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">0871-63815951</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">昆明冶金高等专科学校</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">昆明市学府路388号</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                       <td colspan="3">陈老师 0871-66051573</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">云南国合建设招标咨询有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">昆明市白龙路425－427号晨曦街洋房1排117号</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">冯丽、陈学敏  15288343673、15974844457</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                              <head>                                                                                                                              <style type="text/css">                                                                                                           body {text-align:center;}                                                                                                       p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                           h2 {text-align:center;}                                                                                                         h4 {text-align:left;margin-left: 30px}                                                                                          .divcss5{width:900px; align:center;margin:0 auto}                                                                           </style>                                                                                                                    </head>                                                                                                                         <body>                                                                                                                          <div class="divcss5">                                                                                                             <br><h2><b>公开招标公告</b></h2><br>                                                                                                  <p align="center">                                                                                                            <table border="1" width="800px" align="center"  border rules=none cellspacing=0 align=center>                                 <tr>                                                                                                                                <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                                &nbsp;&nbsp;&nbsp;&nbsp;昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）招标项目的潜在投标人应在云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage）获取招标文件，并于2022-09-13 11:00（北京时间）前递交投标文件。</td>            </tr>                                                                                                                       </table>                                                                                                                        </p>                                                                                                                            <br><h4><b>一、项目基本情况</b></h4><br>                                                                                                           <p><font size="4px">项目编号：YNGH[2022]-301</font></p>                                                                                       <p><font size="4px">项目名称：昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）</font></p>                                                                                       <p><font size="4px">预算金额（万元）：240</font></p>                                                                                       <p><font size="4px">最高限价（万元）：240</font></p>                                                                                       <p><font size="4px">采购需求：昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次），租赁车型：45～47座以上空调客车；33～39座空调客车；14～19座以上空调客车，5～7座公务用车；具体服务要求详见招标文件“第六章 采购需求”。</font></p>                                                                                       <p><font size="4px">合同履行期限：详见招标文件</font></p>                                                                                   <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br><h4><b>二、申请人的资格要求：</b></h4><br>                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                               <p><font size="4px">2.落实政府采购政策需满足的资格要求：（1）本项目非专门面向中小企业采购的项目。扶持中小企业政策：评审时对符合招标文件要求的小型和微型企业服务享受10%的价格折扣。监狱企业和残疾人福利性单位视同小型、微型企业。
+（2）落实政府采购政策需满足的要求：《政府采购促进中小企业发展管理办法》（财库&#x3014;2020&#x3015;46号）、《财政部关于进一步加大政府采购支持中小企业力度的通知》的通知（云财采&#x3014;2022&#x3015;9号）、《云南省人民政府办公厅关于印发云南省进一步帮扶中小微企业纾困发展工作方案的通知》（云政办发&#x3014;2022&#x3015;42号）、《财政部 司法部关于政府采购支持监狱企业发展有关问题的通知》（财库&#x3014;2014&#x3015;68号）、《三部门联合发布关于促进残疾人就业政府采购政策的通知》（财库&#x3014;2017&#x3015;141号）及《中华人民共和国政府采购法》、《中华人民共和国政府采购法实施条例》、《政府采购货物和服务招标投标管理办法》（财政部令第87号）等有关法律、法规和规章的规定。</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：投标人须具有道路运输经营许可证和交通运输企业安全生产标准化达标一级证书。4.信用查询：按照《财政部关于在政府采购活动中查询及使用信用记录有关问题的通知》(财库&#x3014;2016&#x3015;125号)相关要求，投标人应在“信用中国”网站(www.creditchina.gov.cn)未被列入失信被执行人记录、重大税收违法失信主体且在中国政府采购网(www.ccgp.gov.cn)没有政府采购严重违法失信行为记录，(被禁止在一定期限内参加政府采购活动但期限届满的除外)，参与本项目的投标人信用查询截止时点：本项目招标公告发布之日起至投标截止时间（查询结果以采购代理机构查询结果为准）。
+5.单位负责人为同一人或者存在直接控股、管理关系的不同投标人，不得参加同一合同项下的政府采购活动。为采购项目提供整体设计、规范编制或者项目管理、监理、检测等服务的投标人，不得再参加该采购项目的其他采购活动。</font></p>                                                                     <br><h4><b>三、获取招标文件</b></h4><br>                                                                                                           <p><font size="4px">时间：2022-08-24 09:00至2022-08-31 17:00，每天上午09:00至12:00，下午14:00至17:00（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage）</font></p>                                                                                           <p><font size="4px">方式：请于招标文件获取时间2022年08月24日至2022年08月31日进入云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage），凭企业数字证书（CA）在网上获取电子招标文件及其它采购资料（电子招标文件，格式为*.ZCZBJ），数字证书（CA）详见其办理流程（如有疑问可咨询24小时技术支持热线：010-86483801）。</font></p>                                                                                           <p><font size="4px">售价（元）：0</font></p>                                                                                       <br><h4><b>四、提交投标文件截止时间、开标时间和地点</b></h4><br>                                                                                   <p><font size="4px">2022-09-13 11:00（北京时间）</font></p>            <p><font size="4px">地点：云南省昆明市科高路799交易大厦开标厅4</font></p>                                                                                       <br><h4><b>五、公告期限</b></h4><br>                                                                                                               <p><font size="4px">自本公告发布之日起5个工作日。</font></p>                                                                <br><h4><b>六、其他补充事宜</b></h4>                                                                                                           <p><font size="4px">开标方式：智能开标 </br>是否需要缴纳投标保证金：是 </br>（ZC530000202220360001001）昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目(二次):</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：48000（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函、银行转账、保证保险</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-13 11:00</br> 其他：（1）发布公告的媒介：云南省政府采购网（www.yngp.com）、云南省公共资源交易中心（http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage）。 （2）电子投标文件递交方式：采用网上递交，在投标文件递交的截止时间（投标截止时间，下同）前，需在网上递交投标文件：网上递交需登录云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage），投标人须在投标截止时间前完成所有电子投标文件的上传，网上确认电子签名，并打印“上传投标文件回执”，投标截止时间前未完成投标文件传输的，视为撤回投标文件。 （3）网上智能开标相关事项 根据《云南省发展和改革委员会关于贯彻落实积极应对疫情创新做好招投标工作保障经济平稳运行有关要求的通知》（云发改办招投标&#x3014;2020&#x3015;108号）、《云南省公共资源交易中心关于推行网上智能开标的通知》的相关要求，本项目采用网上智能开标远程解密的方式进行。 方式：网上智能开标远程解密。投标人登录云南省公共资源交易平台，按照《网上智能开标远程解密操作指南（投标人）》完成远程解密、查看开标一览表等相关操作。本项目解密时间为1小时，请投标人在投标截止时间前登录系统做好解密准备。若投标人未在规定时间完成以上解密，则视为撤销其投标文件，不再进入评标阶段。 因开标系统电、开标现场网络、设备及其他特殊原因，导致不能正常解密投标文件的，经核实和上报相关部门同意后，可再次下达网上解密指令来延长解密时间。 开标过程中如有问题，可以在线提出异议，由代理机构给予对应的回复。在规定的统一提出异议时间内不提出异议的，则视为对开标结果无异议。 （4）技术支持 联系方式： 技术支持：010-86483801 地址：云南省昆明市科高路799号交易大厦云南省公共资源交易中心五楼 投标人可到云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage）进行“电子投标文件制作及上传”的学习。 数字证书办理: 投标人可登陆云南省公共资源交易中心（网址：http://ggzy.yn.gov.cn/ynggfwpt-home-web/#/homePage），按照CA数字证书办理流程进行办理。技术支持：4006727666</font></p>                                                                                 <br><h4><b>七、对本次招标提出询问，请按以下方式联系。</b></h4><br>                                                                                  <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：昆明冶金高等专科学校</font></p>                                                                                          <p><font size="4px">地址：昆明市学府路388号</font></p>                                                                                           <p><font size="4px">联系方式：陈老师 0871-66051573</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：云南国合建设招标咨询有限公司</font></p>                                                                                          <p><font size="4px">地址：昆明市白龙路425－427号晨曦街洋房1排117号</font></p>                                                                                           <p><font size="4px">联系方式：冯丽、陈学敏  15288343673、15974844457</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：冯丽、陈学敏、武江艳、张正举、杨云惠、闾富蓉</font></p>                                                                                     <p><font size="4px">电　话：0871-63815951</font></p><br>                                                                                 </div>                                                                                                                          </body>                                                                                                                     </html>                                                                                                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 采购文件</td>
+                                    <td style="text-align:center">(招标)昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）.ZCZBJ</td>
+                                    <td style="text-align:center">2022-08-23</td>
+                                    <td style="text-align:center"><a href="javascript:download('-1c3d8818.182b5bd2d7b.-706','/bulletinfiles/2022-08-23/1661246741830.ZCZBJ','(招标)昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目（二次）.ZCZBJ')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+                    <br>
+                    <div class="panel-body">
+                        <div style="float:left;"><span style="font-size:16px"><b>采购公告：</b></span></div>
+                        <br>
+                        <div style="float:left;">
+                            <input type="hidden" id="pk_id" name="pk_id" value="58e4006a.18223c46b19.-62c5" />
+                            <a href="#" onclick="goOppen(this);"><span style="font-size:14px">昆明冶金高等专科学校2022-2025年教职工交通车服务采购项目公开招标公告</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

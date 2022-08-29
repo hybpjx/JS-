@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="云南省政府采购网">
+    <meta name="keywords" content="中国政府采购网云南分网 云南省政府购买服务信息平台">
+    <meta name="author" content="东软集团">
+    <title>云南省政府采购网</title>
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/style.js"></script>
+    <script src="/common/config.js"></script>
+</head>
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+     
+<div class="purTop">
+  <div class="purLayout clear">
+    <div id="date" class="topDate fl"></div>
+    <!--
+    <div class="topWeather fr">
+      <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=0&v=0&d=3&bd=0&k=&f=ffffff&ltf=ffffff&htf=ffffff&q=1&e=1&a=1&c=54511&w=180&h=36&align=center"></iframe>
+    </div>
+  -->
+  </div>
+</div>
+ <!-- header -->
+ <div class="purLayout">
+       <div class="purHeader clear">
+        <div class="purLogo fl">
+            <div class="lo1">云南省政府采购网</div>
+            <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+        </div>
+        <div class="purSearch fr">
+            <form class="psSearch">
+                <input id="bulletintitle_search" placeholder="请输入需要查询的内容"/>
+                <button type="button" onclick="openSearchformainTitle();">搜索</button>
+            </form>
+            <div class="psHot">
+                <span class="hotName">热门搜索：</span>
+                <ul class="hotList">
+                    <li><a href='javascript:void(0);' onclick="openSearchformainType('bxlx013');">业务公告</a></li>
+                    <li><a href='javascript:void(0);' onclick="openSearchformainType('xzzl');">资料下载</a></li>
+                    <li><a href='javascript:void(0);' onclick="openSearchformainType('02');">财政部文件</a></li>
+                    <li><a href='javascript:void(0);' onclick="openSearchformainType('01');">国家法规</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+	    <ul class="purMenu" style="padding:0">
+	      <li class="cur"><a href='javascript:void(0);' onclick="doMenu('/index.html');">首页</a></li>
+	      <li><a href='javascript:void(0);' onclick="doMenu('/page/procurement/procurementList.html');">采购信息</a></li>
+	      <li><a href='javascript:void(0);' onclick="doMenu('/page/supervision/supervisionList.html');">监督管理</a></li>
+	      <li><a href='javascript:void(0);' onclick="doMenu('/page/policy/policyList.html');">政策法规</a></li>
+	      <li><a href='javascript:void(0);' onclick="doMenu('/page/organization/organizationList.html');">相关机构</a></li>
+	      <li><a href='javascript:void(0);' onclick="doMenu('/page/workguide/workguideList.html');">办事指南</a></li>
+	    </ul>
+    <script>
+      function doMenu(url){
+            window.location.href=url;
+      }
+      function showmenu(){
+        clearMenu();
+        url = window.location.href;
+        if (url.indexOf("index.html")>0){
+          $($(".purMenu")[0].children[0]).addClass("cur");
+        }else if (url.indexOf('procurementList.html')>0){
+          $($(".purMenu")[0].children[1]).addClass("cur");
+        }else if (url.indexOf('supervisionList.html')>0){
+          $($(".purMenu")[0].children[2]).addClass("cur");
+        }else if (url.indexOf('policyList.html')>0){
+          $($(".purMenu")[0].children[3]).addClass("cur");
+        }else if (url.indexOf('organizationList.html')>0){
+          $($(".purMenu")[0].children[4]).addClass("cur");
+        }else if (url.indexOf('workguideList.html')>0){
+          $($(".purMenu")[0].children[5]).addClass("cur");
+        }
+     }
+      function clearMenu(){
+        $(".cur").each(function(){
+          $(this).removeAttr("class");
+        });
+      }
+      showmenu();
+      //公告查询
+     function openSearchformainTitle(){
+          var bulletintitle=document.getElementById("bulletintitle_search").value;	
+          if(bulletintitle==null||bulletintitle==""||bulletintitle=="请输入查询内容"){
+            alert('请输入公告查询内容');
+            return;
+          }
+        var url="/page/procurement/searchForMain.html?bulletintitle="+encodeURIComponent(encodeURIComponent(bulletintitle));
+          window.location.href=url;
+        }
+        //热门搜索
+        function openSearchformainType(bulletinclass){
+        var url="/page/procurement/searchForMain.html?bulletinclass="+encodeURIComponent(encodeURIComponent(bulletinclass));
+          window.location.href=url;
+        }
+        	// 日期
+	function changeTime() {
+		var myDate = new Date();
+		year = myDate.getFullYear();
+		month = myDate.getMonth() + 1;
+		date = myDate.getDate();
+		hours = myDate.getHours();
+		minutes = myDate.getMinutes();
+		seconds = myDate.getSeconds();
+		weekend = myDate.getDay(); 
+		weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+		day = weeks[weekend]
+		if (month<10) {
+			month = '0'+month
+		}
+		if (date<10) {
+			date = '0'+date
+		}
+		if (hours<10) {
+			hours = '0'+hours
+		}
+		if (minutes<10) {
+			minutes = '0'+minutes
+		}
+		if (seconds<10) {
+			seconds = '0'+seconds
+		}
+		$('#date').html(year+"年"+month+"月"+date+"日"+" "+day+" "+hours+":"+minutes)
+	}
+	changeTime();
+	setInterval(changeTime, 1000);
+  </script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/js/captcha/verify.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.css"/>
+    <link href="/static/css/bootstrap-select.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bootstrap-dialog.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap-datetimepicker.js"></script>
+    <script src="/static/js/bootstrap-grid.js"></script>
+    <script src="/static/js/bootstrap-select.min.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/static/js/captcha/crypto-js.min.js"></script>
+    <script src="/static/js/captcha/ase.js"></script>
+    <script src="/static/js/captcha/verify.js"></script>
+    <script src="/staticpage/procurement/procurementList.js" defer></script>
+</head>
+<body>
+<!--顶部导航 over--> 
+<div class="purContainer">
+    <div class="purMain hasSidebar">
+		<div class="purSidebar">
+			<div class="pursHead"><b>B</b>采购信息<span>BUYING LEADS</span></div>
+			<ul class="pursList" style="padding:0">
+				<li class="cur"><a href="javascript:void(0);" id="query1" onclick="userful('1',this);">招标/预审/谈判/磋商/询价公告</a></li>
+				<li><a href="javascript:void(0);" id="query3" onclick="userful('3',this);">单一来源审核前公示</a></li>
+				<li><a href="javascript:void(0);" id="query2" onclick="userful('2',this);">结果公告</a></li>
+                <li><a href="javascript:void(0);" id="query7" onclick="userful('7',this);">更正公告</a></li>
+				<li><a href="javascript:void(0);" id="query9" onclick="userful('9',this);">电子卖场公告</a></li>
+				<li><a href="javascript:void(0);" id="query10" onclick="userful('10',this);">终止公告</a></li>
+				<li><a href="javascript:void(0);" id="query4" onclick="userful('4',this);">PPP合作伙伴采购信息</a></li>
+                <!--<li><a href="javascript:void(0);" id="query5" onclick="userful('5',this);">进口产品核准前公示</a></li>-->
+                <li><a href="javascript:void(0);" id="query6" onclick="userful('6',this);">政府采购合同公告</a></li>
+				<li><a href="javascript:void(0);" id="query8" onclick="userful('8',this);">公共服务项目验收结果公告</a></li>
+				<li><a href="javascript:void(0);" id="query11" onclick="userful('11',this);">云南省电子卖场管理公告</a></li>
+			</ul>
+		</div>
+		<div class="purContent">
+<div class="panel  panel-search">
+    <div id="tab-content" class="tab-content">
+        <form id="tab1content" class="tab-pane active">
+            <input type="hidden" id="sign" name="sign" value="1" />
+            <div class="panel-body form-horizontal search-body" id="searchPanel1">
+                <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group form-group-sm">
+                        <label class="search-label-left control-label ">
+                            标题：
+                        </label>
+                        <div class="search-input-left">
+                            <input type="text" maxlength="64" value="" name="bulletintitle"
+                                id="bulletintitle" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group form-group-sm">
+                        <label class="search-label-right control-label">
+                            发布时间：
+                        </label>
+                        <div class="search-input-left form-inline">
+                            <div class="input-group input-group-sm date form_datetime"
+                                data-date-format="dd MM yyyy">
+                                <input class="form-control" id="startTime" name="startTime"
+                                    type="text">
+                                <span class="input-group-addon"><span
+                                    class="glyphicon glyphicon-calendar"></span> </span>
+                            </div>
+                            至
+                            <div class="input-group input-group-sm date form_datetime"
+                                data-date-format="dd MM yyyy">
+                                <input class="form-control" id="endTime" name="endTime"
+                                    type="text">
+                                <span class="input-group-addon"><span
+                                    class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group form-group-sm">
+                        <label class="search-label-left control-label ">
+                            采购单位名称：
+                        </label>
+                        <div class="search-input-left">
+                            <input type="text" maxlength="64" value="" name="purchaser"
+                                id="purchaser" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xs-6">
+                    <div class="form-group form-group-sm">
+                        <label class="search-label-right control-label">
+                            项目编号：
+                        </label>
+                        <div class="search-input-left">
+                            <input type="text" maxlength="128" value="" name="projectid"
+                                id="projectid" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group form-group-sm">
+                        <label class="search-label-left control-label ">区划：</label>
+                        <div class="search-input-left">
+                            <select class="selectpicker"   id="districtCode"  title="请选择">
+                            </select>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" id="querygglxdm_div">
+                    <div class="form-group form-group-sm">
+                        <label class="search-label-right control-label">类别：</label>
+                        <div class="search-input-left">
+                           <select class="selectpicker" id="querygglxdm">
+                                   <option value="">请选择</option>
+                                   <option value="bxlx005">资格预审公告</option>
+                                   <option value="bxlx001">公开招标公告</option>
+                                   <option value="bxlx006">邀请招标公告</option>
+                                   <option value="bxlx003">竞争性谈判公告</option>
+                                   <option value="bxlx015">竞争性磋商公告</option>
+                                   <option value="bxlx002">询价采购公告</option>
+                                   <option value="bxlx016">单一来源公告</option>
+                                   <option value="bxlx009">其他公告</option>
+                                   <option value="bxlx010">补遗公告</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-xs-6 col-xs-offset-6">
+                    <div class="form-group">
+                        <label class="search-label-right control-label"></label>
+                        <div class="search-input-right text-right">
+                            <button type="button"
+                                class="btn btn-default btn-sm search-button" id="resetbtn">
+                                重置
+                            </button>
+                            <button type="button" 
+                                class="btn btn-primary btn-sm search-button" id="querybtn">
+                                查询
+                            </button>
+                            <input type="hidden" value="隐藏查询按钮" id="hiddenQeuryBtn"/>
+                            <div id="mpanel4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class=" panel-body">
+        <table class="table  table-hover " id="bulletinlistid">
+            <thead class="bg-default" id="thead">
+                <tr>
+                    <th data-width="60%" data-column-id="bulletintitle"
+                        data-sortable="false" data-align="left"
+                        data-formatter="operation" data-visibletitle="true">
+                        标题
+                    </th>
+                    <th data-width="15%" data-column-id="bulletinclassname"
+                        data-sortable="false" data-align="center" data-visibletitle="true">
+                        类别
+                    </th>
+                    <th data-width="10%" data-column-id="districtname"
+                        data-sortable="true" data-align="center"  data-visibletitle="true">
+                        区划
+                    </th>
+                    <th data-width="15%" data-column-id="finishday"
+                        data-sortable="false" data-align="center" data-visibletitle="true">
+                        发布时间
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+
+    <!-- 引入尾部文件信息 -->
+    <!-- link -->
+<div class="purLink">
+    <div class="linkName">相关链接</div>
+    <ul class="linkList" id="liskList">
+    </ul>
+    <a class="linkMore" href='javascript:void(0);' onclick='moreLinkList();'>更多 &gt;&gt;</a>
+</div>
+<script>
+   ynportal.ajaxpost("/api/common/otheruse.linklist.svc",null,function (data){
+     let htmlstr="";
+    data.forEach(link => {
+      htmlstr+="<li><a href='"+link.LINK_ADDRESS+"' target='_blank' rel='noopener noreferrer' title='"+link.LINK_NAME+"'>";
+      let name=link.LINK_NAME;
+      if (name.length>8 ){
+          name=name.slice(0,8)+"...";
+          htmlstr+=name;
+      }else{
+          htmlstr+=name;
+      }
+       htmlstr+="</a></li>";
+     });
+     $("#liskList").html(htmlstr);
+   });
+//链接地址更多页
+function moreLinkList() {
+    window.location.href="/page/firstpage/moreLinkList.html";
+}
+</script>
+    <div class="purFooter">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>
+    
+  

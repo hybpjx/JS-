@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="18cb1125.182b5bebffc.5284" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-24&#47;1661336213416.docx" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="招标公告.docx" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">芒市民政局芒市殡仪馆项目-火化设备采购公开招标公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-24</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">芒市殡仪馆项目-火化设备采购</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">芒市民政局机关</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">德宏州</td>                                                  <td class="title" width="128">公告时间</td>                                                                 <td width="168">2022-08-24</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取招标文件时间</td>                                                                       <td colspan="3">2022-08-24 18:18:09至2022-08-31 17:30:00<br>每日上午:08:30至11:30&nbsp;&nbsp;下午:14:30至17:30（北京时间，法定节假日除外）</td>      </tr>                                                                                                    <tr>                                                                                                            <td class="title">招标文件售价</td>                                                                       <td colspan="3">￥0</td>                                               </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取招标文件的地点</td>                                                                     <td colspan="3">云南润腾招标咨询有限公司</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">开标时间</td>                                                                           <td colspan="3">2022-09-16 15:00:00</td>                                                      </tr>                                                                                                       <tr>                                                                                                            <td class="title">开标地点</td>                                                                             <td colspan="3">芒市公共资源交易中心2号开标室</td>                                                    </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥400万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">王紫葳</td>                                                    </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">13578237595</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">芒市民政局机关</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">德宏州芒市河东路17号</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                       <td colspan="3">0692-2105007</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">云南润腾招标咨询有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">德宏州芒市芒市大街20-2号三楼</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">13578237595</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                              <head>                                                                                                                              <style type="text/css">                                                                                                           body {text-align:center;}                                                                                                       p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                           h2 {text-align:center;}                                                                                                         h4 {text-align:left;margin-left: 30px}                                                                                          .divcss5{width:900px; align:center;margin:0 auto}                                                                           </style>                                                                                                                    </head>                                                                                                                         <body>                                                                                                                          <div class="divcss5">                                                                                                             <br><h2><b>公开招标公告</b></h2><br>                                                                                                  <p align="center">                                                                                                            <table border="1" width="800px" align="center"  border rules=none cellspacing=0 align=center>                                 <tr>                                                                                                                                <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                                &nbsp;&nbsp;&nbsp;&nbsp;芒市殡仪馆项目-火化设备采购招标项目的潜在投标人应在云南润腾招标咨询有限公司获取招标文件，并于2022-09-16 15:00（北京时间）前递交投标文件。</td>            </tr>                                                                                                                       </table>                                                                                                                        </p>                                                                                                                            <br><h4><b>一、项目基本情况</b></h4><br>                                                                                                           <p><font size="4px">项目编号：YNRTZB-DH-2022-006</font></p>                                                                                       <p><font size="4px">项目名称：芒市殡仪馆项目-火化设备采购</font></p>                                                                                       <p><font size="4px">预算金额（万元）：400</font></p>                                                                                       <p><font size="4px">最高限价（万元）：400</font></p>                                                                                       <p><font size="4px">采购需求：高档智能环保节能拣灰火化机设备4套，具体详见第三章采购项目要求</font></p>                                                                                       <p><font size="4px">合同履行期限：自签订合同后采购人通知之日起60日历天内交货、施工、安装、调试完成并通过验收</font></p>                                                                                   <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br><h4><b>二、申请人的资格要求：</b></h4><br>                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                               <p><font size="4px">2.落实政府采购政策需满足的资格要求：无</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：1.满足《中华人民共和国政府采购法》第二十二条规定，提供下列资料：
+（1）营业执照：具有独立承担民事责任的能力，依法取得有效的营业执照、组织机构代码证、税务登记证等相关证件或三证合一的《营业执照》；分公司参与投标的，还需提供总公司出具的授权书并由法人签字授权。同一家公司的总公司和下属的不同分公司不能同时参与同一项目投标；
+（2）财务状况：提供2021年的审计报告和经审计的财务状况报告（至少包含资产负债表、利润表、现金流量表）；成立不满1年的可提供成立至本项目公告发布前一个月企业自行编制的财务状况报告或响应文件提交截止时间前三个月内开户银行出具的资信证明或资金存款证明；
+（3）税收要求：提供交纳所属时间在2021年1月至本项目投标文件提交截止时间前任意三个月交纳税收的证明材料，依法免税的，应提供依法免税的相关证明文件，企业成立不满三个月的无需提供；
+（4）社保要求：提供交纳所属时间在2021年1月至本项目投标文件提交截止时间前任意三个月交纳社会保障资金的证明材料，依法免缴的，应提供依法免缴的相关证明文件，企业成立不满三个月的无需提供；
+（5）专业技术能力：提供具备履行合同所必需的设备和专业技术能力的证明材料或承诺书；
+（6）无重大违法记录声明：参加此次采购活动前3年内（自本项目发布公告之日起前3年内），在经营活动中没有重大违法记录的书面声明；
+（7）信誉要求：按照《政府采购货物和服务招标投标管理办法》《财政部关于在政府采购活动中查询及使用信用记录有关问题的通知》相关要求，投标人及法定代表人（负责人）信誉要求“信用中国”网站（https://www.creditchina.gov.cn/xinyongfuwu/?navPage=4）中未被列入：①严重失信主体名单；②失信被执行人；③政府采购严重违法失信行为记录名单；④税收违法黑名单。（在一定期限内被禁止参加政府采购活动但期限届满的除外）注：以上网站投标人可截屏保存后上传至投标文件，也可不传。但以上网站均由招标人或招标代理机构在资格审查时查询为准，若投标人或法定代表人有不良信誉信用，将视为不满足资格要求，投标文件无效。
+（8）本项目不接受联合体投标。</font></p>                                                                     <br><h4><b>三、获取招标文件</b></h4><br>                                                                                                           <p><font size="4px">时间：2022-08-24 18:18至2022-08-31 17:30，每天上午08:30至11:30，下午14:30至17:30（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：云南润腾招标咨询有限公司</font></p>                                                                                           <p><font size="4px">方式：网上获取</font></p>                                                                                           <p><font size="4px">售价（元）：0</font></p>                                                                                       <br><h4><b>四、提交投标文件截止时间、开标时间和地点</b></h4><br>                                                                                   <p><font size="4px">2022-09-16 15:00（北京时间）</font></p>            <p><font size="4px">地点：芒市公共资源交易中心2号开标室</font></p>                                                                                       <br><h4><b>五、公告期限</b></h4><br>                                                                                                               <p><font size="4px">自本公告发布之日起5个工作日。</font></p>                                                                <br><h4><b>六、其他补充事宜</b></h4>                                                                                                           <p><font size="4px">开标方式：网上开标 </br>是否需要缴纳投标保证金：是 </br>（/）芒市殡仪馆项目-火化设备采购:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：80000（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-16 15:00</br></font></p>                                                                                 <br><h4><b>七、对本次招标提出询问，请按以下方式联系。</b></h4><br>                                                                                  <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：芒市民政局机关</font></p>                                                                                          <p><font size="4px">地址：德宏州芒市河东路17号</font></p>                                                                                           <p><font size="4px">联系方式：0692-2105007</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：云南润腾招标咨询有限公司</font></p>                                                                                          <p><font size="4px">地址：德宏州芒市芒市大街20-2号三楼</font></p>                                                                                           <p><font size="4px">联系方式：13578237595</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：王紫葳</font></p>                                                                                     <p><font size="4px">电　话：13578237595</font></p><br>                                                                                 </div>                                                                                                                          </body>                                                                                                                     </html>                                                                                                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">招标公告.docx</td>
+                                    <td style="text-align:center">2022-08-24</td>
+                                    <td style="text-align:center"><a href="javascript:download('18cb1125.182b5bebffc.52b6','/bulletinfiles/2022-08-24/1661336213416.docx','招标公告.docx')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

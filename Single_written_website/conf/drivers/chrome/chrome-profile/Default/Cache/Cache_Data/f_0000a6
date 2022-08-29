@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="18b18869.182de4cd547.-719d" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-28&#47;1661680929415.pdf" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="招标公告（恢复）-永宁镇2022年温泉村委会瓦拉壁片区示范创建项目.pdf" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">永宁镇2022年温泉村委会瓦拉壁片区示范创建项目竞争性谈判恢复公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-28</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">永宁镇2022年温泉村委会瓦拉壁片区示范创建项目</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">宁蒗彝族自治县永宁镇人民政府</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">丽江市</td>                                                  <td class="title" width="128">公告时间</td>                                                               <td width="168">2022-08-28</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件的地点</td>                                                                     <td colspan="3">宁蒗镕诚建设项目管理有限公司（宁蒗县金沙铭城商业步行街宏韵文化艺术学校对面）三楼开标室</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件时间</td>                                                                       <td colspan="3">2022-08-29 08:00:33至2022-09-02 18:00:41<br>每日上午:08:00至12:00&nbsp;&nbsp;下午:14:00至18:00（北京时间，法定节假日除外）</td>      </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥150万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">沙永才</td>                                                    </tr>                                                                                                      <tr>                                                                                                            <td class="title">项目联系电话</td>                                                                         <td colspan="3">13708821869</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">宁蒗彝族自治县永宁镇人民政府</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">宁蒗彝族自治县永宁镇</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                      <td colspan="3">13708821869</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">宁蒗镕诚建设项目管理有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">宁蒗县金沙铭城商业步行街5-2</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">15912216513</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                          <head>                                                                                                                          <style type="text/css">                                                                                                       body {text-align:center;}                                                                                                   p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                      h2 {text-align:center;}                                                                                                     h4 {text-align:left;margin-left: 30px}                                                                                      .divcss5{width:900px; align:center;margin:0 auto}                                                                       </style>                                                                                                                </head>                                                                                                                     <body>                                                                                                                      <div class="divcss5">                                                                                                         <br>                                                                                                                        <h2><b>竞争性谈判公告</b></h2>                                                                                              <br>                                                                                                                        <p align="center">                                                                                                        <table border="1" width="780px" align="center"  border rules=none cellspacing=0 align=center>                             <tr>                                                                                                                            <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                          &nbsp;&nbsp;&nbsp;&nbsp;永宁镇2022年温泉村委会瓦拉壁片区示范创建项目采购项目的潜在供应商应在宁蒗&#x9555;诚建设项目管理有限公司（宁蒗县金沙铭城商业步行街宏韵文化艺术学校对面）三楼开标室获取采购文件，并于2022-09-03 09:00（北京时间）前提交响应文件。</td>            </tr>                                                                                                                   </table>                                                                                                                    </p>                                                                                                                        <br>                                                                                                                        <h4><b>一、项目基本情况</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">项目编号：NLRC(谈)-20220807</font></p>                                                                                               <p><font size="4px">项目名称：永宁镇2022年温泉村委会瓦拉壁片区示范创建项目</font></p>                                                                                               <p><font size="4px">采购方式：竞争性谈判</font></p>                                                                           <p><font size="4px">预算金额（万元）：150</font></p>                                                                                               <p><font size="4px">最高限价（万元）：150</font></p>                                                                                               <p><font size="4px">采购需求：本次规划的瓦拉壁片区主要涉及污水管（主管）铺设、道路提升改造（东侧）两个项目：
+①污水管（主管）铺设规模：HDPE双壁波纹管 SN8DN300;
+②道路提升改造规模：道路长度397米，拓宽硬化至4米，材质选用沥青路面。</font></p>                                                                                               <p><font size="4px">合同履行期限：60日历天</font></p>                                                                                           <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br>                                                                                                                                    <h4><b>二、申请人的资格要求：</b></h4>                                                                                      <br>                                                                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                         <p><font size="4px">2.落实政府采购政策需满足的资格要求：1、具有独立承担民事责任的能力；
+2、具有良好的商业信誉和健全的财务会计制度；提供财务状况说明及承诺（若为新成立公司未满三年的，则要求投标人提供公司成立至今的证明材料）；
+3、履约能力：主要包括支付能力和生产能力两方面的内容，有履约能力保证的。
+4、有依法缴纳税收和社会保障资金的良好记录；(提供2020年1月至今任意三个月的税收缴纳凭证和社保资金缴纳凭证,成立未满三个月的投标人提供成立以来税收和社会保障资金缴纳凭证或相关情况说明，依法不需要缴纳税收和社保的应提供相应的证明材料或合理可信的情况说明）；
+5、信用要求：根据《财政部关于在政府采购活动中查询及使用信用记录有关问题的通知-财库&#x3014;2016&#x3015;125号》相关要求，对列入失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信行为记录名单的投标人拒绝其参与本次政府采购活动（以采购代理机构查询范围为准）。投标人在投标截止时间前近三年无行贿犯罪记录，投标人在中国裁判文书网（www.court.gov.cn/wenshu.html）查询，提供在中国裁判文书网（www.court.gov.cn/wenshu.html）查询记录的网页截图，并加盖投标人公章；</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：1、投标人须提供自2019年至今1个类似服务业绩合同，且单个合同金额不低于人民币150万元;
+2、资质要求：持有有效营业执照，具有有效的安全生产许可证，具有市政公用工程施工总承包三级及以上资质，并在人员、设备、资金等方面具备相应的能力；
+3、项目经理资格：具有市政公用专业中级或以上职称，持有市政专业工程注册二级建造师执业资格证书，同时持有B类安全生产考核合格证，市政工程施工经验2年以上，具有较强的工作协调能力和组织、管理能力。
+4、项目总工：具有大专或以上学历，市政工程类工程师及以上职称，市政工程施工经验年满2年及以上，2019年至今顺利完成1个及以上合同金额大于150万元的市政工程施工项目的项目总工（技术负责人）。</font></p>                                                                     <br>                                                                                                                        <h4><b>三、获取采购文件</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">时间：2022-08-29 08:00至2022-09-02 18:00，每天上午08:00至12:00，下午14:00至18:00（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：宁蒗&#x9555;诚建设项目管理有限公司（宁蒗县金沙铭城商业步行街宏韵文化艺术学校对面）三楼开标室</font></p>                                                                                     <p><font size="4px">方式：现场获取</font></p>                                                                                     <p><font size="4px">售价（元）：800</font></p>                                                                                 <br>                                                                                                                        <h4><b>四、响应文件提交</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">截止时间：2022-09-03 09:00（北京时间）</font></p>                                            <p><font size="4px">地点：宁蒗&#x9555;诚建设项目管理有限公司（宁蒗县金沙铭城商业步行街宏韵文化艺术学校对面）三楼开标室</font></p>                                                                                 <br>                                                                                                                        <h4><b>五、开启</b></h4>                                                                          <br>                                                                                                                            <p><font size="4px">时间：2022-09-03 09:00（北京时间）</font></p>                                                <p><font size="4px">地点：宁蒗&#x9555;诚建设项目管理有限公司（宁蒗县金沙铭城商业步行街宏韵文化艺术学校对面）三楼开标室</font></p>                                                                                 <br>                                                                                                                        <h4><b>六、公告期限</b></h4>                                                                                                <br>                                                                                                                            <p><font size="4px">自本公告发布之日起3个工作日。</font></p>                                                          <br>                                                                                                                        <h4><b>七、其他补充事宜</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">开标方式：现场开标 </br>是否需要缴纳投标保证金：是 </br>（NLRC(谈)-20220807）永宁镇2022年温泉村委会瓦拉壁片区示范创建项目:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：20000.00（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函、银行转账、现金</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-02 18:00</br> 其他：无</font></p>                                                                                 <br>                                                                                                                        <h4><b>八、凡对本次采购提出询问，请按以下方式联系。</b></h4>                                                                <br>                                                                                                                            <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：宁蒗彝族自治县永宁镇人民政府</font></p>                                                                                          <p><font size="4px">地址：宁蒗彝族自治县永宁镇</font></p>                                                                                           <p><font size="4px">联系方式：13708821869</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：宁蒗&#x9555;诚建设项目管理有限公司</font></p>                                                                                          <p><font size="4px">地址：宁蒗县金沙铭城商业步行街5-2</font></p>                                                                                           <p><font size="4px">联系方式：15912216513</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：沙永才</font></p>                                                                                     <p><font size="4px">电　话：13708821869</font></p><br>                                                                                     <br>                                                                                                                    </div>                                                                                                                      </body>                                                                                                                 </html>                                                                                                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">招标公告（恢复）-永宁镇2022年温泉村委会瓦拉壁片区示范创建项目.pdf</td>
+                                    <td style="text-align:center">2022-08-28</td>
+                                    <td style="text-align:center"><a href="javascript:download('18b18869.182de4cd547.-719c','/bulletinfiles/2022-08-28/1661680929415.pdf','招标公告（恢复）-永宁镇2022年温泉村委会瓦拉壁片区示范创建项目.pdf')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+                    <br>
+                    <div class="panel-body">
+                        <div style="float:left;"><span style="font-size:16px"><b>采购公告：</b></span></div>
+                        <br>
+                        <div style="float:left;">
+                            <input type="hidden" id="pk_id" name="pk_id" value="-1c3d8818.182b5bd2d7b.-4f10" />
+                            <a href="#" onclick="goOppen(this);"><span style="font-size:14px">永宁镇2022年温泉村委会瓦拉壁片区示范创建项目竞争性谈判公告</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="6eb5a52f.182b5bf7447.-72ae" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-22&#47;1661132578858.pdf" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务   竞争性磋商公告.pdf" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">景谷傣族彝族自治县半坡乡卫生院景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务竞争性磋商公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-22</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">景谷傣族彝族自治县半坡乡卫生院</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">普洱市</td>                                                  <td class="title" width="128">公告时间</td>                                                                 <td width="168">2022-08-22</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件时间</td>                                                                       <td colspan="3">2022-08-22 23:55:00至2022-08-29 17:00:00<br>每日上午:09:00至11:30&nbsp;&nbsp;下午:14:30至17:00（北京时间，法定节假日除外）</td>      </tr>                                                                                                    <tr>                                                                                                            <td class="title">响应文件递交地点</td>                                                                     <td colspan="3">景谷傣族彝族自治县响水路32号富强酒店2楼会议室</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">响应文件开启时间</td>                                                                     <td colspan="3">2022-09-02 09:00:00</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">响应文件开启地点</td>                                                                     <td colspan="3">景谷傣族彝族自治县响水路32号富强酒店2楼会议室</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥70万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">王思程</td>                                                    </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">15912950347</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">景谷傣族彝族自治县半坡乡卫生院</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">景谷傣族彝族自治县半坡乡金山路10号</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                       <td colspan="3">0879-5351113</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">普洱正格工程咨询有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">景谷县威远镇益智路益才新城3栋6单元401室</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">0879-5229004</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                          <head>                                                                                                                          <style type="text/css">                                                                                                       body {text-align:center;}                                                                                                   p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                      h2 {text-align:center;}                                                                                                     h4 {text-align:left;margin-left: 30px}                                                                                      .divcss5{width:900px; align:center;margin:0 auto}                                                                       </style>                                                                                                                </head>                                                                                                                     <body>                                                                                                                      <div class="divcss5">                                                                                                         <br>                                                                                                                        <h2><b>竞争性磋商公告</b></h2>                                                                                              <br>                                                                                                                        <p align="center">                                                                                                        <table border="1" width="780px" align="center"  border rules=none cellspacing=0 align=center>                             <tr>                                                                                                                            <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                          &nbsp;&nbsp;&nbsp;&nbsp;景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务采购项目的潜在供应商应在邮箱报名获取采购文件，并于2022-09-02 09:00（北京时间）前提交响应文件。</td>            </tr>                                                                                                                   </table>                                                                                                                    </p>                                                                                                                        <br>                                                                                                                        <h4><b>一、项目基本情况</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">项目编号：PEZG-JG-20220704</font></p>                                                                                               <p><font size="4px">项目名称：景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务</font></p>                                                                                               <p><font size="4px">采购方式：竞争性磋商</font></p>                                                                           <p><font size="4px">预算金额（万元）：70</font></p>                                                                                               <p><font size="4px">最高限价（万元）：61.66452</font></p>                                                                                               <p><font size="4px">采购需求：医疗影像材料、医疗中医耗材、医疗检验试剂、医疗卫生普通耗材等，详见第三章 采购内容及要求。</font></p>                                                                                               <p><font size="4px">合同履行期限：2年，合同一年一签。自合同签订之日起至次年对应之日止。供货周期内采购人对供货产品质量和服务进行考核，如考核不满足要求，采购人将有权终止合同。</font></p>                                                                                           <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br>                                                                                                                                    <h4><b>二、申请人的资格要求：</b></h4>                                                                                      <br>                                                                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                         <p><font size="4px">2.落实政府采购政策需满足的资格要求：2.1促进中小企业发展政策：评审时小型、微型企业提供的产品（提供本企业制造的货物、承担的工程或者服务，或者提供其他中小企业制造的货物）价格给予相应的扣除。监狱企业、残疾人福利性单位视同小型和微型企业，其产品在评审时给予相同的价格扣除。执行政策文件：《政府采购促进中小企业发展管理办法》（财库&#x3014;2020&#x3015;46 号）、《财政部关于进一步加大政府采购支持中小企业力度的通知》财库&#x3014;2022&#x3015;19号、《财政部司法部关于政府采购支持监狱企业发展有关问题的通知》（财库&#x3014;2014&#x3015;68 号）、《财政部民政部中国残疾人联合会关于促进残疾人就业政府采购政策的通知》（财库&#x3014;2017&#x3015;141 号）。 
+2.2 鼓励环保政策：采购标的属于环境标志产品政府采购品目清单时，在技术、服务等指标同等条件下，优先采购环境标志产品。 
+2.3 鼓励节能政策：采购标的属于节能产品政府采购品目清单时，在技术、服务等指标同等条件下，优先采购节能产品。
+2.4本项目不属于专门面向中小企业采购的项目。</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：3.1供应商如果是代理商或经销商，须提供医疗器械经营许可证/备案，所投产品制造商医疗器械生产许可证、所投产品的医疗器械注册证及附件；供应商如果是制造商，须提供医疗器械生产许可证、所投产品的医疗器械注册证及附件。医疗器械生产或经营许可证生产或经营范围须覆盖所投第二、三类医疗器械（根据中华人民共和国国务院令第 739 号《医疗器械监督管理条例》和国家药品监督管理局《医疗器械分类目录》的规定，在《医疗器械分类目录》内的产品必须按照《医疗器械监督管理条例》的要求提供，其他不在《医疗器械分类目录》内的不作强行要求）。
+3.2如果供应商工商注册地在中华人民共和国境内的，须提供具备所投产品经营范围的《中华人民共和国医疗器械经营企业许可证》/备案证，以许可证上的经营范围为准，不接受其他证明材料；若涉及药品的须具有药品经营许可证；涉及消毒剂的生产或经营企业应依法取得《卫生许可证》。
+4.信用查询：
+（1）供应商未被列入“信用中国”网站（www.creditchina.gov.cn）公布的“重大税收违法案件当事人”名单、“失信被执行人”名单、“政府采购严重违法失信行为记录”名单； 
+（2）供应商未被列入“中国政府采购网”（www.ccgp.gov.cn）公布的“政府采购严重违法失信行为信息记录”名单(被禁止在一定期限内参加政府采购活动但期限届满的除外)。 
+以采购代理机构工作人员在投标截止时间前对上述信用信息进行查询核对的结果为准。
+5.单位负责人为同一人或者存在直接控股、管理关系的不同供应商，不得参加同一合同项下的政府采购活动。为采购项目提供整体设计、规范编制或者项目管理、监理、检测等服务的供应商，不得再参加该采购项目的其他采购活动。</font></p>                                                                     <br>                                                                                                                        <h4><b>三、获取采购文件</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">时间：2022-08-22 23:55至2022-08-29 17:00，每天上午09:00至11:30，下午14:30至17:00（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：邮箱报名</font></p>                                                                                     <p><font size="4px">方式：邮箱报名。请在报名时间内（节假日、双休日除外），把有效期内的①营业执照；②加盖公章的介绍信（注明项目名称、联系人姓名、联系电话）；③加盖公章的法定代表人证明书（附法定代表人身份证）；④加盖公章的法人授权委托书（附委托代理人身份证，由法定代表人报名确认可不提供此项）。以上材料原件扫描件整理成1份PDF文件，文件和邮件名以 公司名称+项目名称 命名，发送至邮箱pezgzb@163.com进行报名确认。</font></p>                                                                                     <p><font size="4px">售价（元）：600</font></p>                                                                                 <br>                                                                                                                        <h4><b>四、响应文件提交</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">截止时间：2022-09-02 09:00（北京时间）</font></p>                                            <p><font size="4px">地点：景谷傣族彝族自治县响水路32号富强酒店2楼会议室</font></p>                                                                                 <br>                                                                                                                        <h4><b>五、开启</b></h4>                                                                          <br>                                                                                                                            <p><font size="4px">时间：2022-09-02 09:00（北京时间）</font></p>                                                <p><font size="4px">地点：景谷傣族彝族自治县响水路32号富强酒店2楼会议室</font></p>                                                                                 <br>                                                                                                                        <h4><b>六、公告期限</b></h4>                                                                                                <br>                                                                                                                            <p><font size="4px">自本公告发布之日起3个工作日。</font></p>                                                          <br>                                                                                                                        <h4><b>七、其他补充事宜</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">开标方式：现场开标 </br>是否需要缴纳投标保证金：是 </br>（PEZG-JG-20220704）景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：10000（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-02 09:00</br> 其他：该项目公告信息在《云南省政府采购网》（http://www.yngp.com）上发布， 公告内容和时间以云南省政府采购网发布的信息为准， 我公司对其他网站转载本公告的内容不负任何责任。</font></p>                                                                                 <br>                                                                                                                        <h4><b>八、凡对本次采购提出询问，请按以下方式联系。</b></h4>                                                                <br>                                                                                                                            <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：景谷傣族彝族自治县半坡乡卫生院</font></p>                                                                                          <p><font size="4px">地址：景谷傣族彝族自治县半坡乡金山路10号</font></p>                                                                                           <p><font size="4px">联系方式：0879-5351113</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：普洱正格工程咨询有限公司</font></p>                                                                                          <p><font size="4px">地址：景谷县威远镇益智路益才新城3栋6单元401室</font></p>                                                                                           <p><font size="4px">联系方式：0879-5229004</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：王思程</font></p>                                                                                     <p><font size="4px">电　话：15912950347</font></p><br>                                                                                     <br>                                                                                                                    </div>                                                                                                                      </body>                                                                                                                 </html>                                                                                                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务   竞争性磋商公告.pdf</td>
+                                    <td style="text-align:center">2022-08-22</td>
+                                    <td style="text-align:center"><a href="javascript:download('18cb1125.182b5bebffc.-6541','/bulletinfiles/2022-08-22/1661132578858.pdf','景谷傣族彝族自治县半坡乡卫生院2022年医疗耗材配送服务   竞争性磋商公告.pdf')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

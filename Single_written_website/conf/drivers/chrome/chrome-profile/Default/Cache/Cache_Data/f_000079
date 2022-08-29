@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="-cbd8858.182d2d22f5a.-562b" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-25&#47;1661418578735.pdf" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程-竞争性磋商公告.pdf" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程竞争性磋商公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-25</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">红河县地方公路管理段</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">红河州</td>                                                  <td class="title" width="128">公告时间</td>                                                                 <td width="168">2022-08-25</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件时间</td>                                                                       <td colspan="3">2022-08-25 17:30:00至2022-09-01 17:30:00<br>每日上午:08:30至11:30&nbsp;&nbsp;下午:14:30至17:30（北京时间，法定节假日除外）</td>      </tr>                                                                                                    <tr>                                                                                                            <td class="title">响应文件递交地点</td>                                                                     <td colspan="3">红河铭盛工程项目咨询有限公司（红河县迤萨镇莲花路财政局一楼1号商铺）</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">响应文件开启时间</td>                                                                     <td colspan="3">2022-09-08 14:20:00</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">响应文件开启地点</td>                                                                     <td colspan="3">红河铭盛工程项目咨询有限公司（红河县迤萨镇莲花路财政局一楼1号商铺）</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥180万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">李政乎</td>                                                    </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">15887741090</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">红河县地方公路管理段</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">红河县迤萨镇莲花路</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                       <td colspan="3">15887741090</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">红河铭盛工程项目咨询有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">红河县迤萨镇莲花路财政局一楼1号商铺</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">15087318160</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                          <head>                                                                                                                          <style type="text/css">                                                                                                       body {text-align:center;}                                                                                                   p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                      h2 {text-align:center;}                                                                                                     h4 {text-align:left;margin-left: 30px}                                                                                      .divcss5{width:900px; align:center;margin:0 auto}                                                                       </style>                                                                                                                </head>                                                                                                                     <body>                                                                                                                      <div class="divcss5">                                                                                                         <br>                                                                                                                        <h2><b>竞争性磋商公告</b></h2>                                                                                              <br>                                                                                                                        <p align="center">                                                                                                        <table border="1" width="780px" align="center"  border rules=none cellspacing=0 align=center>                             <tr>                                                                                                                            <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                          &nbsp;&nbsp;&nbsp;&nbsp;红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程采购项目的潜在供应商应在红河铭盛工程项目咨询有限公司（红河县迤萨镇莲花路财政局一楼1号商铺）获取采购文件，并于2022-09-08 14:20（北京时间）前提交响应文件。</td>            </tr>                                                                                                                   </table>                                                                                                                    </p>                                                                                                                        <br>                                                                                                                        <h4><b>一、项目基本情况</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">项目编号：HHMS-2022-072</font></p>                                                                                               <p><font size="4px">项目名称：红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程</font></p>                                                                                               <p><font size="4px">采购方式：竞争性磋商</font></p>                                                                           <p><font size="4px">预算金额（万元）：180</font></p>                                                                                               <p><font size="4px">最高限价（万元）：190.1271</font></p>                                                                                               <p><font size="4px">采购需求：红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程</font></p>                                                                                               <p><font size="4px">合同履行期限：2022年10月30日之前完成</font></p>                                                                                           <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br>                                                                                                                                    <h4><b>二、申请人的资格要求：</b></h4>                                                                                      <br>                                                                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                         <p><font size="4px">2.落实政府采购政策需满足的资格要求：扶持中小微企业政策：《政府采购促进中小企业发展暂行办法》（财库[2011]181 号）、《关于政府采购支持监狱企业发展有关问题的通知》(财库[2014]68 号)、《关于促进残疾人就业政府采购政策的通知》（财库[2017]141 号）、《司法部关于政府采购支持监狱企业发展有关问题》的通知（财库&#x3014;2014&#x3015;68号）。扶持中小企业政策：针对小型和微型企业产品的价格给予6%的扣除，用扣除后的价格参与评审。监狱企业、残疾人福利性单位提供的产品视同小型、微型企业。</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：5.1本次招标要求磋商申请人须具备有效的公路工程施工总承包叁级及以上（含叁级）资质，同时具有交通运输企业安全生产标准化达标等级证书。
+5.2本次招标要求项目经理取得公路工程专业贰级及以上注册建造师证书（不含临时证书）和安全生产考核合格证书(B证)。
+5.3磋商申请人近3年（2019年至今）财务状况表（复印件加盖公章，新成立公司根据具体情况提供）
+5.4业绩要求近3年（2019年至今）至少完成过1个安全生命防护工程或公路工程施工业绩（提供中标通知书或合同协议书 ）。
+5.5省外企业还需提供入滇备案证明资料。
+5.6具有投资参股关系的关联企业,或具有直接管理和被管理关系的母子公司,或同一母公司的子公司,或法定代表人为同一个人的两个及两个以上法人不得同时对同一标段投标,否则均按废标处理。
+5.7报名单位信用等级评价不得低于省级主管部门2020年信用等级评价B级。
+5.8失信信息查询:&#160;根据最高人民法院、国家发展改革委、工业和信息化部、住房和城乡建设部、交通运输部、水利部、商务部、国家铁路局、中国民用航空局《关于在招标投标活动中对失信被执行人实施联合惩戒的通知》（法&#x3014;2016&#x3015;285号）的要求，采购人在发出中标通知书前，应通过&#160;“信用中国”网站（http://www.creditchina.gov.cn&#160;）查询投标人及法定代表人、项目负责人是否为失信被执行人，对属于失信被执行人的，取消其中标资格。
+5.9为贯彻落实《云南人民政府关于稳增长开好局若干政策措施意见》、云政发【2016】19号及云财发电【2016】4号，“政府集中采购所产品购（服务）时，需在同质同价条件下原则上优先就近采购本地产品。
+5.10鼓励节能政策：在技术、服务等指标同等条件下，优先采购属于国家公布的节能清单中的产品；
+5.11鼓励环保政策：在性能、技术、服务等指标同等条件下，优先采购国家最新公布的环保产品清单中的产品；</font></p>                                                                     <br>                                                                                                                        <h4><b>三、获取采购文件</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">时间：2022-08-25 17:30至2022-09-01 17:30，每天上午08:30至11:30，下午14:30至17:30（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：红河铭盛工程项目咨询有限公司（红河县迤萨镇莲花路财政局一楼1号商铺）</font></p>                                                                                     <p><font size="4px">方式：现场获取</font></p>                                                                                     <p><font size="4px">售价（元）：1200</font></p>                                                                                 <br>                                                                                                                        <h4><b>四、响应文件提交</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">截止时间：2022-09-08 14:20（北京时间）</font></p>                                            <p><font size="4px">地点：红河铭盛工程项目咨询有限公司（红河县迤萨镇莲花路财政局一楼1号商铺）</font></p>                                                                                 <br>                                                                                                                        <h4><b>五、开启</b></h4>                                                                          <br>                                                                                                                            <p><font size="4px">时间：2022-09-08 14:20（北京时间）</font></p>                                                <p><font size="4px">地点：红河铭盛工程项目咨询有限公司（红河县迤萨镇莲花路财政局一楼1号商铺）</font></p>                                                                                 <br>                                                                                                                        <h4><b>六、公告期限</b></h4>                                                                                                <br>                                                                                                                            <p><font size="4px">自本公告发布之日起3个工作日。</font></p>                                                          <br>                                                                                                                        <h4><b>七、其他补充事宜</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">开标方式：现场开标 </br>是否需要缴纳投标保证金：是 </br>（HHMS-2022-072）红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：20000.00（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-08 14:20</br></font></p>                                                                                 <br>                                                                                                                        <h4><b>八、凡对本次采购提出询问，请按以下方式联系。</b></h4>                                                                <br>                                                                                                                            <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：红河县地方公路管理段</font></p>                                                                                          <p><font size="4px">地址：红河县迤萨镇莲花路</font></p>                                                                                           <p><font size="4px">联系方式：15887741090</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：红河铭盛工程项目咨询有限公司</font></p>                                                                                          <p><font size="4px">地址：红河县迤萨镇莲花路财政局一楼1号商铺</font></p>                                                                                           <p><font size="4px">联系方式：15087318160</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：李政乎</font></p>                                                                                     <p><font size="4px">电　话：15887741090</font></p><br>                                                                                     <br>                                                                                                                    </div>                                                                                                                      </body>                                                                                                                 </html>                                                                                                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程-竞争性磋商公告.pdf</td>
+                                    <td style="text-align:center">2022-08-25</td>
+                                    <td style="text-align:center"><a href="javascript:download('-cbd8858.182d2d22f5a.-562a','/bulletinfiles/2022-08-25/1661418578735.pdf','红河县2022年田坝寨、石头寨、比紫、桂东、蒙居及坝蒿等公路村道安防工程-竞争性磋商公告.pdf')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

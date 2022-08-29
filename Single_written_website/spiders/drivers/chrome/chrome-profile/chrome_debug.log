@@ -1,0 +1,5 @@
+[4944:18696:0824/130648.177:INFO:CONSOLE(21)] "slider-1533463a-f5fb-4bc5-879f-dae6fead1988", source: http://www.yngp.com/static/js/captcha/verify.js (21)
+[4944:18696:0824/130648.331:INFO:CONSOLE(536)] "Uncaught TypeError: Cannot read properties of undefined (reading 'length')", source: http://www.yngp.com/static/js/bootstrap-grid.js (536)
+[4944:18696:0824/130650.376:INFO:CONSOLE(21)] "slider-1533463a-f5fb-4bc5-879f-dae6fead1988", source: http://www.yngp.com/static/js/captcha/verify.js (21)
+[4944:18696:0824/130726.313:INFO:render_frame_host_impl.cc(11654)] RenderFrameHostImpl::MaybeGenerateCrashReport url = http://www.yngp.com/page/procurement/procurementList.html#, status = 4, exit_code = 258
+[4944:18696:0824/130726.593:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

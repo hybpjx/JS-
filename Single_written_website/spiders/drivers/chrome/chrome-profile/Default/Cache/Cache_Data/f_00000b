@@ -1,0 +1,549 @@
+	var poratl = {};
+	//获取服务名称
+	var pathName = window.document.location.pathname;
+    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    projectName = webpath;
+	poratl.web_ctx = projectName;
+	poratl.web_user_name="";
+	poratl.web_user_account="";
+	
+	
+	// 登陆提示功能
+	(function ($) {
+		setTimeout(function () {
+		
+			//获取当前登录用户信息
+		 	$.ajax({    
+		        type:'post',        
+		        url:poratl.web_ctx+'/register.do?method=getRegisterUserInfo',    
+		        data:{},    
+		        cache:false,    
+		        dataType:'json',    
+		        success:function(data){
+		        	if(data)
+		        	{
+			        	// 返回值
+						var resobj = data;
+						var flag = resobj.portal_user_flag;       // 默认用户未登录
+						var loginArea = $('.login_area');
+						if (flag=="true") { // 登陆成功
+							poratl.web_user_name =resobj.portal_user_name;    // 用户名
+							poratl.web_user_account = resobj.portal_user_account; 
+							loginArea.eq(0).addClass('dn');
+							loginArea.eq(1).removeClass('dn').html('欢迎你，<a style="color:#FFF" href="'+webpath+'/InfoEdit.do?method=userInfoEdit">'+ poratl.web_user_name +'</a>&nbsp;|&nbsp;<a style="color:#FFF" href="'+webpath+'/searchapproveinfo.do?method=gotoList">我的项目</a>&nbsp;|&nbsp;<a style="color:#FFF" href="javascript:void(0);" onclick="doDestroy()">注销</a>');
+						} else { // 未登录
+							loginArea.eq(1).addClass('dn');
+							loginArea.eq(0).removeClass('dn');
+						}	
+						var shengname = "";
+						if(js_global_areacode==JIANGSU){
+							shengname = "江苏省";
+						}else if(js_global_areacode==ANHUI){
+							shengname = "安徽省";
+						}else if(js_global_areacode==QINGHAI){
+							shengname = "青海省";
+						}else if(js_global_areacode==GUANGXI){
+							shengname = "广西省";
+						}else if(js_global_areacode==GANSU){
+							shengname = "甘肃省";
+						}else if(js_global_areacode==XIZANG){
+							shengname = "西藏";
+						}
+						$(document).attr('title',shengname+'投资项目审批监管平台');
+		        	}
+						          
+		        }    
+		    });  
+			
+
+		}, 100);
+	}) (jQuery);
+	
+	function doDestroy(){
+	   $.ajax({    
+		        type:'post',        
+		        url:poratl.web_ctx+'/login.do?method=doDestroy',    
+		        data:'',    
+		        cache:false,    
+		        success:function(){ 
+		        //重新登录
+		        goTRSChannel('firstPage');
+		        //window.location.href = "/tzxmspweb/login.do?method=begin"
+		       }    
+	    }); 
+	}
+	
+	function doDestroy1(flag){
+	   $.ajax({    
+		        type:'post',        
+		        url:poratl.web_ctx+'/login.do?method=doDestroy',    
+		        data:'',    
+		        cache:false,    
+		        success:function(){ 
+		        //重新登录
+		        //goTRSChannel('firstPage');
+		        if(flag=="11"){
+		        	window.location.href = webpath+"/register.do?method=registerIndex"
+		        }else if(flag=='0'){
+		       		window.location.href = webpath+"/login.do?method=begin"
+		        }else if(flag=='1'){
+		        	window.location.href = webpath+"/index.jsp?jiangsuzhuxiaoflag=1"
+		        }else if(flag=='2'){
+		        	window.parent.location.href = webpath+"/index.jsp"
+		        }  
+		       }    
+	    }); 
+	}
+	
+	//调用颜色变化功能
+	(function ($) {
+		$.fn.setHide = function (callback) {
+			var $signD = $(this).css('display', 'block');
+			if (callback) callback($signD);
+			$signD.animate({
+				opacity : 100
+			}, 0, function () {
+				
+			});
+			$signD.animate({
+				opacity : 0
+			}, 10000, function () {
+				$signD.hide('fast');
+			});
+		};
+	}) (jQuery);
+
+	//调转导航
+	function goChannel(pageType){
+		var  page_like= channel_links[pageType];
+		window.top.location=poratl.web_ctx+page_like;
+	}
+	
+	
+	function initSelectOption(project_typeDatas,selectElement){
+			 $(project_typeDatas).each(function (key) {
+				selectElement.append("<option value='" + project_typeDatas[key].id + "'>"+ project_typeDatas[key].name + "</option>");
+			});
+		}
+		
+	function initSelectMore(project_typeDatas,selectElement){
+				var i =0;
+				selectElement.append('<table>	<tbody>	' );
+			 $(project_typeDatas).each(function (key) {
+			 if(i%3 == 0)
+			 {
+			 	selectElement.append('<tr>');
+			 }
+			 
+			 selectElement.append('<td width = "140px"><input type="checkbox" name="sjdm" value="'+project_typeDatas[key].id+'" ><span>'+ project_typeDatas[key].name +'</span></td>')
+			 i++;
+			 if(i%3 == 0)
+			 {
+			 	selectElement.append('</tr>');
+			 }
+			});
+			selectElement.append('</tbody>	</table>' );
+		}
+		
+	function initAreaLinks(area_links,selectElement){
+			 var i =0;
+			 selectElement.append('<table width="100%"> ' );
+			 $(area_links).each(function (key) {
+			 if(i%6 == 0)
+			 {
+			 	selectElement.append('<tr>');
+			 }
+			 
+			 selectElement.append('<td width="10%"><span style="padding:0px 15px;border-left:2px #C30 solid;"></span><a href="'+area_links[key].link+'">'+area_links[key].areaname+'</a></td>')
+			 i++;
+			 if(i%6 == 0)
+			 {
+			 	selectElement.append('</tr>');
+			 }
+			});
+			selectElement.append(' </table>' );
+		}
+		
+	function initProvince(area_links,selectElement){
+			$(area_links).each(function (key) {
+			  selectElement.append('<div class="shengf"><a href="'+ area_links[key].link+'">'+area_links[key].areaname+'</a></div>');			 
+			});
+		}
+	function goDynamic(dynamic,itemSortId,catalog_uuid,guideType,attributiontype,areacode) { 
+		dynamic.id ='dynamicId';
+			$.ajax({
+	                cache: true,
+	                type: "POST",
+	                url: poratl.web_ctx +'/portalopenDynamic.do?method=queryDynamic',
+	                data: {'itemSortId':itemSortId,'catalog_uuid':catalog_uuid},
+	                async: false,
+	                error: function(data) {
+	                return;
+	                },
+	                success: function(data) {
+	                var divtext = '';
+	                if(attributiontype != ""){
+	                	if(areacode == js_global_areacode && attributiontype != "属市事项")
+	                	{
+	                		getcity(itemSortId,catalog_uuid,guideType,areacode);
+	                		return;
+	                	}
+	                	else{
+	                		goArea(itemSortId,catalog_uuid,guideType,areacode);
+	                	    return;
+	                	}
+	                }
+                    if('[]'!=data)
+	                {
+	                	var jsonObj=eval("("+data+")");
+	                    if(jsonObj.length==1){
+	                		doGuide(jsonObj[0].itemUuid,itemSortId,catalog_uuid,guideType,jsonObj[0].serverdirType);
+	                		return;
+	                	}
+	                	var jsonObj=eval("("+data+")");
+		                divtext = '<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" id="inputinfo">'
+						$.each(jsonObj, function (i, item) {
+							var temp = "";
+//							if(item.areaCodeLevel == '1'){
+//								temp = "中央";
+//							}else if(item.areaCodeLevel == '2'){
+//								temp = "省级";
+//							}else if(item.areaCodeLevel == '3'){
+//								temp = "市";
+//							}else if(item.areaCodeLevel == '4'){
+//								temp = "区（县）";
+//							}
+							temp = item.areaCodeLevel ? "[" + item.areaCodeLevel + "] " : "";
+							divtext = divtext +	'<tr><td width="80%" class="xline">'+ temp +
+							item.itemName + '</td><td width="20%" class="xline">'+
+							'<button class="button button_normal blue" onclick="doGuide(\''+item.itemUuid+'\',\''+itemSortId+'\',\''+catalog_uuid+'\',\''+guideType+'\',\''+item.serverdirType+'\')">办事指南</button>	</td></tr>'
+						});
+						divtext = divtext +'</table>'
+	                }else{
+	                	divtext = '<div>当前审批事项办事指南尚在准备中，请直接咨询办理人员</div>';
+	                }
+	                
+					
+					var popDiv = new Object;
+					   	popDiv.id='popDiv';
+					   	popDiv.left='380';
+					   	popDiv.top=$(document).scrollTop() + 190;
+					  	popDiv.title='审批事项';
+					   	popDiv.text=divtext;		
+					   	dynamic.id = '';				
+					doListDiv(popDiv);
+	                }
+	            });
+		} 
+		
+	    function getcity(itemSortId,catalog_uuid,guideType,areacode){
+	   $("#TB_overlayBG").css({
+		display:"block",height:$(document).height(), opacity : '0.3'
+		});
+		$.ajax({    
+	        type:'post',        
+	        url:poratl.web_ctx+'/projectcatalog.do?method=getAreasSort', 
+	        data: {'areacode':areacode},    
+	        cache:false,    
+	        dataType:'json',    
+	        success:function(data){
+	                var divtext = '';
+	                var areas = data;
+		                divtext = '<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" id="inputinfo">'
+						$.each(areas, function (i, item) {
+							var temp = "";
+							temp = item.areaName ? "[" + item.areaName + "] " : "";
+                            divtext = divtext +	'<button class=" button button_normal button_shi areaItem selected" onclick="goArea(\''+itemSortId+'\',\''+catalog_uuid+'\',\''+guideType+'\',\''+item.areaCode+'\')"  style="background:#CCE6FC;">'+temp+'</button>	</td></tr>'						}
+						);
+						divtext = divtext +'</table>'
+
+					var popDiv = new Object;
+					   	popDiv.id='popDiv';
+					   	popDiv.left='380';
+					   	popDiv.top=$(document).scrollTop() + 190;
+					  	popDiv.title='审批事项';
+					   	popDiv.text=divtext;						
+					    doListDiv(popDiv);
+	        }
+		});
+	}
+	
+	
+	
+
+
+	
+		function goArea(itemSortId,catalog_uuid,guideType,areacode) { 
+		$("#LoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+			$("#LoginBox").remove();
+			$.ajax({
+	                cache: true,
+	                type: "POST",
+	                url: poratl.web_ctx +'/portalopenDynamic.do?method=queryArea',
+	                data: {'itemSortId':itemSortId,'catalog_uuid':catalog_uuid,'areacode':areacode},
+	                async: false,
+	                error: function(data) {
+	                return;
+	                },
+	                success: function(data) {
+	                var div = '';
+	                var jsonObj=eval("("+data+")");
+		                div = '<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" id="inputinfo">'
+						$.each(jsonObj, function (i, item) {
+							var temp = "";
+							temp = item.areaCodeLevel ? "[" + item.areaCodeLevel + "] " : "";
+							div = div +	'<tr><td width="80%" class="xline">'+ temp +
+							item.itemName + '</td><td width="20%" class="xline">'+
+							'<button class="button button_normal blue" onclick="doGuide(\''+item.itemUuid+'\',\''+itemSortId+'\',\''+catalog_uuid+'\',\''+guideType+'\',\''+item.serverdirType+'\')">办事指南</button>	</td></tr>'
+						}
+						);
+						div = div +'</table>'+"<tr style='color:red'>该事项需要到属地办理，请选择相应属地查看办事指南</tr>"
+					var popDiv = new Object;
+					   	popDiv.id='popDiv2';
+					   	popDiv.left='380';
+					   	popDiv.top=$(document).scrollTop() + 190;
+					  	popDiv.title='查看对应地区';
+					   	popDiv.text=div;		
+					   //	dynamic.id = '';				
+					doListDiv(popDiv);
+	                }
+	            });
+		} 
+		
+	function doListDiv(popDiv){
+		if("undefined" == typeof popDiv.width){
+			popDiv.width = 626;
+		}
+		$(document.body).append(
+			'<div id="LoginBox" style="left:'+popDiv.left +'px;top:'+popDiv.top+'px;width:'+popDiv.width+'px;">'+
+		        '<div class="row1"><table width="100%"><tr><td style = "color:#FFF">'+
+		        popDiv.title+
+		        	'</td><td style="text-align:right;"><a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn" ><img src="'+webpath+'/tzxmweb/Resources/images/folder_bai.png" width="20" height="21"/></a></td></tr></table>'+
+		        '</div>'+
+		        '<div class="row">'+
+			       	'<div class="nong_tc" style="padding-top:0;">'+
+			      		popDiv.text +
+					'</div>'+ 		
+		        ' </div>'+
+		   ' </div>'
+		);
+		//关闭
+		$("#closeBtn").hover().on('click', function () {
+			$("#LoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+			$("#LoginBox").remove();
+		});
+		doDonfirmInfo();
+	}
+	function doGuide(itemUuid,itemSortId,catalog_uuid,guideType,serverdirType) {
+		$.ajax({
+	        cache: true,
+	        type: "POST",
+	        url: poratl.web_ctx +'/portalopenDynamic.do?method=queryServiceGuideExit',
+	        data: {'itemUuid':itemUuid,'itemSortId':itemSortId,'catalog_uuid':catalog_uuid,'serverdirType':serverdirType},
+	        async: false,
+	        error: function(data) {
+	        	return;
+	        },
+	        success: function(data) {
+		        var divtext = '';
+		        if('[]'!=data)
+		        {
+		        	if(guideType=="1"){
+		        	alert(getWebRootPath())
+		        		//window.open (getWebRootPath()+"/tzxmspweb/itemGuide.do?method=queryItemGuide&itemUuid="+itemUuid);
+		        		window.location.href = getWebRootPath() + "/tzxmweb/itemGuide.do?method=queryItemGuide&itemUuid="+itemUuid;
+//						window.location.href = '/tzxmspweb/tzxmweb/pages/portal/common/htmlpath/guide/'+ itemUuid +'.html'; 
+					}else{
+						if(serverdirType == '2'){
+							$.ajax({
+		        				cache: true,
+		        				type: "POST",
+		        				url: poratl.web_ctx +'/portalopenDynamic.do?method=queryServiceGuideAreaLink',
+		        				data: {'itemUuid':itemUuid,'itemSortId':itemSortId,'catalog_uuid':catalog_uuid},
+		        				async: false,
+		        				error: function(data) {
+		        					return;
+		        				},
+		        				success: function(data) {
+		        					var jsonObj=eval("("+data+")");
+		        					var urlNew = jsonObj[0].onlinehalllinks;
+		        					//top.location.href = urlNew;
+		        					window.open(urlNew);
+		        				}
+		        			});
+						}else if(serverdirType == '3'){
+							var jsonObj=eval("("+data+")");
+							var dir_uuid = jsonObj[0].dir_uuid;
+							//判断当前办事指南是否上传了附件
+							$.ajax({
+		        				cache: true,
+		        				type: "POST",
+		        				url: poratl.web_ctx +'/portalopenDynamic.do?method=queryServiceGuideElectronicFileDownExit',
+		        				data: {'dir_uuid':dir_uuid},
+		        				async: false,
+		        				error: function(data) {
+		        					return;
+		        				},
+		        				success: function(data) {
+		        					if('[null]'!=data){
+		        						$.ajax({
+					        				cache: true,
+					        				type: "POST",
+					        				url: poratl.web_ctx +'/portalopenDynamic.do?method=queryServiceGuideElectronicFileDown',
+					        				data: {'dir_uuid':dir_uuid},
+					        				async: false,
+					        				error: function(data) {
+					        					return;
+					        				},
+					        				success: function(data) {
+					        					var jsonObj=eval("("+data+")");
+					        					window.open(getWebRootPath() + "/tzxmweb/portalopenDynamic.do?method=downloadAttachment&id="+jsonObj[0].att_id);
+					        				}
+					        			});
+		        					}else{
+		        						alert('对不起，该事项目前没有服务指南！');
+		        					}
+		        				}
+		        			});
+							
+						}else{
+							window.location.href = getWebRootPath() + "/tzxmweb/itemGuide.do?method=queryItemGuide&itemUuid="+itemUuid+"&catalog_uuid="+catalog_uuid+"&itemSortId="+itemSortId;
+						}
+						//window.open (getWebRootPath()+"/tzxmspweb/itemGuide.do?method=queryItemGuide&itemUuid="+itemUuid);
+						
+//						window.location.href = '/tzxmspweb/tzxmweb/pages/portal/common/htmlpath/guide/'+ itemUuid +'_psn.html'; 
+					}
+		        }else{
+		        	alert('对不起，该事项目前没有服务指南！');
+		        }
+	        }
+    	});
+	} 			
+		
+	function doCreatDiv(popDiv,projectuuid){
+			$('#'+ popDiv.id).append(
+		'<div id="LoginBox" style="left:'+popDiv.left+'px;top:'+popDiv.top+'px;width:550px;">'+
+	        '<div class="row1">'+
+	           	popDiv.title+
+	        	'<a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn" ><img src="'+webpath+'/tzxmweb/Resources/images/folder_bai.png" width="20" height="21"></a>'+
+	       ' </div>'+
+	        '<div class="row">'+
+	       	'<div class="nong_tc">'+
+				'<p class="redp" style="background: #FEFDE0; padding: 15px;">' + popDiv.text+
+				'</p><br>'+
+				'<div align = "center">' +
+				'<button id="confirm_Btn" class="button button_normal blue" >确认</button>' +
+				'<button id="dayin_declare" onclick="dayin_declare(\''+projectuuid+'\')" class="button button_normal blue" >下载登记单</button>' +
+				'<button id="dayin_page_declare" onclick="dayin_page_declare(\''+projectuuid+'\')" class="button button_normal blue">打印登记单</button>' +
+				'</div>'+
+			 '</div>   '+ 		
+	        ' </div>'+
+	   ' </div>'
+		);
+		//关闭
+		$("#closeBtn,#close_Btn").hover().on('click', function () {
+			$("#LoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+			confirmYes();
+		});
+		//确认
+		$("#confirm_Btn").hover().on('click', function () {
+			$("#LoginBox").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+			confirmYes();
+		});
+	}
+	
+	function doCreatDiv2(popDiv){
+			$('#'+ popDiv.id).append(
+		'<div id="LoginBoxq" class ="LoginBoxpop" style="left:'+popDiv.left+'px;top:'+popDiv.top+'px;width:550px;">'+
+	        '<div class="row1">'+
+	           	popDiv.title+
+	        	'<a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn" ><img src="'+webpath+'/tzxmweb/Resources/images/folder_bai.png" width="20" height="21"></a>'+
+	       ' </div>'+
+	        '<div class="row">'+
+	       	'<div class="nong_tc">'+
+				'<p class="redp" style="background: #FEFDE0; padding: 15px;">' + popDiv.text+
+				'</p><br>'+
+				'<div align = "center">' +
+				'<button id="confirm_Btn" class="button button_normal blue" >确认</button>' +
+				'<button id="close_Btn" class="button button_normal blue" >取消</button>' +
+				'</div>'+
+			 '</div>   '+ 		
+	        ' </div>'+
+	   ' </div>'
+		);
+		//关闭
+		$("#closeBtn,#close_Btn").hover().on('click', function () {
+			$("#LoginBoxq").fadeOut("fast");
+			$("#maskq").css({ display: 'none' });
+		});
+		//确认
+		$("#confirm_Btn").hover().on('click', function () {
+			$("#LoginBoxq").fadeOut("fast");
+			$("#maskq").css({ display: 'none' });
+			confirmYesq();
+		});	
+	}
+	
+	function doDonfirmInfo(){
+			$("body").append("<div id='mask'></div>");
+			$("#mask").addClass("mask").fadeIn("slow");
+			$("#LoginBox").fadeIn("slow");
+	}
+	function doDonfirmInfo2(){
+			$("body").append("<div id='maskq'></div>");
+			$("#maskq").addClass("mask").fadeIn("slow");
+			$("#LoginBoxq").fadeIn("slow");
+	}
+	
+	//加入收藏
+	function AddFavorite(sURL, sTitle)
+	{
+	    try
+	    {
+	        window.external.addFavorite(sURL, sTitle);
+	    }
+	    catch (e)
+	    {
+	        try
+	        {
+	            window.sidebar.addPanel(sTitle, sURL, "");
+	        }
+	        catch (e)
+	        {
+	            
+	        }
+	    }
+	}
+	function getWebRootPath() {
+    var webroot=document.location.href;
+    webroot=webroot.substring(webroot.indexOf('//')+2,webroot.length);
+    webroot=webroot.substring(webroot.indexOf('/')+1,webroot.length);
+    webroot=webroot.substring(0,webroot.indexOf('/'));
+    var rootpath="/"+webroot;
+    return rootpath;
+}
+
+// 超出指定字数显示省略号  add by huang-n at 2017-09-06
+jQuery.fn.limit=function(){  
+    var self = $("[limit]");  
+    self.each(function(){  
+        var objString = $(this).text();  
+        var objLength = $(this).text().length;  
+        var num = $(this).attr("limit");  
+        if(objLength > num){  
+            $(this).attr("title",objString);  
+            objString = $(this).text(objString.substring(0,num) + "......");  
+        }  
+    })  
+}
+$(function(){
+	var self = $("[limit]");
+	//alert(self.val());
+	if(self.val()!=undefined){
+		self.limit();
+	}
+});

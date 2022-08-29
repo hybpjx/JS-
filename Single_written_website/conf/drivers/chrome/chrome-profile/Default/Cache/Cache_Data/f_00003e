@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="6eb5a52f.182b5bf7447.-359b" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-22&#47;1661165183620.docx" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="文件获取登记表.docx" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">云南省地图院云南省自然资源统一调查监测项目技术协作服务竞争性磋商公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-22</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">云南省自然资源统一调查监测项目技术协作服务</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">云南省地图院</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">省级</td>                                                  <td class="title" width="128">公告时间</td>                                                                 <td width="168">2022-08-22</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件时间</td>                                                                       <td colspan="3">2022-08-23 09:00:00至2022-08-30 17:00:00<br>每日上午:09:00至12:00&nbsp;&nbsp;下午:14:00至17:00（北京时间，法定节假日除外）</td>      </tr>                                                                                                    <tr>                                                                                                            <td class="title">响应文件递交地点</td>                                                                     <td colspan="3">云南国合建设招标咨询有限公司会议室（昆明市白龙路425－427号晨曦街洋房1排117号）</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">响应文件开启时间</td>                                                                     <td colspan="3">2022-09-02 14:30:00</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">响应文件开启地点</td>                                                                     <td colspan="3">云南国合建设招标咨询有限公司会议室（昆明市白龙路425－427号晨曦街洋房1排117号）</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥175.75万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">闾富蓉、张正举、李灿辉、武江艳、施欣怡</td>                                                    </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">18788530492</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">云南省地图院</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">云南省昆明市西山区西昌路223号</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                       <td colspan="3">吕老师  0871-64166356</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">云南国合建设招标咨询有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">昆明市白龙路425－427号晨曦街洋房1排117号</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">闾富蓉、张正举、李灿辉、武江艳、施欣怡 0871-63815951、18788530492</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                          <head>                                                                                                                          <style type="text/css">                                                                                                       body {text-align:center;}                                                                                                   p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                      h2 {text-align:center;}                                                                                                     h4 {text-align:left;margin-left: 30px}                                                                                      .divcss5{width:900px; align:center;margin:0 auto}                                                                       </style>                                                                                                                </head>                                                                                                                     <body>                                                                                                                      <div class="divcss5">                                                                                                         <br>                                                                                                                        <h2><b>竞争性磋商公告</b></h2>                                                                                              <br>                                                                                                                        <p align="center">                                                                                                        <table border="1" width="780px" align="center"  border rules=none cellspacing=0 align=center>                             <tr>                                                                                                                            <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                          &nbsp;&nbsp;&nbsp;&nbsp;云南省自然资源统一调查监测项目技术协作服务采购项目的潜在供应商应在云南国合建设招标咨询有限公司（昆明市白龙路425－427号晨曦街洋房1排117号）；获取采购文件，并于2022-09-02 14:30（北京时间）前提交响应文件。</td>            </tr>                                                                                                                   </table>                                                                                                                    </p>                                                                                                                        <br>                                                                                                                        <h4><b>一、项目基本情况</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">项目编号：YNGH[2022]-372</font></p>                                                                                               <p><font size="4px">项目名称：云南省自然资源统一调查监测项目技术协作服务</font></p>                                                                                               <p><font size="4px">采购方式：竞争性磋商</font></p>                                                                           <p><font size="4px">预算金额（万元）：175.75</font></p>                                                                                               <p><font size="4px">最高限价（万元）：175.75</font></p>                                                                                               <p><font size="4px">采购需求：1.项目编号：YNGH[2022]-372；
+2.项目名称：云南省自然资源统一调查监测项目技术协作服务；
+3.采购方式：竞争性磋商；
+4.预算金额：壹佰柒拾伍万柒仟伍佰元整（￥1757500.00元），其中A标段伍拾万柒仟伍佰元整（￥507500.00元），B标段柒拾伍万元整（￥750000.00元），C标段伍拾万元整（￥500000.00元）；
+5.最高限价（如有）：壹佰柒拾伍万柒仟伍佰元整（￥1757500.00元），其中A标段伍拾万柒仟伍佰元整（￥507500.00元），B标段柒拾伍万元整（￥750000.00元），C标段伍拾万元整（￥500000.00元）；
+6.采购需求：
+（1）本项目分A、B、C三个标段，供应商可根据自身情况对三个标段同时进行投标。（2）供应商须按标段制作、加密及递交响应文件，对所投标段包括的项目内容进行整体投标，不可缺项、漏项，否则响应文件将按无效处理。
+A标段服务内容是为采购人负责的自然资源统一调查监测项目临沧市、红河州、保山市的部分县（市、区）提供外业举证服务；交通方式及外业平板、外业底图数据及调绘软件平板均由供应商自行解决。B标段服务内容是根据云南省地图院自然资源统一调查监测信息化生产提供管理系统，按照测绘生产信息化的要求，建设包括web端和移动端生产管理平台。C标段服务内容是自然资源统一调查局域网维护服务、办公外设维护服务、设备备件保障服务、信息化咨询服务、自然资源统一调查“云建设”运维服务、实施监理服务。
+7.服务期限：两年。
+8.本项目不接受联合体参与磋商。</font></p>                                                                                               <p><font size="4px">合同履行期限：两年</font></p>                                                                                           <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br>                                                                                                                                    <h4><b>二、申请人的资格要求：</b></h4>                                                                                      <br>                                                                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                         <p><font size="4px">2.落实政府采购政策需满足的资格要求：2.1本项目不属于专门面向中小企业的采购项目。
+2.2落实政府采购政策需满足的要求：《政府采购促进中小企业发展管理办法》（财库&#x3014;2020&#x3015;46号）、《财政部 司法部关于政府采购支持监狱企业发展有关问题的通知》（财库[2014]68号）、《三部门联合发布关于促进残疾人就业政府采购政策的通知》（财库&#x3014;2017&#x3015;141号）、《云南省人民政府办公厅关于印发云南省进一步帮扶中小微企业纾困发展工作方案的通知》（云政办发&#x3014;2022&#x3015;42号）、《云南省人民政府关于贯彻落实扎实稳住经济一揽子政策措施的意见》（云政发&#x3014;2022&#x3015;32号）、云南省财政厅关于贯彻《财政部关于进一步加大政府采购支持中小企业力度的通知》的通知（云财采&#x3014;2022&#x3015;9号）。</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：1.本项目的特定资格要求：无。
+2.供应商参加本次采购活动前三年内，在经营活动中没有重大违法记录(重大违法记录是指供应商因违法经营受到刑事处罚或者责令停产停业、吊销许可证或者执照、较大数额罚款等行政处罚)。
+3.供应商应在“信用中国”网站(www.creditchina.gov.cn)未被列入失信被执行人记录、重大税收违法失信主体且在中国政府采购网(www.ccgp.gov.cn)没有政府采购严重违法失信行为记录(被禁止在一定期限内参加政府采购活动但期限届满的除外)，参与本项目的供应商信用查询截止时点：本项目竞争性磋商公告发布之日起至响应文件递交截止时间（以采购人、采购代理机构查询结果为准）。
+4.单位负责人为同一人或者存在直接控股、管理关系的不同供应商，不得参加同一合同项下的政府采购活动。为采购项目提供整体设计、规范编制或者项目管理、监理、检测等服务的供应商，不得再参加该采购项目的其他采购活动。</font></p>                                                                     <br>                                                                                                                        <h4><b>三、获取采购文件</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">时间：2022-08-23 09:00至2022-08-30 17:00，每天上午09:00至12:00，下午14:00至17:00（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：云南国合建设招标咨询有限公司（昆明市白龙路425－427号晨曦街洋房1排117号）；</font></p>                                                                                     <p><font size="4px">方式：网上获取（请将单位营业执照（扫描件）、法定代表人身份证明书（盖章扫描件）、授权委托书（盖章扫描件）以及文件获取登记表（详见附件）发送至云南国合建设招标咨询有限公司邮箱（2624654686@qq.com）后致电张老师15288213484/0871-63815951确认获取竞争性磋商文件；</font></p>                                                                                     <p><font size="4px">售价（元）：600</font></p>                                                                                 <br>                                                                                                                        <h4><b>四、响应文件提交</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">截止时间：2022-09-02 14:30（北京时间）</font></p>                                            <p><font size="4px">地点：云南国合建设招标咨询有限公司会议室（昆明市白龙路425－427号晨曦街洋房1排117号）</font></p>                                                                                 <br>                                                                                                                        <h4><b>五、开启</b></h4>                                                                          <br>                                                                                                                            <p><font size="4px">时间：2022-09-02 14:30（北京时间）</font></p>                                                <p><font size="4px">地点：云南国合建设招标咨询有限公司会议室（昆明市白龙路425－427号晨曦街洋房1排117号）</font></p>                                                                                 <br>                                                                                                                        <h4><b>六、公告期限</b></h4>                                                                                                <br>                                                                                                                            <p><font size="4px">自本公告发布之日起3个工作日。</font></p>                                                          <br>                                                                                                                        <h4><b>七、其他补充事宜</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">开标方式：网上开标 </br>是否需要缴纳投标保证金：否 </br> 其他：1.开标方式：网上开标
+2.是否需要缴纳投标保证金：否
+3.保证金金额：A标段0元、B标段0元、C标段0元；
+4.保证金缴纳方式：/
+5.保证金缴纳截止时间：同响应文件截止时间
+6.其他：采购信息、成交结果公告均仅在以下媒体发布：云南省政府采购网（www.yngp.com）发布。
+7.响应文件为电子版，格式为PDF格式；响应文件递交时间（投标截止时间）：于2022年09月02日14点30分前（以到达邮箱时间为准）；响应文件递交方式：请将加密的响应文件压缩包（电子版一份PDF格式）发送至云南国合建设招标咨询有限公司项目负责人邮箱2893361876@qq.com。加密压缩包的文件名称为：������������公司YNGH[2022]-372响应文件；响应文件解密：请于2022年09月02日14点30分至14时40分将解压密码发送至云南国合建设招标咨询有限公司项目负责人邮箱2893361876@qq.com。解压密码文件名称为：������������公司YNGH[2022]-372响应文件文件解压密码；解密：采购代理机构将对响应文件递交截止时间前发送至指定邮箱的所有响应文件进行解密；响应文件递交截止时间前未完成响应文件传输的，视为撤回响应文件（以邮件显示送达时间为准）。未按规定时间发送正确解压密码的，也视为撤回响应文件，采购代理机构不予受理。</font></p>                                                                                 <br>                                                                                                                        <h4><b>八、凡对本次采购提出询问，请按以下方式联系。</b></h4>                                                                <br>                                                                                                                            <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：云南省地图院</font></p>                                                                                          <p><font size="4px">地址：云南省昆明市西山区西昌路223号</font></p>                                                                                           <p><font size="4px">联系方式：吕老师  0871-64166356</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：云南国合建设招标咨询有限公司</font></p>                                                                                          <p><font size="4px">地址：昆明市白龙路425－427号晨曦街洋房1排117号</font></p>                                                                                           <p><font size="4px">联系方式：闾富蓉、张正举、李灿辉、武江艳、施欣怡 0871-63815951、18788530492</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：闾富蓉、张正举、李灿辉、武江艳、施欣怡</font></p>                                                                                     <p><font size="4px">电　话：18788530492</font></p><br>                                                                                     <br>                                                                                                                    </div>                                                                                                                      </body>                                                                                                                 </html>                                                                                                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">文件获取登记表.docx</td>
+                                    <td style="text-align:center">2022-08-22</td>
+                                    <td style="text-align:center"><a href="javascript:download('6eb5a52f.182b5bf7447.-3558','/bulletinfiles/2022-08-22/1661165183620.docx','文件获取登记表.docx')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

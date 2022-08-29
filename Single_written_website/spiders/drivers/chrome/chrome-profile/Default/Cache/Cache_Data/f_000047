@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="6eb5a52f.182b5bf7447.20a" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-23&#47;1661246904838.docx" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="临沧市工业和信息化局移动传感器项目 采购公告.docx" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">临沧市工业和信息化局移动传感器项目采购公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-24</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">临沧市工业和信息化局移动传感器项目</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">临沧市工业和信息化局</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">临沧市</td>                                                  <td class="title" width="128">公告时间</td>                                                                 <td width="168">2022-08-24</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取招标文件时间</td>                                                                       <td colspan="3">2022-08-23 18:00:00至2022-08-30 18:00:00<br>每日上午:09：00至12:00&nbsp;&nbsp;下午:14:30至18:00（北京时间，法定节假日除外）</td>      </tr>                                                                                                    <tr>                                                                                                            <td class="title">招标文件售价</td>                                                                       <td colspan="3">￥600</td>                                               </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取招标文件的地点</td>                                                                     <td colspan="3">云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">开标时间</td>                                                                           <td colspan="3">2022-09-13 09:00:00</td>                                                      </tr>                                                                                                       <tr>                                                                                                            <td class="title">开标地点</td>                                                                             <td colspan="3">云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室</td>                                                    </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥105万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">刘师/武师</td>                                                    </tr>                                                                                                      <tr>                                                                                                             <td class="title">项目联系电话</td>                                                                         <td colspan="3">150 1204 9373/184 6804 7836</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">临沧市工业和信息化局</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">临沧市临翔区公园路62号</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                       <td colspan="3">陶师/137 5934 7870</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">云南力勤工程咨询有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">刘师/15012049373</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                              <head>                                                                                                                              <style type="text/css">                                                                                                           body {text-align:center;}                                                                                                       p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                           h2 {text-align:center;}                                                                                                         h4 {text-align:left;margin-left: 30px}                                                                                          .divcss5{width:900px; align:center;margin:0 auto}                                                                           </style>                                                                                                                    </head>                                                                                                                         <body>                                                                                                                          <div class="divcss5">                                                                                                             <br><h2><b>公开招标公告</b></h2><br>                                                                                                  <p align="center">                                                                                                            <table border="1" width="800px" align="center"  border rules=none cellspacing=0 align=center>                                 <tr>                                                                                                                                <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                                &nbsp;&nbsp;&nbsp;&nbsp;临沧市工业和信息化局移动传感器项目招标项目的潜在投标人应在云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室获取招标文件，并于2022-09-13 09:00（北京时间）前递交投标文件。</td>            </tr>                                                                                                                       </table>                                                                                                                        </p>                                                                                                                            <br><h4><b>一、项目基本情况</b></h4><br>                                                                                                           <p><font size="4px">项目编号：YNLQCG2022-51-161</font></p>                                                                                       <p><font size="4px">项目名称：临沧市工业和信息化局移动传感器项目</font></p>                                                                                       <p><font size="4px">预算金额（万元）：105</font></p>                                                                                       <p><font size="4px">最高限价（万元）：105</font></p>                                                                                       <p><font size="4px">采购需求：序号	设备名称    	技术参数	        数量  	单位
+1	监测接收机	具体技术参数详见第五章《采购需求》	5	套
+2	天馈系统	具体技术参数详见第五章《采购需求》	5	套
+3	配套附件及其他	具体技术参数详见第五章《采购需求》	5	套
+4	边境电磁频谱系统	具体技术参数详见第五章《采购需求》	1	套</font></p>                                                                                       <p><font size="4px">合同履行期限：合同签订后90日内完成并交付使用。</font></p>                                                                                   <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br><h4><b>二、申请人的资格要求：</b></h4><br>                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                               <p><font size="4px">2.落实政府采购政策需满足的资格要求：无，本项目不属于专门面向中小企业。</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：（1）在中华人民共和国境内注册、具有独立承担民事责任能力的法人或其他组织，提供工商行政主管部门核发的有效的营业执照；
+（2）具有良好的商业信誉和健全的财务会计制度：
+①提供国家企业信用信息公示系统（www.gsxt.gov.cn）中的企业信用信息查询记录或公示报告（信息查询记录或公示报告中未出现行政处罚、列入经营异常名录且未被移出、列入严重违法失信企业名单（黑名单）且未被移出等不良情况）；
+②财务状况良好，提供2021年度经第三方审计的财务报告及报表（包括资产负债表、利润表、现金流量表）或者财务报表（包括资产负债表、利润表、现金流量表），新成立的单位，提供财务情况说明；
+（3）具有履行合同所必需的设备和专业技术能力(需提供相关材料或声明函)；
+（4）有依法缴纳税收和社会保障资金的良好记录；
+①投标人须提供税务局税收通用缴款书,完税证明或银行电子缴税（费）凭证或税务局出具纳税情况的相关证明，新成立企业、依法免税的，应提供相关证明文件；
+②投标人须提供社会保险费缴款书或银行电子缴税（费）凭证或社保管理部门出具的有效的缴款证明，新成立企业、依法免缴的，应提供相关证明文件；
+（5）参加政府采购活动前三年内，在经营活动中无重大违法记录（重大违法记录是指投标人因违法经营受到刑事处罚或者责令停产停业、吊销许可证或者执照、较大数额罚款等行政处罚）。
+（6）其他法律法规要求；
+①企业信誉要求：投标人应在“中国执行信息公开网”未被列入失信被执行人记录；在“信用中国”网站（www.creditchina.gov.cn）未被列入重大税收违法失信主体及政府采购严重违法失信行为记录；在“中国政府采购网”（http://www.ccgp.gov.cn/）没有政府采购严重违法失信行为记录（被禁止在一定期限内参加政府采购活动但期限届满的除外，提供查询结果网页截图，截图时间须在本公告发出之日后至开标前）。
+②具有投资参股关系的关联企业，或具有直接管理和被管理关系的子母公司，或同一母公司的子公司，或法定代表人为同一人的两个及以上法人不得同时对本项目提出投标申请；</font></p>                                                                     <br><h4><b>三、获取招标文件</b></h4><br>                                                                                                           <p><font size="4px">时间：2022-08-23 18:00至2022-08-30 18:00，每天上午09：00至12:00，下午14:30至18:00（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室</font></p>                                                                                           <p><font size="4px">方式：现场购买</font></p>                                                                                           <p><font size="4px">售价（元）：600</font></p>                                                                                       <br><h4><b>四、提交投标文件截止时间、开标时间和地点</b></h4><br>                                                                                   <p><font size="4px">2022-09-13 09:00（北京时间）</font></p>            <p><font size="4px">地点：云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室</font></p>                                                                                       <br><h4><b>五、公告期限</b></h4><br>                                                                                                               <p><font size="4px">自本公告发布之日起5个工作日。</font></p>                                                                <br><h4><b>六、其他补充事宜</b></h4>                                                                                                           <p><font size="4px">开标方式：现场开标 </br>是否需要缴纳投标保证金：是 </br>（4530900JH202200201）临沧市工业和信息化局移动传感器项目:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：20000.00（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函、银行转账、银行保函、投标保证保险</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-09-13 09:00</br> 其他：1.获取招标文件时，投标人需提供以下资料(以下证件需在报名时审验原件并提交一份加盖公章的复印件)。
+（1）营业执照复印件；
+（2）法定代表人身份证明书原件；
+（3）法定代表人授权委托书原件；
+（4）法定代表人或委托代理人的身份证原件；
+2.质量要求：
+（1）中标人保证货物是全新原装品牌货物并完全符合招标文件、合同规定的质量、规格的要求。
+（2）中标人保证所提供的货物经正确安装在其使用寿命期内应具有满意的效果。在质量保证期之内，中标人对由于设计、工艺或材料的缺陷而导致的后果负责。
+（3）系统所有设备和材料在安装调试完成，经验收合格并交付使用后，质量保证期内，产品因非采购人人为原因造成的任何缺陷或损坏时，中标人应负责修理和更换，由此发生的一切费用由中标人承担。
+3.质保期：所有新购产品质保期不少于3年。
+4.本项目不接受进口产品。
+5.系统演示样片：投标人须携带所投系统样片视频到开标现场，演示时间不超过20分钟。
+6.本项目采购信息同时在“云南省政府采购网”（http://www.yngp.com/）、“中国招标投标公共服务平台”（http://www.cebpubservice.com/）、“全国招标采购公共服务平台”（www.hnzbcgxxw.com）上同时发布。采购人及代理机构对其他网站发布的同类信息不承担任何责任，请投标人在递交投标文件前随时查看，以获取最新信息。因投标人不留意网站公告，导致结果由其自行负责，采购人及代理机构不承担任何责任。
+7.逾期送达的或者未送达指定地点的响应文件，采购人不予受理。</font></p>                                                                                 <br><h4><b>七、对本次招标提出询问，请按以下方式联系。</b></h4><br>                                                                                  <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：临沧市工业和信息化局</font></p>                                                                                          <p><font size="4px">地址：临沧市临翔区公园路62号</font></p>                                                                                           <p><font size="4px">联系方式：陶师/137 5934 7870</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：云南力勤工程咨询有限公司</font></p>                                                                                          <p><font size="4px">地址：云南省临沧市临翔区忙角社区世纪路428号临沧市消防支队干部统建房1幢1单元201室</font></p>                                                                                           <p><font size="4px">联系方式：刘师/15012049373</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：刘师/武师</font></p>                                                                                     <p><font size="4px">电　话：150 1204 9373/184 6804 7836</font></p><br>                                                                                 </div>                                                                                                                          </body>                                                                                                                     </html>                                                                                                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 其他文件</td>
+                                    <td style="text-align:center">临沧市工业和信息化局移动传感器项目 采购公告.docx</td>
+                                    <td style="text-align:center">2022-08-23</td>
+                                    <td style="text-align:center"><a href="javascript:download('6eb5a52f.182b5bf7447.20b','/bulletinfiles/2022-08-23/1661246904838.docx','临沧市工业和信息化局移动传感器项目 采购公告.docx')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

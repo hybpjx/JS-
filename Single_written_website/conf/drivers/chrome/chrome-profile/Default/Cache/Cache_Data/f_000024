@@ -1,0 +1,2282 @@
+/**
+ * @file common.js
+ * @desription 公用函数
+ * @version 1.0 2003.4.10
+ * @author 
+ */
+var SESSION_TIMEOUT_TAG = "<!-- THE NOTE OF SESSION-TIMEOUT FOR PARTREFRESH -->";
+var isSystemEncode = false;
+//Added by LiuGuojian for bug(2050) on 20100712 lines 8-14
+onerror = HandleMyError
+function  HandleMyError(a1,a2,a3){
+	if(a1=="SESSION_TIMEOUT"){
+		alert("登录超时，请重新登录！");
+		return true;
+	}
+}//End by LiuGuojian
+
+//////////////////////////////////////////////////////////////////////////////
+//寻找一个对象
+/////////////////////////////////////////////////////////////////////////////
+//n：要寻找的对象的id
+//d：包容该对象的父对象，缺省为document
+function findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+var currentActionName;
+//////////////////////////////////////////////////////////////////////////////
+//得到From中所有元素的ID和值，并组成GET请求中要求的[name]=[value]&...[name]=[value]串
+//////////////////////////////////////////////////////////////////////////////
+function getAlldata(obj){
+    var data = "";
+    for (i=0; i<obj.length; i++ ){
+        if ( obj(i).type && obj(i).type != "submit" && obj(i).type != "reset" && obj(i).type != "button"){
+            if( obj(i).type == "select-multiple"){
+                for(j=0; j<obj(i).length;j++){
+                    if (obj(i).options[j].selected ){
+                        data = data+obj(i).id+"="+replaceStr(obj(i).options[j].value)+"&";
+                    }
+                }
+            }else if(obj(i).type =="radio" || obj(i).type =="checkbox"){
+                if (obj(i).checked){
+                    data=data+obj(i).id+"="+replaceStr(obj(i).value)+"&";
+                }
+            }else{
+              
+                data=data+obj(i).id+"="+replaceStr(obj(i).value)+"&";
+            }
+        }
+    }
+    return data;
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//对话框的提交
+//////////////////////////////////////////////////////////////////////////////
+function dialogSubmit(){
+    top.returnValue = getAlldata(eval(unieap.FORM_NAME));
+    top.close();
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//打开模态对话框
+//////////////////////////////////////////////////////////////////////////////
+function openModalDialog(action,method,para,width,height){
+    var url = webAppPath + "/" + action + ".do";
+    if(method != null){
+        url += "?method=" + method;
+    }
+    if(para != null){
+        url += "&" + para;
+    }
+    var dialogStyle = "dialogWidth:" + width + ";dialogHeight:" + height + ";center:yes";
+
+    return window.showModalDialog(url,window,dialogStyle);
+}
+//////////////////////////////////////////////////////////////////////////////
+//打开非模态对话框
+//////////////////////////////////////////////////////////////////////////////
+function openModelessDialog(action,method,para,width,height){
+
+    var url = webAppPath + "/" + action + ".do";
+    if(method != null){
+        url += "?method=" + method;
+    }
+    if(para != null){
+        url += "&" + para;
+    }
+    var dialogStyle = "dialogWidth:" + width + ";dialogHeight:" + height + ";center:yes";
+
+    return window.showModelessDialog(url,window,dialogStyle);
+}
+
+function replaceStr(str)
+{
+   str = str.replace(/%/g,"%25");
+   //str = str.replace(/\+/g,"%2B");   
+    str = str.replace(/&/g,"%26");
+    //str = str.replace(/\\/g,"&#92;");
+    //str = str.replace(/</g,"&#60;");
+    //str = str.replace(/>/g,"&#62;");
+    //str = str.replace(/\"/g,"&#34;");
+    //str = str.replace(/ /g,"&nbsp;");
+    
+    return str;
+}
+
+//重写window.setTimeout()方法:可以传递函数参数   by shenb
+var _st = window.setTimeout;
+var callbackFun;
+var isWait = false;
+setTimeoutX = function(fRef, mDelay) {
+    if(typeof fRef == 'function'){
+        var argu = Array.prototype.slice.call(arguments,2);
+        var f = (function(){ fRef.apply(null,argu); });
+        return _st(f, mDelay);
+   }
+    return _st(fRef,mDelay);
+}
+//如果需要在AJAX请求过程中显示等待页面调用该方法
+function executeRequestX(actionName,actionMethod,postParameter,func,msg,isAsynchronism){
+	if(msg != null && msg != "undefined"){
+		isWait = true;
+		//addSubmitDiv(msg);
+		Showloading.open();
+	}
+	callbackFun = func;
+	setTimeoutX(executeRequest,0,actionName,actionMethod,postParameter,isAsynchronism);
+}
+
+/**
+*@description:      统一的局部刷新请求入口
+*@param:            actionName        已配置的action
+*@param:            actionMethod      action中的方法
+*@param:            getParameter      利用get方法传递的参数
+*@param:            postParameter     利用post方法传递的参数
+*@param:            isSynch
+*@return:           从服务器返回的字符串
+*/
+//function executeRequest(action,actionMethod,postParameter,isSynch){//modified by hyzou, remove parameter 'getParameter'
+function executeRequest(actionName,actionMethod,postParameter,isAsynchronism){
+    //判断是否使用局部刷新
+    var isPartlyRefresh;
+    if(event!=null)
+    {
+    var srcObj = event.srcElement;   
+    try{
+	    if(srcObj != null && srcObj.tagName.toUpperCase() == "INPUT"){      
+	        if(srcObj.isPartlyRefresh != null && srcObj.isPartlyRefresh.toUpperCase() == "FALSE"){                          
+	                executeDirectRequest(actionName,actionMethod);  
+	                return "UNIEAP_NOTING";                             
+	        }
+	    }
+	}catch(e){
+	}
+    }
+    var objXMLReq = getObjXMLReq();
+    var strURL = webAppPath + "/" + actionName + ".do";
+    currentActionName = actionName;
+    
+    var flag = false;
+    if(actionMethod != null && actionMethod != ""){
+        strURL += "?method=" + actionMethod;
+        flag = true;
+    }
+    //增加局部刷新标示符
+    if(flag) 
+        strURL += "&isPartlyRefresh=true";
+    else
+        strURL += "?isPartlyRefresh=true";  
+   
+    if(postParameter == null || postParameter == "undefined") postParameter ="";
+    //postParameter=replaceStr(postParameter);    //如果重复替换将会有问题
+    //调试信息
+    if(findObj("SendMsg")) findObj("SendMsg").innerText = postParameter;
+    
+    if(isAsynchronism == null || isAsynchronism == "undefined") isAsynchronism = false;
+    
+    //增加变化的参数（时间+随机数），用于防止代理服务器缓存
+    var r = new Date().getTime()+""+Math.random()*1000;
+	strURL += ("&R="+r);
+    
+    objXMLReq.open("POST", strURL, isAsynchronism);
+    objXMLReq.send(postParameter);
+    
+    var result;
+    if(isAsynchronism==false){
+            result = objXMLReq.responseText;
+            if(isWait){
+            	delSubmitDiv();
+            }
+            if(result.indexOf(SESSION_TIMEOUT_TAG)>=0){
+            	//Added by LiuGuojian for the bug(2050) while /EAPDomain/unieap/pages/login/login.jsp modified at its first line
+            	window.top.location = window.top.location;
+            	throw new Error("SESSION_TIMEOUT");
+            }
+            if (result.indexOf('错误页面') >= 0 || result.indexOf('error') >=0) {
+                Showloading.close();
+                BootstrapDialog.alert({
+			        title: ConstantMsg.ExceptionTitle,
+			        message: ConstantMsg.ExceptionMessage,
+			        type: BootstrapDialog.TYPE_INFO
+			    });
+            }     
+            //调试信息
+            if(findObj("RetrieveMsg")) findObj("RetrieveMsg").innerText = result;
+            if(typeof callbackFun=="function"){
+            	callbackFun(result);
+            }
+            return result;
+     }
+}
+/**
+*@description:      统一的直接请求入口
+*@param:            actionName        已配置的action
+*@param:            actionMethod      action中的方法
+*/
+function executeDirectRequest(actionName,actionMethod){
+    currentActionName = actionName;
+    var strURL = webAppPath + "/" + actionName + ".do";
+    var formObj = findObj(unieap.FORM_NAME);
+    if(formObj == null) return; 
+    //指定action方法
+    if(actionMethod != null && actionMethod != ""){
+        for (i=0; i<formObj.length; i++ ){
+            if ( formObj(i).type == "hidden" && formObj(i).id.toLowerCase() == "method" ){
+                formObj(i).value = actionMethod;
+                break;
+            }
+        }  
+    }            
+    //指定action
+    formObj.action = strURL;
+    formObj.submit();   
+}
+//////////////////////////////////////////////////////////////////////////////
+//局部刷新请求代理
+//////////////////////////////////////////////////////////////////////////////
+function proxyRequest(action, method, parameter,isAsynchronism) {
+    var objXMLReq = getObjXMLReq();
+    var strURL = webAppPath + "/" + action + ".do";
+    var flag = false;
+    if(method != null && method != ""){
+        strURL += "?method=" + method;
+        flag = true;
+    }
+    //if(parameter != null && parameter != ""){
+    //    strURL += ("&" + parameter);
+    //}
+    if (parameter == null) parameter = "";
+    
+    if(flag)
+    	strURL += "&isPartlyRefresh=true";
+    else
+      strURL += "?isPartlyRefresh=true"; 
+    
+    //同步'false'和异步'true'判断
+    if(!isAsynchronism) isAsynchronism = false;
+         
+    objXMLReq.open("POST", strURL, isAsynchronism);
+    objXMLReq.send(parameter);
+    var strResult = objXMLReq.responseText;
+	if(strResult.indexOf(SESSION_TIMEOUT_TAG)>=0){
+    	window.top.location = window.top.location;
+    	throw new Error("SESSION_TIMEOUT");
+    }  
+    //调试
+    //resutFromServer.innerText = strResult;
+
+    //如果是局部刷新，返回内容会明确以"局部刷新："开头。
+    //否则说明后台返回的是一个完整的界面。
+    if(strResult.indexOf("PartRefresh:") == 0){
+        eval(strResult.substring(12));
+    }else{
+        //先要清理界面所有元素
+        document.createElement();
+        document.write(strResult);
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//菜单新增局部刷新请求代理 lixun
+//////////////////////////////////////////////////////////////////////////////
+function proxyMenuRequest(action, method, parameter) {
+   
+    var objXMLReq = getObjXMLReq();
+    var strURL = webAppPath + "/" + action + ".do";
+    var flag = false;
+   
+    if(method != null && method != ""){
+        strURL += "?method=" + method;
+        flag = true;
+    }
+    
+    if (parameter == null) parameter = "";
+    
+    if(flag)
+        strURL += "&isPartlyRefresh=true";
+    else
+      strURL += "?isPartlyRefresh=true"; 
+       
+    objXMLReq.open("POST", strURL, false);
+    objXMLReq.send(parameter);
+   
+    var strResult = objXMLReq.responseText;
+    if(strResult.indexOf(SESSION_TIMEOUT_TAG)>=0){
+    	window.top.location = window.top.location;
+    	throw new Error("SESSION_TIMEOUT");
+    }
+    return strResult;
+    
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//datastore通用自身请求，包括刷新和翻页，为局部刷新
+//////////////////////////////////////////////////////////////////////////////
+function dsSessionMgr(actionMethod,formId,dwName,parameter,param){
+
+    //翻页监听事件（前）
+    try{
+	    if(!dwManager.getDW(dwName).dwevent.trigger(dwEvent.BEFOR_LOAD)) return false;
+	  
+	    var action=dwManager.DEFAULT_ACTION_NAME;
+	    var postParameter;
+	
+	    var objDwForm=findObj(formId);
+	    postParameter="dwid_"+dwName+"="+findObj("dwid_"+dwName,objDwForm).value;
+	    postParameter+="&dwName="+dwName;
+	    if(parameter) postParameter+="&"+parameter;
+	    postParameter+= dwManager.getDW(dwName).getParameters();
+
+	    if(param){
+	    	
+			var turntopages = findObj(param,objDwForm).value;
+			try{
+			   if(turntopages!=parseInt(turntopages,10)+""){
+				   return;
+			   }  
+			}catch(e){
+			   return;
+			}
+			postParameter+="&turn_pages="+turntopages;
+	    }
+
+	    var result = executeRequest(action,actionMethod,postParameter,false);
+	
+	    commDealResult(result); 
+	    
+	     try{
+  			dwManager.getDW(dwName).setRefreshRequest();
+  		}catch(e){}
+	    //翻页监听事件（后）
+	    dwManager.getDW(dwName).dwevent.trigger(dwEvent.AFTER_LOAD);
+    }catch(e){
+    	return false;
+    }
+  
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//datastore从session中清除，为局部刷新，异步，onbeforeunload时调用
+//////////////////////////////////////////////////////////////////////////////
+function removeDataStoreFromSession()
+{    
+	try{
+    var action=dwManager.DEFAULT_ACTION_NAME;
+    var actionMethod="removeDataStoreFromSession";
+    var postParameter="";   
+    var arr = dwManager.getAllDW();  
+    var individual = "";          
+    for(var i=0; i < arr.length; i++){         
+        if(!((individual = arr[i].getIndividual())=="" && !arr[i].isAutoRemove())){ 
+        	postParameter+= "&dwName="+arr[i].getName();
+            postParameter+= "&dwid_"+arr[i].getName()+"=" + arr[i].getDWIdValue();
+            postParameter+= individual;
+            postParameter+= "&isAutoRemove_"+arr[i].getName()+"=" + arr[i].isAutoRemove();
+        }
+    }
+    if(postParameter!=null && postParameter!="") 
+        postParameter=postParameter.substring(1);    
+    else    
+        return;     
+    var result = executeRequest(action,actionMethod,postParameter,true);
+    }catch(e){}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//检查数据合法性                                   //modify by wanglijie
+//////////////////////////////////////////////////////////////////////////////
+function checkValue(formObj){
+      
+    var obj;
+    var form = formObj == null ? findObj(unieap.FORM_NAME): formObj;
+    //add by ferry start
+    if(formObj != null){
+    	//if(eapObjsMgr.onvalidate(formObj)){
+    	//	return true;
+    	//}
+    	//return false;
+    	return eapObjsMgr.onvalidate(formObj);
+    }
+    //add by ferry end
+    /*
+     * u
+     * @des 适应每个页面需要有多个EAPForm需要校验的情况
+     */
+    if(form.elements){
+		return checkEAPForm(form);
+	} else {
+		for(j=0; j<form.length; j++){
+			var temp_formObj = form[j];
+			return checkEAPForm(temp_formObj);
+		}
+	}
+}
+
+/*
+ * add
+ * @des 校验一个EAPForm中的所有细粒度组件
+ */
+function checkEAPForm(form){
+ 	for(var i=0;i<form.elements.length; i++){
+		obj=form[i];
+		if(obj.isUniEAP==true){
+			if(obj.type != "submit" && obj.type != "reset" && obj.type != "button" && obj.id.indexOf("hiddenEditer_") < 0)
+			{
+				var Mobj=eapObjsMgr.onvalidate(obj);
+				if(Mobj.errormessage!="success")
+				{   
+					return Mobj;
+				}
+			}
+		}
+	}
+	var Sobj=new Object();
+	Sobj.errormessage="success";
+	return Sobj;
+}
+
+function checkValueChangeID(formObj){
+   
+    var obj;
+    var form = formObj == null ? findObj(unieap.FORM_NAME): formObj;
+
+    for(var i=0;i<form.elements.length; i++){//执行校验每个细粒度组件
+      
+         obj=form[i];
+             
+            if(obj.isUniEAP==true){
+             if(obj.type != "submit" && obj.type != "reset" && obj.type != "button" && obj.id.indexOf("hiddenEditer_") < 0){
+                //alert(obj.JSObjName);
+                //alert(eapObjsMgr.onvalidate(obj));
+            
+                if(!(eapObjsMgr.onvalidate(obj))){//校验某个细粒度组件
+                
+                    
+                    return obj.id
+                    break;
+               
+               }
+                 
+             }    
+            }
+   }
+   
+   return "true";
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//装配数据岛中的数据，主要是DataWindow和Tree
+//////////////////////////////////////////////////////////////////////////////
+function assambleXMLData(obj){
+    var  dwFilterBegin = "dwfilter_";
+    for (i=0; i<obj.length; i++ ){
+        if ( obj(i).type == "hidden" && obj(i).id.indexOf(dwFilterBegin) == 0){
+            //调用数据窗口对象的函数进行数据过滤
+            dwManager.getDW(obj(i).id.substring(dwFilterBegin.length)).dataFilter();
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//设置actionMethod
+//////////////////////////////////////////////////////////////////////////////
+function setActionMethod(actionMethod){
+    EAPForm.method.value = actionMethod;
+}
+//////////////////////////////////////////////////////////////////////////////
+//数据窗口局部刷新的数据重新装配
+//////////////////////////////////////////////////////////////////////////////
+function dataWindowRefresh(dwName,data,type)
+{   
+    if(data == null || data == "") return;      
+    dwManager.getDW(dwName).replaceNode(data,type);    
+}
+//////////////////////////////////////////////////////////////////////////////
+//DataWindow预处理，包括代码列表转换、格式化显示数据
+// dw 数据窗口对象
+//////////////////////////////////////////////////////////////////////////////
+function preDealDW(dw){ 
+   
+ 	var dwName = dw.id.substring(6);
+    try{
+        if(!dwManager.getDW(dwName).preDealDW()) return false;
+       
+    }catch(e){}
+//add by zhoujj
+    if(!dwManager.getDW(dwName).dwevent.trigger(dwEvent.BEFOR_LOAD)) return false;
+
+    return true;
+    
+}
+//////////////////////////////////////////////////////////////////////////////
+//将DataWindow用其自身指定的XSL解析l
+// dw 数据窗口对象
+//////////////////////////////////////////////////////////////////////////////
+function msxslt(dw){
+
+    var dwName = dw.id.substring(6);
+    dwManager.getDW(dwName).msxslt();
+    try{
+    	dwManager.getDW(dwName).sendAsyRequest();
+    }catch(e){}
+    //触发事件
+    dwManager.getDW(dwName).dwevent.trigger(dwEvent.AFTER_LOAD); 
+   
+    
+}
+//////////////////////////////////////////////////////////////////////////////
+//获取xml控件
+//return object/null(if exception catched)
+//////////////////////////////////////////////////////////////////////////////
+function getXMLActiveObj(){
+    try{
+        return new ActiveXObject("MSXML2.DOMDocument.4.0");
+    }catch(e){
+       // if(confirm("您的机器上的XML解析器版本太低，您是否打算现在升级？")){
+       if(confirm(CommonConstants.parameter_err_xsl_version_low)){
+            document.location = webAppPath + "/unieap/pages/datawindow/MsXML4.0.jsp";
+        }
+        return null;
+    }
+}
+//////////////////////////////////////////////////////////////////////////////
+//用指定的XSL解析xml
+// xml XML对象
+// href XSL路径
+//////////////////////////////////////////////////////////////////////////////
+function msxsltXML(xml,href){   
+    var objXMLDoc= getXMLActiveObj(); 
+    objXMLDoc.async=false;
+    objXMLDoc.resolveExternals=false;
+    objXMLDoc.validateOnParse=false;
+    objXMLDoc.loadXML(xml);
+    
+    if(objXMLDoc.parseError.errorCode != 0){
+        return 'XML Parse Error Reason: ' + objXMLDoc.parseError.reason;
+    }
+    //从缓存中取预编译好的对象
+    var oXslProcessor=getXslProcessor(href);
+   
+    if(!oXslProcessor){
+    	 try{
+         //保存模板预编译对象    
+          oXslProcessor=saveXslProcessor(href);
+          
+        }catch(e){
+           return e;
+        }
+    }    
+    oXslProcessor.input = objXMLDoc;
+    //转化xsl模板
+    oXslProcessor.transform();
+    return oXslProcessor.output;
+}
+function getXslProcessor(href){
+      var xslprocessor=null;
+      var arr = href.split("/");      
+      try{
+	      if(top&&top.rootmenu){
+				xslprocessor = top.rootmenu[arr[arr.length - 2]+"."+arr[arr.length - 1]];
+	      }
+      }catch(e){}
+      return xslprocessor;
+}
+
+function saveXslProcessor(href){
+    var arr=href.split("/");    
+    var oXslDom = new ActiveXObject("MSXML2.FreeThreadedDomDocument.4.0");
+    oXslDom.async = false;
+    oXslDom.resolveExternals=false;
+    oXslDom.validateOnParse =false;    
+    oXslDom.load(href);    
+    if(oXslDom.parseError.errorCode !=0){    
+        throw 'XSL Parse Error Reason: ' + oXslDom.parseError.reason
+    }
+    //预编译xsl模板    
+    var oXslTemplate = new ActiveXObject("MSXML2.XSLTemplate.4.0");   
+    oXslTemplate.stylesheet = oXslDom;
+    var oXslProcessor = oXslTemplate.createProcessor();
+    //缓存编译后的xsl模板
+    try{
+	    if (top&&top.rootmenu){
+	         top.rootmenu[arr[arr.length - 2]+"."+arr[arr.length - 1]] = oXslProcessor;      
+	    }
+    }catch(e){}
+    return oXslProcessor;
+}
+/**
+*@description:      服务器返还结果常规处理函数
+*@param:            result            局部刷新的返回结果字符串
+*/
+function commDealResult(result){
+    //alert(result);    
+  
+    if(result == null || result == "UNIEAP_NOTING") return "UNIEAP_NOTING"; 
+    //如果是定义好了不处理标识，直接显示
+   
+    if(result.indexOf(unieap.NOT_DEAL_INDENTIFIER) >= 0){
+        document.createElement();
+        document.write(result);
+        return "UNIEAP_NOTING";
+    }
+                
+    //如果是局部刷新，返回内容会明确以"局部刷新："开头。
+    if(result.indexOf("局部刷新：") == 0){
+   
+        eval(result.substring(5));
+        return "UNIEAP_NOTING";
+    }
+
+    var cmdArr =  result.split(unieap.resultSplit); 
+
+    var cmdKind,cmd;
+    var pos;    
+    var isError = false;
+    for(var i=0; i < cmdArr.length; i++){      
+        if(cmdArr[i] == null || cmdArr[i] == "") continue;
+        try{
+            pos = cmdArr[i].indexOf("=");       
+            if(pos < 0){
+                // alert("开发人员注意：现在还不能处理"+cmdArr[i]);
+                 alert(CommonConstants.parameter_err_cannot_tackle_someting+cmdArr[i]);
+                 return "UNIEAP_ERROR";
+            }               
+            cmdKind = cmdArr[i].substring(0,pos).toUpperCase();         
+            cmd = cmdArr[i].substring(pos+1);           
+            switch(cmdKind){
+                case "ERRORMSG":                     
+                   // alert("错误信息："+cmd);   
+                    alert(CommonConstants.parameter_err_information+cmd);      
+                    isError = true;
+                    break;
+                case "MESSAGE":
+                    alert(cmd);  
+                    break;
+                case "EXECUTE":
+                    eval(cmd);
+                    break;
+                case "DATAOBJS":                            
+                    refreshDataObjs(cmd);
+                    break;
+                default:
+                    //alert("开发人员注意：现在还不能处理"+cmdKind+"类型的返回结果" + cmdArr);
+                    alert(CommonConstants.parameter_err_cannot_tackle_someting+cmdKind+CommonConstants.parameter_err_type_result + cmdArr);
+                    return "UNIEAP_ERROR";
+            }       
+        }
+        catch(e){
+            //alert("开发人员注意：执行commDealResult()出错，\n错误信息："+e.message);
+            alert(CommonConstants.parameter_err_commonresult_err+e.message);
+            return "UNIEAP_ERROR";
+        }
+    }
+    if(isError) return "UNIEAP_ERROR";
+    return "UNIEAP_NOTING";;
+}
+/**
+*@description:      刷新某个dataObjs
+*@param:            dataObjs 新的dataObjs字符串
+*                   格式: <dataObjs... dwName="name" ...>...</dataObjs>
+*/
+function refreshDataObjs(dataObjsStr){  
+    if(dataObjsStr == null) return; 
+    var DWNAME_STRING = "dwName=\"";
+    var pos = dataObjsStr.indexOf(DWNAME_STRING);   
+    if(pos < 0) return;
+    var tmpStr = dataObjsStr.substring(pos+DWNAME_STRING.length);   
+    var pos1 = tmpStr.indexOf("\"");        
+    var dwName = dataObjsStr.substring(pos+DWNAME_STRING.length,pos1+pos+DWNAME_STRING.length);     
+    if(dwManager.getDW(dwName).nameRule.getXml() == null){
+       // alert("数据窗口刷新失败：界面上没有数据窗口("+dwName+")");
+        alert(CommonConstants.parameter_err_datawindow_refresh_err+"("+dwName+")");
+        return;
+    }
+    dataWindowRefresh(dwName,dataObjsStr,"dataObjs");
+}
+/**
+*@description 协助局部刷新作forward
+*@param forwardName  configed in struts-config.xml
+*@param alertMsg   be alerted
+*@param executeScript javaScript function generally;
+*                     fowarding is stoped when "false" is returned by executeScript
+*/
+function forwardByPartlyRefresh(forwardName,alertMsg,executeScript){
+    if(alertMsg != null && alertMsg != "") alert(alertMsg);
+    
+    if(executeScript != null && executeScript != ""){
+        var executeScriptReturn = ""+eval(executeScript);
+        if(executeScriptReturn.toLowerCase() == "false")
+            return;
+    }
+    
+    findObj("FORWARD_NAME_IN_PARTLY_REFRESH").value = forwardName;
+    executeDirectRequest(currentActionName,"EAPForward");
+}
+
+//以图片地址为参数显示图片。
+function display_picture(picture_address){
+   window.open (picture_address, "newwindow"); 
+
+}
+//取得XMLHttpRequest对象,基于AJAX技术
+function getObjXMLReq(){
+    var objXMLReq;
+    // IE5 for the mac claims to support window.ActiveXObject, but throws an error when it's used
+    if (window.ActiveXObject && !(navigator.userAgent.indexOf('Mac') >= 0 && navigator.userAgent.indexOf("MSIE") >= 0)){
+        objXMLReq = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    //for Mozilla and Safari etc.
+    else if (window.XMLHttpRequest){
+        objXMLReq = new XMLHttpRequest();
+    }
+    return objXMLReq;
+}
+//字符串去空格操作
+String.prototype.trim = function(){ 
+	return this.replace(/(^\s*)|(\s*$)/g, ""); 
+} 
+String.prototype.ltrim = function(){ 
+	return this.replace(/(^\s*)/g, ""); 
+} 
+String.prototype.rtrim = function(){
+	return this.replace(/(\s*$)/g, "");
+}
+//禁止选择
+function disableMouseSelection(element){
+    if (element.onselectstart !== undefined){
+        element.onselectstart = function(){return false;}
+    }
+    else if (element.style.MozUserSelect !== undefined){
+        element.style.MozUserSelect = "none";
+    }
+    else if (element.style.KhtmlUserSelect !== undefined){
+        element.style.KhtmlUserSelect = "none";
+    }
+    else {
+        element.onmousedown = function(){return false;}
+    }
+    if (element.ondrag !== undefined){
+        element.ondrag = function(){return false;}
+    }
+}
+//允许选择
+function enableMouseSelection(element){
+     if (element.onselectstart !== undefined){
+         element.onselectstart = function(){return true;}
+     }
+     else if (element.style.MozUserSelect !== undefined){
+         element.style.MozUserSelect = "";
+     }
+     else if (element.style.KhtmlUserSelect !== undefined){
+         element.style.KhtmlUserSelect = "";
+     }
+     else {
+         element.onmousedown = function(){return true;}
+     }
+     if (element.ondrag !== undefined){
+         element.ondrag = function(){return true;}
+     }
+}
+//初始化查看源码的事件
+function loadView(){	
+	var obj= document.getElementById("view-jsp");
+	if(obj){
+		obj.onclick = function(){
+			var url;
+			if(url= document.getElementById("view-page").getAttribute("url")){
+			  	var path=url.substring(0,url.lastIndexOf("/")+1)+"src/";
+				var filename=url.substring(url.lastIndexOf("/")+1,url.lastIndexOf("."))+"-jsp.jsp";
+			  	window.open(path+filename);
+		  	}
+		};
+		obj.onmouseover = function(){
+			document.getElementById("view-jsp").style.border = "1px solid #000";
+		};
+		obj.onmouseout = function(){
+			document.getElementById("view-jsp").style.border = "0px solid #000";
+		};	
+		obj.title = "查看JSP源码";		
+	}
+	obj= document.getElementById("view-java"); 
+	if(obj){		
+		obj.onclick = function(){ 
+		  	var url;
+			if(url= document.getElementById("view-page").getAttribute("url")){	 
+				var path=url.substring(0,url.lastIndexOf("/")+1)+"src/";
+				var filename=url.substring(url.lastIndexOf("/")+1,url.lastIndexOf("."))+"-java.jsp";
+			  	window.open(path+filename);
+		  	}
+		};
+		obj.onmouseover = function(){
+			document.getElementById("view-java").style.border = "1px solid #000";
+		};
+		obj.onmouseout = function(){
+			document.getElementById("view-java").style.border = "0px solid #000";
+		};	
+		obj.title = "查看JAVA源码";
+			
+	}
+}
+
+//when no bisiness method invoke   //add by zhangjingbo //modify by wanglijie
+function checkObj(obj){    
+	//if(!checkValue(obj)) return false;
+	//return true;
+	return checkValue(obj);
+}
+
+//choose all checkboxs of the table component  //add by zhangjingbo
+function select_all(obj){
+	var checkbox = document.getElementsByName(obj.con);
+	for(i=0;i<checkbox.length;i++){
+		if(obj.checked){
+			if(checkbox[i].sequence){
+				checkbox[i].checked = true;
+			}
+		} else {
+			checkbox[i].checked = false;
+		}
+	}
+}
+//pop suspend alert msaage when error occour  //add by wanglijie
+function showMessage(message,obj)
+{
+//   var oPopup = window.createPopup();
+//    var oPopupBody = oPopup.document.body;
+//	oPopupBody.style.backgroundColor="transparent";
+//    
+//    oPopupBody.attachEvent("oncontextmenu",function(){return false});
+//   
+//   var errMessage ="<table style='border:1px solid #C8BA92;border-collapse:collapse' width='100%' height='100%'>"
+//                  +"<tr><td style='background:#F3F0E7;font-family:arial;font-size:12px;font-weight:bold;padding:5px;border-bottom:1px solid #C8BA92;'>"+BaseObjConstants.parameter_tip_err_tip_name+"</td></tr>"
+//                  +"<tr><td style='font-family:arial;font-size:12px;padding:5px;background:#FFFFFF'>"+message+"</td></tr>"
+//                  +"</table>";
+//
+//  	//var xy_old = page(this.edtObj);
+//  	var x_old = findPosX(obj);
+//  	var y_old = findPosY(obj);
+//  	
+//  	var docBodyHeight = document.body.clientHeight;
+//  	var docBodyWidth = document.body.clientWidth;
+//
+//  	scrollPosition(x_old,y_old,docBodyWidth,docBodyHeight,obj);
+//
+//    var xy=page(obj);
+//    var x = xy[0];
+//    var y = xy[1];    
+//     
+//    oPopupBody.innerHTML = errMessage;
+//
+//    var maxlen = parseInt(message.length/12);
+//
+//     if(maxlen*12< message.length)
+//          ++maxlen;
+//     oPopup.show(x+obj.clientWidth+5, y, 2*75 ,(maxlen+1)*25+3, document.body);
+    document.getElementById(obj.id+"_errormessage").style.color="red";
+    document.getElementById(obj.id+"_errormessage").innerHTML=message;
+}
+
+//preview picture        //add by zhangjingbo
+function PreviewImg(imgFile,divid,width,height)
+{
+    var newPreview = document.getElementById(divid);
+    newPreview.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod = scale;)";  
+    newPreview.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgFile.value;
+    if(width){
+    	newPreview.style.width = width;
+    }else{
+    	newPreview.style.width = "80px";
+    }
+    if(height){
+    	newPreview.style.height = height;
+    }else{
+    	newPreview.style.height = "60px";
+    }
+}
+//set page value according to return String from server  //add by wanglijie
+function setPageValue(str){
+	var temp = str.split("&");
+	for(i=0; i<temp.length; i++){
+		var pageobj = document.getElementById(temp[i].split("=")[0]);
+		if(lowerCase(pageobj.tagName)=="font"){
+			pageobj.innerHTML = temp[i].split("=")[1] == "null" ? "" :temp[i].split("=")[1];
+		}else{
+			pageobj.value = temp[i].split("=")[1] == "null" ? "" :temp[i].split("=")[1] ;
+		}
+	}
+}
+//set image/file size/type //add by wanglijie
+function checkImagefile(filename,size,type,isfile)
+{  
+   var file=document.getElementById(filename);
+   var fvalue=file.value.toLowerCase(file.value);
+   var tp1=fvalue.substr(fvalue.lastIndexOf(".")+1,fvalue.length-1); 
+   var tp=type.split("|");
+   var browser=navigator.appName; 
+   var b_version=navigator.appVersion; 
+   var version=b_version.split(";"); 
+   var trim_Version=version[1].replace(/[ ]/g,""); 
+   var n=0;
+   for(i=0;i<tp.length;i++)
+   {
+       if(tp1==tp[i])
+	   {
+	       n++;
+		   break;
+	   }
+   }
+   if(n==0)
+   {
+       alert("上传格式不正确，只能上传"+type+"！");
+	   file.outerHTML=file.outerHTML;
+	  
+	   return false;
+   }
+   if(!isfile)
+   {
+      var img=new Image();
+	  img.src=fvalue;
+//      if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") 
+//      {
+//          parentobj=file.parentNode;
+//          var newNode1=document.createElement("<div id='pic' style='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);display:none'></div>");
+//          var newNode2=document.createElement("<img name='temp' style='display:none'>");   
+//          parentobj.appendChild(newNode1);
+//          parentobj.appendChild(newNode2);
+//          document.getElementById("pic").filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = fvalue;
+//          var obj=document.getElementById("temp")
+//          obj.src=document.getElementById("pic").filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src  
+//          if(obj.fileSize>size*1024)
+//          {
+//              alert("上传图片不能大于"+size+"KB");
+//		      file.outerHTML=file.outerHTML;
+//	          return false;
+//          }
+//      }
+      
+      if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") 
+      {
+         if(img.fileSize==-1)
+	     {
+	        return checkImagefile(filename,size,type,isfile);         
+	     }
+         if(img.fileSize>size*1024)
+	     {
+	        alert("上传图片不能大于"+size+"KB！");
+		    file.outerHTML=file.outerHTML;
+	        return false;
+	     }
+      }
+	  else
+	  {
+	     var size1=getFileSize(fvalue);
+	     if(size1>size*1024)
+	     {
+	        alert("上传图片不能大于"+size+"KB！");
+		    file.outerHTML=file.outerHTML;
+	        return false;
+	     }
+	  }
+  
+   }else{
+    try{
+         var size1=getFileSize(fvalue);
+         if(size1>size*1024)
+        {
+           alert("文件不能大于"+size/1024+"M！");
+	       file.outerHTML=file.outerHTML;
+	       return false;
+        }
+     }
+     catch(e)
+     {
+        var fl=new ActiveXObject("Scripting.FileSystemObject");
+        var ff=fl.GetFile(fvalue);
+//        var size1=getFileSize(fvalue);
+        if(fl.Size>size*1024)
+        {
+          alert("文件不能大于"+size/1024+"M！");
+	      file.outerHTML=file.outerHTML;
+	      return false;
+       }
+     }
+   }
+   return true;
+  }
+//add by wanglijie
+function getFileSize(fileName) { 
+window.oldOnError = window.onerror; 
+window.onerror = function (err) { 
+if (err.indexOf('utomation') != -1) { 
+alert('请启动ActiveX控件和插件！'); 
+return true; 
+} 
+else 
+return false; 
+}; 
+var fso = new ActiveXObject('Scripting.FileSystemObject'); 
+var file = fso.GetFile(fileName); 
+window.onerror = window.oldOnError; 
+return file.Size; 
+} 
+function showImageDimensions () { 
+alert(this.width + 'x' + this.height); 
+}
+
+//del html label from the string of html format
+function delHTML(str){
+	var result = "";
+	var k = 0;
+	for(i=0;i<str.length;i++){
+		if(str.charAt(i) == "<"){
+			k = 1;
+			continue;
+		}else if(str.charAt(i) == ">"){
+			k = 0;
+			continue;
+		}else if(k == 0){
+			result += str.charAt(i);
+		}
+	}
+	return result;
+}
+//decode html formattext
+function HTMLDecode(text)
+{
+	if ( typeof( text ) != "string" )
+		text = text.toString() ;
+		
+	text = text.replace(
+		/&amp;/g, "&").replace(
+		/&quot;/g, "\"").replace(
+		/&lt;/g, "<").replace(
+		/&gt;/g, ">").replace(
+		/&nbsp;/g, " ") ;
+
+	return text ;
+}
+//细粒度组件单体校验 add by wanglijie
+function check(obj,isalert)
+{
+   var Mobj=checkObj(obj);
+   if(Mobj.errormessage!="success")
+   {
+     if(obj)
+     {
+        if(isalert)
+        {
+           Mobj.obj.focus();
+           alert(Mobj.errormessage);
+           return false;
+        }
+        else
+        {
+          document.getElementById(Mobj.obj.id+"_errormessage").style.color="red";
+          document.getElementById(Mobj.obj.id+"_errormessage").innerHTML=Mobj.errormessage;
+          return false; 
+        }    
+     }
+     else
+     {
+     	Mobj.obj.focus();
+        alert(Mobj.errormessage);
+        return false;
+     }
+   } 
+   else
+   {
+      if(isalert)
+      {
+          return true;
+      }
+      if(obj)
+      {
+         document.getElementById(obj.id+"_errormessage").innerHTML="校验成功！";
+      }
+      return true;
+   }   
+}
+//获得焦点，显示原信息   add by wanglijie
+function remessage(obj)
+{
+   var Mobj= document.getElementById(obj.id+"_errormessage");
+   //  Mobj如果是空则不显示  add by shenb
+   if(Mobj=="null" || Mobj==null)return;
+   if(Mobj.message)
+   {
+     document.getElementById(Mobj.id).style.color="";
+     Mobj.innerHTML=Mobj.message;
+   }
+   else
+   {
+      document.getElementById(Mobj.id).style.color="";
+      Mobj.innerHTML="&nbsp;";
+   }
+}
+
+  //提交审批方法;sort:审批类别;path:各业务提交(发布)信息时需要跳转的路径,如:"suppliers.do?method=add"
+//add by wangwei & modify hl
+function forwardcheck(sortcode,path,formId){
+    var confirmschemecode = "";
+	var action = "pubcheck";
+	var method = "getNeedCheck";
+	var para = "sortcode="+sortcode;
+	var result = executeRequest(action,method,para);
+	if(isNaN(result)){
+		alert(result);
+		return;
+	}
+	if(result!="0" && result!="1" && result!="-1"){
+		var features = "status:no;center:yes;help:no;minimize:no;maximize:no;border:thin;statusbar:no;dialogWidth:700px;dialogHeight:450px;resizable:yes;scrolling:yes";
+		//var	url = webAppPath+"/resource/pubcheck.do?method=gomoduleindex&gomethod=showConfirmstepscheme&windowtitle=实例化审批流程选择页面&confirmschemesortcode="+sortcode;
+		var	url = webAppPath+"/resource/pubcheck.do?method=showConfirmstepscheme&confirmschemesortcode="+sortcode;				
+		var objs = window.showModalDialog(url,new Array(parent,window),features);
+		if(objs!=undefined){
+			confirmschemecode = objs;
+		}
+		if(confirmschemecode != null && confirmschemecode != ""){
+			//该处是自己要提交跳转的action方法,同时要把返回的流程编号confirmschemecode传入后台作为调用接口addconfirmstep的第一个参数.
+//	    	document.EAPForm.action = path+"&confirmschemecode="+confirmschemecode;
+//	    	document.EAPForm.submit();
+	    	$(formId).ajaxSubmit({
+            url: path+"&confirmschemecode="+confirmschemecode,
+            type: "POST",
+            success: function (res) {
+            }
+        });
+	    	
+	    }else{
+	    	return;
+	    }
+	}else if(result=="1" ){
+		//该处是自己要提交跳转的action方法
+//	    document.EAPForm.action = path;
+//	    document.EAPForm.submit();
+	    $(formId).ajaxSubmit({
+            url: path,
+            type: "POST",
+            success: function (res) {
+            }
+        });
+	    
+	}else if(result=="0" ){
+		alert("请您先配置审批流程!");
+		return;
+	}else if(result=="-1"){
+		//该处是自己要提交跳转的action方法,同时要把返回的流程编号confirmschemecode传入后台作为调用接口addconfirmstep的第一个参数.
+//    	document.EAPForm.action = path+"&ischeck=-1";
+//    	document.EAPForm.submit();
+    	
+    	$(formId).ajaxSubmit({
+            url: path,
+            type: "POST",
+            success: function (res) {
+            }
+        });
+	}
+}
+
+function expertForwardcheck(sortcode,path,filePath){
+    var confirmschemecode = "";
+	var action = "pubcheck";
+	var method = "getNeedCheck";
+	var para = "sortcode="+sortcode;
+	var result = executeRequest(action,method,para);
+	if(result!="0" && result!="1" && result!="-1"){
+		var features = "status:no;center:yes;help:no;minimize:no;maximize:no;border:thin;statusbar:no;dialogWidth:780px;dialogHeight:600px;resizable:yes;scrolling:yes";
+		//var	url = webAppPath+"/resource/pubcheck.do?method=gomoduleindex&gomethod=showConfirmstepscheme&windowtitle=实例化审批流程选择页面&confirmschemesortcode="+sortcode;
+		var	url = webAppPath+"/resource/pubcheck.do?method=showConfirmstepscheme&confirmschemesortcode="+sortcode;				
+		var objs = window.showModalDialog(url,new Array(parent,window),features);
+		if(objs!=undefined){
+			confirmschemecode = objs;
+		}
+		if(confirmschemecode != null && confirmschemecode != ""){
+			//该处是自己要提交跳转的action方法,同时要把返回的流程编号confirmschemecode传入后台作为调用接口addconfirmstep的第一个参数.
+	    	document.EAPForm.action = path+"&confirmschemecode="+confirmschemecode;
+	    	document.EAPForm.submit();
+	    }else{
+	    	return;
+	    }
+	}else if(result=="1" ){
+		//该处是自己要提交跳转的action方法
+
+	    document.EAPForm.action = path;
+	    document.EAPForm.submit();
+	}else if(result=="0" ){
+		alert("请您先配置审批流程!");
+		delExpertSubmitDiv();
+		return;
+	}else if(result=="-1"){
+		//该处是自己要提交跳转的action方法,同时要把返回的流程编号confirmschemecode传入后台作为调用接口addconfirmstep的第一个参数.
+    	delExpertSubmitDiv();
+		document.EAPForm.file.value = filePath;
+    	document.EAPForm.action = path+"&ischeck=-1";
+    	document.EAPForm.submit();
+	}
+}
+
+//提交审批方法;sort:审批类别;path:各业务提交(发布)信息时需要跳转的路径,如:"suppliers.do?method=add"
+//add by xieyu  带层处理逻辑
+function forwardcheckDiv(sortcode,path){
+	addSubmitDiv();
+    var confirmschemecode = "";
+	var action = "pubcheck";
+	var method = "getNeedCheck";
+	var para = "sortcode="+sortcode;
+	var result = executeRequest(action,method,para);
+	if(isNaN(result)){
+		alert(result);
+		delSubmitDiv();
+		return;
+	}
+	if(result!="0" && result!="1" && result!="-1"){
+		var features = "status:no;center:yes;help:no;minimize:no;maximize:no;border:thin;statusbar:no;dialogWidth:700px;dialogHeight:450px;resizable:yes;scrolling:yes";
+		var	url = webAppPath+"/resource/pubcheck.do?method=showConfirmstepscheme&confirmschemesortcode="+sortcode;
+		var objs = window.showModalDialog(url,new Array(parent,window),features);
+		if(objs!=undefined){
+			confirmschemecode = objs;
+		}
+		if(confirmschemecode != null && confirmschemecode != ""){
+			//该处是自己要提交跳转的action方法,同时要把返回的流程编号confirmschemecode传入后台作为调用接口addconfirmstep的第一个参数.
+	    	document.EAPForm.action = path+"&confirmschemecode="+confirmschemecode;
+	    	document.EAPForm.submit();
+	    }else{
+	    	return;
+	    }
+	}else if(result=="1" ){
+		//该处是自己要提交跳转的action方法
+	    document.EAPForm.action = path;
+	    document.EAPForm.submit();
+	}else if(result=="0" ){
+		if(sortcode == 'YJDLJGBG' || sortcode == 'JJDLJGBG' || sortcode == 'WDDLJGBG'){
+			alert("请与资源管理员联系，配置变更审批流程");
+		}else{
+			alert("请您先配置审批流程!");
+		}
+		delSubmitDiv();
+		return;
+	}else if(result=="-1"){
+		//该处是自己要提交跳转的action方法,同时要把返回的流程编号confirmschemecode传入后台作为调用接口addconfirmstep的第一个参数.
+    	document.EAPForm.action = path+"&ischeck=-1";
+    	document.EAPForm.submit();
+	}
+}
+
+var subDivId  = "shcz200902191023doing";
+var subDivIdX1  = "smile201004211517done1";
+var subDivIdX2  = "logon";
+//添加层
+function addSubmitDiv(msg) {
+//	var obj = document.getElementById(subDivId);
+//	if(obj==null||obj=='undefined'||obj=='') {
+//		//var divHtml="<div id='"+subDivId+"' runat='server' style='FILTER: Alpha(Opacity=75);Z-INDEX: 12000; LEFT: 10px;  WIDTH: 100%;  POSITION: absolute; TOP: 10px; HEIGHT: 100%;background-color:#6699ff'><iframe style='width:100%;filter:alpha(opacity=0);-moz-opacity:0; height:100%; position:absolute; z-index:-1'></iframe><table width='100%' height='100%'><tr align='center' valign='middle'><td><table width='100%' height='100%' class='font3' bgcolor='#6699ff' style='FILTER: Alpha(Opacity=75);'><tr align='center' valign='middle'> <td>页面提交中,请等待<br/>Please wait</td></tr></table></td></tr></table></div>";
+//		var divHtml="<div id='"+subDivId+"' runat='server' style='Z-INDEX: 12000; LEFT: 0px; WIDTH: 100%; CURSOR: wait; POSITION: absolute; TOP: 0px; HEIGHT: 100%'><table width='100%' height='100%'><tr align='center' valign='middle'><td><table width='169' height='62' class='font3' bgcolor='#6699ff' style='FILTER: Alpha(Opacity=75);'><tr align='center' valign='middle'> <td>页面提交中,请等待<br/>Please wait</td><td><img src=\"/gpimp/unieap/images/wait.gif\" width=\"9\"height=\"9\" /></td></tr></table></td></tr></table></div>";
+//		document.body.innerHTML = document.body.innerHTML+divHtml;//update by fanghaijun 20100125
+//	}else {
+//		obj.style.visibility="visible";
+//	}
+    var defaultmsg;
+    if(msg==null || msg=="" || msg=="undefined" ){
+    	defaultmsg="请稍等..."
+    }else{
+    	defaultmsg = msg;
+    }
+    var obj = document.getElementById(subDivIdX1);
+    if(obj==null||obj=='undefined'||obj=='') {
+    	getMask(defaultmsg);
+    }else{
+    	obj.style.visibility="visible";
+    	document.getElementById(subDivIdX2).style.visibility="visible";
+    }
+
+}
+
+//专家提交层
+function addExpertSubmitDiv() {
+	var obj = document.getElementById(subDivId);
+	if(obj==null||obj=='undefined'||obj=='') {
+		var msg = "系统正在处理您的申请信息，即将跳转到注册成功页面，请稍候！<br/><br/>      Please wait ... ... ";
+		getMask(msg);
+	}else {
+		obj.style.visibility="visible";
+	}
+}
+
+//消失层
+function delExpertSubmitDiv() {
+	var obj = document.getElementById(subDivId);
+	if(obj!=null && obj!='undefined' && obj != '') {
+		obj.style.visibility="hidden";
+	}
+}
+
+function getMask(msg){
+	var unieap = new UniEAP();
+	var imgpath = webAppPath+"/unieap/js/ext/ext-1.1.1/resources/images/default";
+    var shieldDiv = document.createElement("div");
+	shieldDiv.id = subDivIdX1;
+	/*以下设置样式*/
+	shieldDiv.style.position = "absolute";
+	shieldDiv.style.left = "0px";
+	shieldDiv.style.top = "0px";
+	shieldDiv.style.width = document.body.scrollWidth;
+	shieldDiv.style.height = document.body.scrollHeight;
+	shieldDiv.style.background = '#EAEAEA';
+	shieldDiv.style.filter = "Alpha(opacity="+50+")";
+	shieldDiv.style.zIndex = 2;
+	/*以上设置样式*/
+	document.body.appendChild(shieldDiv);
+	
+	var loaddiv = document.createElement("div");
+	var x = (document.body.offsetWidth-100)/2;
+	var y = document.body.scrollTop + (document.body.offsetHeight-50)/2;
+	if(y<0){y=-y;}
+	//var loaddiv = "<div id=\"logon\" style=\"z-index:20001;position:absolute;top:"+y+";"+
+	//              "left:expression(Math.abs(Math.round((window.document.body.clientWidth-logon.offsetWidth)/2)));border:1px solid #6593cf;background:#c3daf9 url("+imgpath+"/box/tb-blue.gif) "+
+	//              "repeat-x 0 -16px;padding:5px 10px 5px 25px;background:#eee url("+imgpath+"/grid/loading.gif) "+
+	//             "no-repeat 5px 5px;line-height:16px;\"><font size='2' face='verdana'>"+msg+"</font></div>";
+	loaddiv.id="logon";
+	
+	loaddiv.style.zIndex="20001";
+	
+	loaddiv.style.position="absolute";
+	
+	loaddiv.style.top=y;
+	
+	
+	
+	loaddiv.style.border="1px solid #6593cf";
+	
+	loaddiv.style.background="#c3daf9 url("+imgpath+"/box/tb-blue.gif) repeat-x 0 -16px";
+	loaddiv.style.padding="5px 10px 5px 25px";
+	loaddiv.style.background="#eee url("+imgpath+"/grid/loading.gif) no-repeat 5px 5px";
+	loaddiv.style.lineHeight="16px";
+	document.body.appendChild(loaddiv);
+	loaddiv.innerHTML="<font size='2' face='verdana'>"+msg+"</font></div>";
+	loaddiv.style.left=Math.abs(Math.round((document.body.clientWidth-document.getElementById("logon").offsetWidth)/2));
+    
+    
+	
+	//document.body.innerHTML = document.body.innerHTML+loaddiv;
+}
+
+
+//消失层
+function delSubmitDiv() {
+	var obj = document.getElementById(subDivIdX1);
+	if(obj!=null && obj!='undefined' && obj != '') {
+		obj.style.visibility="hidden";
+		document.getElementById(subDivIdX2).style.visibility="hidden";
+	}
+}
+
+
+
+//验证是否登录
+function isenter()
+{
+    var action = "login";
+	var method = "isenter";
+	var para = "";
+	var result = executeRequest(action,method,para);
+	if(result=="1")
+	{
+	   return true;
+	}
+	else
+	{
+	   return false;
+	}
+	
+}
+//url重写处理参数中的特殊字符
+function replaceUrlStr(str)
+{
+   str = str.replace(/%/g,"%25");
+   str = str.replace(/\+/g,"%2B");   
+   str = str.replace(/&/g,"%26");
+   str= str.replace(/#/g,"%23");
+   str = str.replace(/\\/g,"%5C");
+   //str = str.replace(/\//g,"%2F");	//从二期同步，注释掉该替换
+   str = str.replace(/\?/g,"%3F");
+   str = str.replace(/=/g,"%3D");
+    //str = str.replace(/</g,"&#60;");
+    //str = str.replace(/>/g,"&#62;");
+    //str = str.replace(/\"/g,"&#34;");
+   str = str.replace(/ /g,"%20"); 
+    return str;
+}
+
+//鼠标移动到上方显示全部信息
+function show(obj){
+	 var cuediv;
+	 if(!document.getElementById('forallcue')){
+	 	cuediv = document.createElement('div');
+	 	cuediv.id = 'forallcue';
+	 	cuediv.style.visibility = 'hidden'; 
+	 	cuediv.style.position = 'absolute';
+	 	cuediv.style.border = '1px';
+	 	cuediv.style.fontSize = '12px';
+	 	cuediv.style.borderStyle = 'solid';
+	 	cuediv.style.borderWidth = '1px';
+	 	cuediv.style.borderColor = '#000000';
+	 	cuediv.style.backgroundColor = '#FFFFCC';
+	 }else{
+	 	cuediv = document.getElementById('forallcue');
+	 }
+	 cuediv.style.posLeft=event.clientX+document.body.scrollLeft+13   
+	 cuediv.style.posTop=event.clientY+document.body.scrollTop+13;   
+	 cuediv.style.visibility='';
+	
+	 cuediv.innerHTML=obj.display; 
+	 document.body.appendChild(cuediv);
+}   
+
+//鼠标离开全部信息隐藏
+function   hid(){   
+	if(document.getElementById('forallcue')){
+		document.getElementById('forallcue').style.visibility='hidden'   
+  }
+}
+
+/**
+ * @对url参数进行加密
+ * @param someaction.do?param1=a?&param2=2?&param3=3?
+ * @return  someaction.do?isEncode=true&param=(*^*(HIUHI^&*(YIUY*&O^&*^&**
+ * @author 
+ */
+function encodeURL(str){
+	var url = str;
+	if(isSystemEncode){
+		var unicode2Ansistr = strUnicode2Ansi(str);
+		var link=unicode2Ansistr.indexOf("?");
+		var ationdo=unicode2Ansistr.substr(0,link);
+		var parmer=unicode2Ansistr.substr(link,unicode2Ansistr.length);
+		var isEncode="?isEncode=true&";
+	    var encodeurl=base64encode(parmer);
+		url=ationdo+isEncode+encodeurl;
+	}
+	return url;
+}
+
+/**
+ * @弹出一个层
+ * @param divid,position,control,width   /div的id、位置、触发控件、宽度
+ * @return  
+ * @author 
+ */
+function showDiv(divid,position,control,width){
+	showDiv(divid,position,control,width);
+}
+/**
+ * @description html字符串编码及解码
+ * @author 
+ */
+String.prototype.HTMLEncode = function() {
+	var temp = document.createElement ("div");  
+	(temp.textContent != null) ? (temp.textContent = this) : (temp.innerText = this);  
+	var output = temp.innerHTML;  
+	temp = null;  
+	return output;  
+}  
+String.prototype.HTMLDecode = function() {  
+	var temp = document.createElement("div");  
+	temp.innerHTML = this;  
+	var output = temp.innerText || temp.textContent;  
+	temp = null;  
+	return output;  
+}
+//**创建浮出层，弹出输入窗口		--end
+//签名意见层 add start 
+var rtnValue;
+var rtnFunc;
+function signature(func, info) {
+	rtnFunc = func;
+	createShieldDiv('#EAEAEA',50,2);
+	createSignatureDiv('#ECF4EC', 3, info);
+}
+
+//创建签名意见层
+function createSignatureDiv(backcolor, layerIndex, info){
+	var signatureDiv = document.createElement("div");
+	signatureDiv.id = "signatureDiv";
+	/*以下设置样式*/
+	signatureDiv.style.position = "absolute";
+	signatureDiv.style.zIndex = layerIndex;
+	signatureDiv.style.width = document.body.offsetWidth;
+	signatureDiv.style.height = document.body.offsetHeight;
+	signatureDiv.style.left = "0px";
+	signatureDiv.style.top = "0px";
+	/*以上设置样式*/
+	
+	/*以下设置内容*/
+	var x = (document.body.offsetWidth-350)/2;
+	var y = document.body.scrollTop + (document.body.offsetHeight-250)/2;
+	if(y<0){y=-y;}
+	var stringbuffer;
+	stringbuffer = "<div id='massage_box'  style='width:500;height: 300px;position: absolute;filter: dropshadow(color = #666666, offx = 3, offy = 3, positive = 2);visibility: visible;top: "+y+";left:"+x+"'>";
+	stringbuffer += "  <div style='border: #036 solid;border-width: 1 1 4 1;background: #fff;color: #036;font-size: 12px;line-height: 170%;'>";
+	stringbuffer += "    <div style='background: #036;height: 10%;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff;' onmousedown='MDown(massage_box)'>";
+	stringbuffer += "      <div style='display: inline;  position: absolute'>";
+	stringbuffer += "      </div>";
+	stringbuffer += "      签名意见";
+    stringbuffer += "    </div>";
+	stringbuffer += "    <br/>";
+	stringbuffer += "      <div id='info'>";
+	stringbuffer += "        <table border='0' align='center'>";
+	stringbuffer += "          <tr>";
+	stringbuffer += "            <td align='left' width='17%'>";
+	stringbuffer += "              签名状态：";
+	stringbuffer += "            </td>";
+	stringbuffer += "            <td align='left' width='50%'>";
+	if(info[0] == null || info[0] == "" || info[0] == "1") {
+		stringbuffer += "              <input type='radio' id='rd' name='rd' value='1' checked>同意";
+		stringbuffer += "              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		stringbuffer += "              <input type='radio' id='rd' name='rd' value='2'>不同意";		
+	} else {
+		stringbuffer += "              <input type='radio' id='rd' name='rd' value='1'>同意";
+		stringbuffer += "              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		stringbuffer += "              <input type='radio' id='rd' name='rd' value='2' checked>不同意";		
+	}
+	stringbuffer += "            </td><td width='33%'>&nbsp;</td>";
+	stringbuffer += "          </tr>";
+	stringbuffer += "          <tr>";
+	stringbuffer += "            <td colspan='3' align='left'>";
+	stringbuffer += "            &nbsp;"; 
+	stringbuffer += "            </td>";
+	stringbuffer += "          </tr>";
+	stringbuffer += "          <tr>";
+	stringbuffer += "            <td align='left'>";
+	stringbuffer += "              签名意见：";
+	stringbuffer += "            </td>";
+	stringbuffer += "            <td align='left'>";
+	if(info[1] == null) info[1] = "";
+	stringbuffer += "     <textarea  prompt='签字意见'  name='ta' id='ta'  maxlength='4000' ";
+	stringbuffer += " 		search='false'  cols='40' rows='7' isnullable='true'  ";
+	stringbuffer += "       class='NEUHTCTextArea' JSObjName='TextArea'  ";
+	stringbuffer += "       onkeydown='eapObjsMgr.getEAPObj(this).getBaseObj().enterToTab();eapObjsMgr.getEAPObj(this).getBaseObj().checktextvalue()'";
+	stringbuffer += "       onkeypress='eapObjsMgr.getEAPObj(this).doKeypress()'";
+	stringbuffer += "		onkeyup='eapObjsMgr.getEAPObj(this).getBaseObj().checktextvalue()'>"+info[1] +"</textarea>";
+	//stringbuffer += "            <textarea name='ta' cols='40' rows='7' id='ta' >" + info[1] + "</textarea>";
+	stringbuffer += "            </td><td><font color='blue'>最多只能输入2000汉字！</font></td>";
+	stringbuffer += "          </tr>";
+	stringbuffer += "          <tr>";
+	stringbuffer += "            <td colspan='3' align='left'>";
+	stringbuffer += "            &nbsp;"; 
+	stringbuffer += "            </td>";
+	stringbuffer += "          </tr>";
+	stringbuffer += "        </table>";
+	stringbuffer += "        <table border='0' align='center'>";
+	stringbuffer += "          <tr><td align='left'>";
+	stringbuffer += "        <input style='width: 70; height: 30; font-size:13' type='button' id='okbutton' value='确定'  onclick='signatureOrNot(true);'>";
+	stringbuffer += "        </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input style='width: 70; height: 30; font-size:13' type='button' value='取消' onclick='signatureOrNot(false)'>&nbsp;</td></tr>";
+	stringbuffer += "          <tr><td colspan='2' align='left'>&nbsp;</td></tr></table>";
+	stringbuffer += "      </div>";
+	stringbuffer += "  </div>";
+	stringbuffer += "</div>";
+	stringbuffer += "<div id='mask'  style='visibility: visible'></div>";
+	/*以上设置内容*/
+	signatureDiv.innerHTML = stringbuffer;
+	document.body.appendChild(signatureDiv);
+}
+
+function signatureOrNot(bool){
+    var rdObj = document.getElementsByName("rd");
+	var taObj = document.getElementById("ta");
+	if(bool == true){
+	   if(rdObj[0].checked){
+           rtnValue = rdObj[0].value;
+       }if(rdObj[1].checked){
+           rtnValue = rdObj[1].value;
+       }
+	   rtnValue += "@@@" + taObj.value;
+	}else{
+		rtnValue = null;
+	}
+	var signature = document.getElementById("signatureDiv"); 
+	var shield = document.getElementById("sheildDiv");
+	document.body.removeChild(signature);
+	document.body.removeChild(shield);
+	if(rtnValue == null) {
+		return;
+	}
+	rtnFunc(rtnValue);
+}
+//签名意见层 add end 
+
+//PROMPT add start 
+function prompt(title, value, func) {
+	rtnFunc = func;
+	createShieldDiv('#EAEAEA',50,2);
+	createPromptDiv(title,value, '#ECF4EC', 3);
+}
+
+//创建屏蔽层
+function createShieldDiv(color,opacity,layerIndex){
+	var shieldDiv = document.createElement("div");
+	shieldDiv.id = "sheildDiv";
+	/*以下设置样式*/
+	shieldDiv.style.position = "absolute";
+	shieldDiv.style.left = "0px";
+	shieldDiv.style.top = "0px";
+	shieldDiv.style.width = document.body.scrollWidth;
+	shieldDiv.style.height = document.body.scrollHeight;
+	shieldDiv.style.background = color;
+	shieldDiv.style.filter = "Alpha(opacity="+opacity+")";
+	shieldDiv.style.zIndex = layerIndex;
+	/*以上设置样式*/
+	document.body.appendChild(shieldDiv);
+	return shieldDiv;
+}
+
+//创建提示窗口层
+function createPromptDiv(title,value, backcolor, layerIndex){
+	var promptDiv = document.createElement("div");
+	promptDiv.id = "promptDiv";
+	/*以下设置样式*/
+	promptDiv.style.position = "absolute";
+
+	promptDiv.style.zIndex = layerIndex;
+	promptDiv.style.width = document.body.offsetWidth;
+	promptDiv.style.height = document.body.offsetHeight;
+	promptDiv.style.left = "0px";
+	promptDiv.style.top = "0px";
+	/*以上设置样式*/
+	/*以下设置内容*/
+
+	var x = (document.body.offsetWidth-350)/2;
+	var y = document.body.scrollTop + (document.body.offsetHeight-250)/2;
+	if(y<0){y=-y;}
+	var stringbuffer;
+	stringbuffer = "<div id='massage_box'  style='visibility: visible;top: "+y+";left:"+x+"'>";
+	stringbuffer += "  <div class='massage'>";
+	stringbuffer += "    <div class='header' onmousedown='MDown(massage_box)'>";
+	stringbuffer += "      <div style='display: inline;  position: absolute'>";
+	stringbuffer += "      </div>";
+	stringbuffer += "      "+title+"";
+    stringbuffer += "    </div>";
+	stringbuffer += "    <ul>";
+	stringbuffer += "      <div id='info'>";
+	stringbuffer += "        " + value + "<br/>";
+	stringbuffer += "        <input type='password' id='rtnText' name='rtnText' value='' style='width: 270' onKeyPress='handleEvent(event);' /><br><br>";
+	stringbuffer += "   <table border='0' align='center'><tr><td align='left'>";
+	stringbuffer += "        <input style='width: 70' type='button' id='okbutton1' value='确定'  onclick='confirmOrNot(true);'>";
+	stringbuffer += "        <input style='width: 70;display:none' type='button' id='okbutton' value='确定'  onfocus='getfocus();'>";
+	stringbuffer += "        </td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input style='width: 70' type='button' value='取消' onclick='confirmOrNot(false)'>&nbsp;</td></tr></table>";
+	stringbuffer += "      </div>";
+	stringbuffer += "    </ul>";
+	stringbuffer += "  </div>";
+	stringbuffer += "</div>";
+	stringbuffer += "<div id='mask'  style='visibility: visible'></div>";
+	/*以上设置内容*/
+	promptDiv.innerHTML = stringbuffer;
+	document.body.appendChild(promptDiv);
+	document.getElementById("rtnText").focus();
+}
+
+function confirmOrNot(bool){
+	var promptInput = document.getElementById("rtnText");
+	if(bool == true){
+		rtnValue = promptInput.value;
+	}else{
+		rtnValue = null;
+	}
+	var prompt = document.getElementById("promptDiv"); 
+	var shield = document.getElementById("sheildDiv");
+	document.body.removeChild(prompt);
+	document.body.removeChild(shield);
+	if(rtnValue == null) {
+		return;
+	}
+	rtnFunc(rtnValue);
+}
+
+function handleEvent(oEvent){
+	if(oEvent.keyCode == 13) {
+		document.getElementById("okbutton1").style.display = "none";
+		document.getElementById("okbutton").style.display = "";
+		document.getElementById("okbutton").focus();
+	}
+}
+
+function getfocus(){
+    confirmOrNot(true);
+}
+//PROMPT add end 
+
+var Obj='';
+document.onmouseup=MUp;
+document.onmousemove=MMove;
+function MDown(Object){
+	Obj = Object.id;
+	document.all(Obj).setCapture();
+	pX=event.x-document.all(Obj).style.pixelLeft;
+	pY=event.y-document.all(Obj).style.pixelTop;
+}
+function MMove(){
+	if(Obj!=''){
+	    document.all(Obj).style.left=event.x-pX;
+	    document.all(Obj).style.top=event.y-pY;
+	}
+}
+
+function MUp(){
+	if(Obj!=''){
+	    document.all(Obj).releaseCapture();
+	    Obj='';
+	}
+}
+//**创建浮出层，弹出输入窗口		--end
+
+// Add by LiangLiubin	判断页面内容是否发生变化  --仅针对form标签里元素内容
+var elementsInForm;		//form标签下元素的值数组
+
+// 获取form标签下，元素的初始值
+function getValuesInForm(){
+	var formObjs = document.getElementsByTagName("form");
+	if(formObjs != null && formObjs.length >= 1){
+          
+		elementsInForm = new Array();
+		var size = 0;
+		for(var i = 0; i < formObjs.length; i++){
+			var formObj = formObjs[i];
+			var ems = formObj.all;
+			if(ems != null && ems.length >= 1){
+				for(var j = 0; j < ems.length; j++){
+					if(ems[j].type == "radio"){
+						elementsInForm[size++] = ems[j].checked;
+					} else{
+						elementsInForm[size++] = ems[j].value;	
+					}
+				}
+			}
+		}
+	}
+}
+
+// 页面内容是否改变 如果页面内容没有改变，返回false；否则，返回true
+function isModified(){
+	var formObjs = document.getElementsByTagName("form");
+	if(formObjs != null && formObjs.length >= 1){	// 含有form标签
+		var size = 0;
+		for(var i = 0; i < formObjs.length; i++){	//遍历form标签
+			var formObj = formObjs[i];
+			var ems = formObj.all;
+			if(ems != null && ems.length >= 1){	//	遍历form标签的元素
+				for(var j = 0; j < ems.length; j++, size++){
+					if(ems[j].type == "radio"){
+						if(elementsInForm[size] != ems[j].checked){	//两个元素的值不相等 说明已经修改
+							return true;
+						}
+					} else{
+						if(elementsInForm[size] == null && (ems[j].value == null || ems[j].value == "")){
+							continue;
+						} else if (elementsInForm[size] == "" && ems[j].value == null){
+							continue;
+						} else if(elementsInForm[size] != ems[j].value){	//两个元素的值不相等 说明已经修改
+							return true;
+						}
+					}
+				}
+			}
+		}
+		
+		if(elementsInForm.length != size){	//如果得到的数组大小不相等
+			return true;
+		}
+	}
+	
+	return false;
+}
+// End by LiangLiubin
+
+//向顶级页面设置帮助路径
+function setHelpURI(path){
+	if(window.top.topFrame!=null && window.top.topFrame != undefined){
+		if (window.top.topFrame.document.readyState != "complete"){
+			setTimeout("setHelpURI('"+path+"')", 3000);
+		} else {
+			window.top.topFrame.setHelp(path);	
+		}
+	}
+}
+
+//date1 为第一个日期, date2为第二个日期,aparamkey为系统变量表中存储的日期间隔变量类别,
+//operstr 操作符号,由调用人自己输入
+//added by 侯冰旭 20100310
+function checkBetweenDates(date1,date2,aparamkey,operstr){
+    var firstDate = DTO_parseDate(date1);
+    var secondDate = DTO_parseDate(date2);
+    var aPeriod = executeRequest('tenderitemplan','doGetDates','aParamType='+aparamkey);
+    var exe = "parseInt((secondDate.getTime()-firstDate.getTime())/1000/60/60/24)" + operstr + "aPeriod;"
+    var bPass = eval(exe);
+    var strOper;
+    
+    if(operstr.indexOf('>')>-1){
+    	strOper = '至少';
+    	if(operstr.indexOf('=')==-1)
+    	  aPeriod=Number(aPeriod)+1;
+    }else if(operstr.indexOf('<')>-1){
+    	strOper = '至多';
+    	if(operstr.indexOf('=')==-1)
+    	  aPeriod=Number(aPeriod)-1;
+    }
+    if(!bPass){
+    	alert(date2.prompt+'必须晚于'+date1.prompt+strOper+aPeriod+'天!');
+    	date2.focus();
+    }
+    
+	return bPass;
+}
+
+/**
+ * Ajax请求入口
+ * @param actionName
+ * @param actionMethod
+ * @param postParameter
+ * @param isAsynchronism
+ * @returns {*}
+ */
+function executeRequestAjax(actionName, actionMethod, postParameter, isAsynchronism) {
+
+    var strURL = webAppPath + "/" + actionName + ".do";
+//    var flag = false;
+    if (actionMethod != null && actionMethod != "") {
+        strURL += "?method=" + actionMethod;
+        //flag = true;
+    }
+    //增加局部刷新标示符
+//    if (flag) {
+//        strURL += "&isPartlyRefresh=true";
+//    } else {
+//        strURL += "?isPartlyRefresh=true";
+//    }
+    //增加变化的参数（时间+随机数），用于防止代理服务器缓存
+    var r = new Date().getTime() + "" + Math.random() * 1000;
+    strURL += ("&R=" + r);
+
+    if (postParameter == null || postParameter == "undefined") postParameter = "";
+
+    if (isAsynchronism == null || isAsynchronism == "undefined") isAsynchronism = true;
+
+    var defer, result;
+    if (isAsynchronism) {
+        defer = $.Deferred();
+    }
+    $.ajax({
+        type: "post",
+        url: strURL,
+        async: isAsynchronism,
+        data: postParameter,
+        beforeSend: function (XMLHttpRequest) {
+        	XMLHttpRequest.setRequestHeader("useajaxprep","true");
+        },
+        success: function (data, textStatus) {
+            //超时校验
+            if (data.indexOf(SESSION_TIMEOUT_TAG) >= 0) {
+                //EAPDomain/unieap/pages/login/login.jsp modified at its first line
+                window.top.location = window.top.location;
+                throw new Error("SESSION_TIMEOUT");
+            } else if (typeof data === 'string') {
+                if (data.indexOf('错误页面') >= 0 || data.indexOf('error') >=0) {
+                    Showloading.close();
+                    BootstrapDialog.alert({
+                    	title: ConstantMsg.ExceptionTitle,
+			        	message: ConstantMsg.ExceptionMessage,
+				        type: BootstrapDialog.TYPE_INFO
+				    });
+                } else if (isAsynchronism) {
+                    defer.resolve(data);
+                } else {
+                    result = data;
+                }
+
+            } else if (isAsynchronism) {
+                defer.resolve(data);
+            } else {
+                result = data;
+            }
+
+        },
+        complete: function (XMLHttpRequest, textStatus) {
+        },
+        error: function () {
+            Showloading.close();
+            BootstrapDialog.alert({
+                title: ConstantMsg.ExceptionTitle,
+		        message: ConstantMsg.ExceptionMessage,
+		        type: BootstrapDialog.TYPE_INFO
+		    });
+        }
+    });
+    if (isAsynchronism) {
+        return defer.promise();
+    } else {
+        return result;
+    }
+}
+/**
+ * Ajax请求入口 提交带附件的表单
+ * @param actionName
+ * @param actionMethod
+ * @param postParameter
+ * @param isAsynchronism
+ * @param function
+ * @returns {*}
+ */
+function executeRequestSubmit(actionName, actionMethod, postParameter, formid, fun) {
+
+    var strURL = webAppPath + "/" + actionName + ".do";
+    if (actionMethod != null && actionMethod != "") {
+        strURL += "?method=" + actionMethod;
+    }
+    if (postParameter == null || postParameter == "undefined") postParameter = "";
+    var result;
+    $("#" + formid).ajaxSubmit({
+        url: strURL + postParameter,
+        type: "POST",
+        async: false,
+        success: function (data, textStatus) {
+            //超时校验
+            if (data.indexOf(SESSION_TIMEOUT_TAG) >= 0) {
+                //while /EAPDomain/unieap/pages/login/login.jsp modified at its first line
+                window.top.location = window.top.location;
+                throw new Error("SESSION_TIMEOUT");
+            } else if (typeof data === 'string') {
+                if (data.indexOf('错误页面') >= 0 || data.indexOf('error') >=0) {
+                    Showloading.close();
+                    BootstrapDialog.alert({
+				        title: ConstantMsg.ExceptionTitle,
+			        	message: ConstantMsg.ExceptionMessage,
+				        type: BootstrapDialog.TYPE_INFO
+				    });
+                } else if (typeof fun === 'function'){
+                    fun(data);
+                } else {
+                    result = data;
+                }
+            } else {
+                result = data;
+            }
+
+        },
+        error: function () {
+            Showloading.close();
+            BootstrapDialog.alert({
+                title: ConstantMsg.ExceptionTitle,
+		        message: ConstantMsg.ExceptionMessage,
+		        type: BootstrapDialog.TYPE_INFO
+		    });
+        }
+    });
+    return result;
+}
+var onlyKey = function (title, customDiv) {
+}
+onlyKey.num = function (){
+	var eventObj = event || e;
+    var keyCode = eventObj.keyCode || eventObj.which;
+    if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 46 || keyCode == 8) {
+        return true;
+    } else {
+        return false;
+    }
+}
+onlyKey.point = function (){
+	var eventObj = event || e;
+    var keyCode = eventObj.keyCode || eventObj.which;
+    if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 46 || keyCode == 8) {
+        return true;
+    } else if (keyCode == 190 || keyCode == 110) {
+        var value = $(this).val();
+        if (value.length > 0 && value.indexOf(".") == -1) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+onlyKey.string = function (){
+	
+}
+//input只能输入带小数金额
+$.fn.onlyNumPoint = function () {
+	$(this).keydown(function(event) {
+	    var eventObj = event || e;
+	    var keyCode = eventObj.keyCode || eventObj.which;
+	    if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 46 || keyCode == 8) {
+	        return true;
+	    } else if (keyCode == 190 || keyCode == 110) {
+	        var value = $(this).val();
+	        if (value.length > 0 && value.indexOf(".") == -1) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    } else {
+	        return false;
+	    }
+	}).focus(function () {
+         this.style.imeMode = 'disabled';
+    });
+};
+//input只能输入数字
+$.fn.onlyNum = function () {
+	$(this).keydown(function(event) {
+	    var eventObj = event || e;
+	    var keyCode = eventObj.keyCode || eventObj.which;
+	    if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 46 || keyCode == 8) {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}).focus(function () {
+         this.style.imeMode = 'disabled';
+    });
+};
+function fileOnchange(file,size,type,flag){
+   var fvalue=file.value.toLowerCase(file.value);
+   var tp1=fvalue.substr(fvalue.lastIndexOf(".")+1,fvalue.length-1); 
+   var tp=type.split("|");
+   var obj = file;
+   var n=0;
+   for(i=0;i<tp.length;i++)
+   {
+       if(tp1==tp[i])
+   {
+       n++;
+   break;
+   }
+   }
+   if(n==0){
+   		clearInputFile(obj);
+        BootstrapDialog.alert("上传格式不正确，只能上传"+type+"！");
+       	return false;
+   }
+       
+       checkFileSize(file,size,flag);
+       return true;
+}
+function clearInputFile(f){
+        if(f.value){
+            try{
+                f.value = ''; //for IE11, latest Chrome/Firefox/Opera...
+            }catch(err){
+            }
+            if(f.value){ //for IE5 ~ IE10
+                var form = document.createElement('form'), ref = f.nextSibling, p = f.parentNode;
+                form.appendChild(f);
+                form.reset();
+                p.insertBefore(f,ref);
+            }
+        }
+    }
+ 
+function checkFileSize(file,size,flag) {
+var fileupload = file;
+var tfileSize = size;
+var fileSize = 0;
+try {
+  var agent = window.navigator.userAgent;
+  if (agent.indexOf("MSIE") >= 1) {
+  //for IE
+  try{
+  var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+  var objFile = objFSO.getFile(fileupload.value);
+  fileSize = objFile.size; //size in kb
+  } catch (e) {
+  alert("由于你的activex控件没有设置好,\n" +
+  "你可以在浏览器菜单栏上依次选择\n" +
+  "工具->internet选项->\"安全\"选项卡->自定义级别,\n" +
+  "打开\"安全设置\"对话框，把\"对没有标记为安全的\n" +
+  "ActiveX控件进行初始化和脚本运行\"，改为\"启动\"即可");
+  return false;
+  }
+  } else {
+  //for FF, Safari, Opeara and Others
+  fileSize = fileupload.files[0].size //size in kb
+  }
+  if(flag){
+  	if(fileSize > parseInt(tfileSize)*1024*1024){
+		clearInputFile(file);
+		BootstrapDialog.alert("请上传"+tfileSize+"MB以内的文件!");
+		return false;
+	}
+  }else{
+  	if(fileSize > parseInt(tfileSize)*1024){
+		clearInputFile(file);
+		BootstrapDialog.alert("请上传"+tfileSize+"KB以内的文件!");
+		return false;
+	}
+  }
+  
+  } catch (e) {
+  	alert("Error is " + e);
+  	return false;
+  }
+}
+
+function formatNumber(obj) {
+	clearAllFormat(obj);
+	var value = obj.value;
+	var result = "";
+	var valueParts = value.split(".");
+	var mostSignificationDigit = valueParts[0].length -1;   // 最高有效数字位，默认为个位
+	var intervalOfDigit = 0; 	// 逗号之间的位数
+	var digit, countOfSignificationDigit;
+	for (var i = valueParts[0].length -1; i >= 0; i--) {
+		digit = valueParts[0][i];
+		result = digit + result;
+		if (digit != "0") {
+			mostSignificationDigit = i;
+		}
+		if (3 == ++intervalOfDigit) {
+			result = "," + result;
+			intervalOfDigit = 0;
+		}
+	}
+	if (mostSignificationDigit == -1) {
+		result = "0";
+	}
+	else {
+		countOfSignificationDigit = valueParts[0].length - mostSignificationDigit;
+		if (countOfSignificationDigit > 3) {
+			result = result.substring(result.length - (countOfSignificationDigit%3 == 0 ? countOfSignificationDigit/3 - 1 : countOfSignificationDigit/3)  - countOfSignificationDigit);
+		}
+		else {
+			result = result.substring(result.length - countOfSignificationDigit);
+		}
+	}
+	if (valueParts.length == 2) {
+		result += ".";
+		var temp = 2 - valueParts[1].length;	// 是否需要补0
+		for (var i = 0; i < temp; i++) {
+			valueParts[1] += "0"
+		}
+		result += valueParts[1].substring(0, 2);
+	}
+	else {
+		result += ".00";
+	}
+	return result;
+}
+
+function clearNoNum(obj){
+  obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符 
+  obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的 
+  //obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+  obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');//只能输入两个小数 
+  //alert(1);
+  if(obj.value.indexOf(".")< 0 && obj.value !=""){//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+   obj.value= parseFloat(obj.value);
+  }
+}
+
+function clearAllFormat(obj){
+	if(obj!=null&&$(obj).val()!=null&&$(obj).val().trim().length>0){
+		var waitToDeleteCommaNumber = $(obj).val();
+		var newInputValue = waitToDeleteCommaNumber.replace(/,/g,"");
+		$(obj).val(newInputValue.toString());
+		return newInputValue.toString();
+	}
+}
+//JS 除法乘法精度计算 add by geshy 2016-12-09
+function CalcFloat(){
+    this.div = _accDiv;
+    this.mul = _accMul;
+	function _accDiv(arg1, arg2) {
+	        var t1 = 0, t2 = 0, r1, r2;
+	        try { t1 = arg1.toString().split(".")[1].length } catch (e) { }
+	        try { t2 = arg2.toString().split(".")[1].length } catch (e) { }
+	        with (Math) {
+	            r1 = Number(arg1.toString().replace(".", ""))
+	            r2 = Number(arg2.toString().replace(".", ""))
+	            var m = (t2 - t1);
+	            if(m<0){
+	                return _accMul((r1 / r2), pow(10, m));
+	            }else{
+	                return (r1 / r2) * pow(10, t2 - t1);
+	            }
+	            
+	        }
+	}
+	function _accMul(arg1, arg2) {
+	        var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+	        try { m += s1.split(".")[1].length } catch (e) { }
+	        try { m += s2.split(".")[1].length } catch (e) { }
+	        return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m)
+    }
+    // 给Number类型增加一个mul方法，调用起来更加方便。
+	//Number.prototype.mul = function(arg) {
+	//        return accMul(arg, this);
+	//}
+	//给Number类型增加一个div方法，调用起来更加方便。
+	//Number.prototype.div = function(arg) {
+	//        return accDiv(this, arg);
+	//}
+}
+function textCounter(obj, maxlimit) { 
+	if (obj.value.length > maxlimit){ 
+		obj.value = obj.value.substring(0, maxlimit); 
+	}
+} 
+var fileSecurityDialog;
+function downloadFile(file_path) {
+    fileSecurityDialog = BootstrapDialog.show({
+        title: '文件下载安全验证',
+        size: BootstrapDialog.SIZE_SMALL, //SIZE_NORMAL,SIZE_SMALL,SIZE_WIDE,SIZE_LARGE
+        closable: false,
+        draggable: true,
+        message: function (dialog) {
+            var $message = $('<div></div>');
+            var pageToLoad = dialog.getData('pageToLoad');
+            $message.load(pageToLoad);
+            return $message;
+        },
+        data: {
+            'pageToLoad': getURI(file_path)
+        }
+    });
+}
+function getURI(uri) {
+    return uri + "&type=file_type_public" ;
+}
+
+function encryptByDES(message, key){
+    var keyHex = CryptoJS.enc.Utf8.parse(key);
+    var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return encrypted.ciphertext.toString();
+}
+
+function getSecurityUrl(url){
+    var key = executeRequestAjax("gettoken","x",null,false);
+    var qindex = url.indexOf("?");
+    var path = url.substring(0,qindex);
+    var hash = url.slice(qindex + 1).split('&');
+    var keys = key.split(";");
+    for (var i = 0; i < hash.length; i++) {
+        var h = hash[i].split("="); //
+        if(h[0]=="method"){
+            path += "?"+h[0]+"="+h[1];
+        }else{
+            path += "&"+h[0]+"="+encryptByDES(h[1],keys[0]);
+        }
+        
+    }
+    if(hash.length>0){
+        path +="&_kt_="+keys[1];
+    }
+    return path;
+}

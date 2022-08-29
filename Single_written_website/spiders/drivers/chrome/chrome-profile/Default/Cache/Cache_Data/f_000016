@@ -1,0 +1,1436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd>
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>标题</title>
+<!-- 头部 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/lib/bootstrap-3.3.0-dist/css/bootstrap.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/js/bootstrap-select.min.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/css/zxx.lib.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/css/slide6.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/js/jDialog/jDialog.css"></link>
+<script type="text/javascript">
+	var webpath = "";
+</script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/jquery-.min.js"></script>
+<script language="javascript" type="text/javascript" src="/tzxmweb/Resources/webpro/lib/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
+<script language="javascript" type="text/javascript" src="/tzxmweb/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/jquery.validate.min.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/messages_zh.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/jquery.validate.extend.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/jquery.enplaceholder.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/js/jDialog/jDialog.js"></script>
+
+<!-- å¤§éä¸­æ°æ ·å¼å¼ç¨ -->
+
+
+
+
+<script type="text/javascript">
+	var js_global_areacode = "340000";
+	//æ±è
+	var JIANGSU = "320000";	
+	//å®å¾½
+	var ANHUI = "340000";	
+	//éæµ·
+	var QINGHAI = "630000";	
+	//å¹¿è¥¿
+	var GUANGXI = "450000";	
+	//è¥¿è
+	var XIZANG = "540000";	
+	//çè
+	var GANSU = "620000";	
+	// webpath
+	var webpath = "";
+</script>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/stylesheets/reset.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/stylesheets/common.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/stylesheets/zxx.lib.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/stylesheets/portal.css"></link>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/stylesheets/newpor.css"></link>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/initdata.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/portal.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/init_ahzwfw.js"></script>
+<script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/md5.js"></script>
+<script type="text/javascript">
+function htmlEncodeByRegExp (str){   
+           var s = ""; 
+          if(str.length == 0) return ""; 
+          s = str.replace(/&/g,"&amp;"); 
+          s = s.replace(/</g,"&lt;"); 
+          s = s.replace(/>/g,"&gt;"); 
+          s = s.replace(/ /g,"&nbsp;"); 
+         s = s.replace(/\'/g,"&#39;"); 
+          s = s.replace(/\"/g,"&quot;"); 
+         return s;   
+    }
+</script>
+
+<!-- å¨æå¼å¥æ ·å¼ -->
+<!-- å®å¾½ -->
+
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/webpro/stylesheets/background/bg_ah.css"></link>
+
+<!-- çè -->
+
+<!-- éæµ· -->
+
+<!-- å¹¿è¥¿ -->
+
+<!-- æ±è -->
+
+<!-- è¥¿è -->
+ 
+<link type="text/css" rel="stylesheet" href="/tzxmweb/Resources/css/slideMin.css">
+        <link type="text/css" rel="stylesheet" href="/tzxmweb/lib/zTree/zTreeStyle/zTreeStyle.css"></link>
+        <script type="text/javascript" language="javascript" src="/tzxmweb/lib/zTree/jquery.ztree.all-3.5.min.js"></script>
+        <script type="text/javascript" language="javascript" src="/tzxmweb/Resources/js/popup_layer.js"></script>
+</head>
+
+<script type="text/javascript">	
+   function publicInformation(){
+   		var publicInformation = "1";
+   		if(publicInformation!="1"){
+   			document.getElementById("publicInformationForm").submit();
+   		}
+   }
+   function goPage(optType){
+    		switch(optType){
+				case 'first':
+				  $("#pageNo").val(1);
+				  break;
+				case 'previous':
+				  $("#pageNo").val(parseInt($("#pageNo").val())-1);
+				  break;
+				case 'next':
+				  $("#pageNo").val(parseInt($("#pageNo").val())+1);
+				  break;
+				case 'last':
+				  $("#pageNo").val(14259);
+				  break;
+				default:
+				  $("#pageNo").val(1);
+    	}
+    	$("#publicInformationForm").submit();
+    }
+	function goToPage(){
+	   	var pageNum = $("#pageNum").val();
+	   	$("#pageNo").val(pageNum);
+	   	$("#publicInformationForm").submit();
+	}
+	
+    function doSerach(){
+    	$("#serviceForm").submit();
+    }
+    //<!--安徽查询条件增加地区和行业 add by luping@neusoft.com 20160624 start-->
+	var setting = {
+	    data: {
+	        simpleData: {
+	            enable: true
+	        }
+	    },
+	    callback: {
+	        onClick: zTreeOnClick
+	    }
+	};
+	var settingxz = {
+	    data: {
+	        simpleData: {
+	            enable: true
+	        }
+	    },
+	    callback: {
+	        onCheck: zxzTreeOnClick             
+	    },
+	    check: {
+	        enable: true,
+	        chkboxType : { "Y" : "p", "N" : "s" }
+	    }
+	};
+	$(document).ready(function(){
+  		initxzTreeNodes();
+  		inithyTreeNodes();
+  	});
+    function doSerachAH(){
+    	$("#serviceFormAH").submit();
+    }
+    
+    //初始化建设地点 
+	function initxzTreeNodes(){
+		var data = {
+	  			areacode : js_global_areacode
+	  		};	
+		$.ajax({    
+	        type:'post',        
+	        //url:poratl.web_ctx+'/projectdeclaration.do?method=getxzTreeNodes',    
+	        url:poratl.web_ctx+'/projectdeclaration1.do?method=getxzTreeNodes',    
+	        data:data,    
+	        cache:false,    
+	        dataType:'json',    
+	        success:function(data){
+			     new PopupLayer({trigger:"#zProvinceAddress",popupBlk:"#blk_xztree",closeBtn:"#close_xz"});
+			     $.fn.zTree.init($("#xztree"), settingxz, data);
+	        }    
+		});
+	}
+	//初始行业树
+	function inithyTreeNodes(){
+		$.ajax({    
+	        type:'post',        
+	        //url:poratl.web_ctx+'/projectdeclaration.do?method=gethyTreeNodes',    
+	        url:poratl.web_ctx+'/projectdeclaration1.do?method=gethyTreeNodes',    
+	        data:{},    
+	        cache:false,    
+	        dataType:'json',    
+	        success:function(data){
+			     new PopupLayer({trigger:"#ele_hy",popupBlk:"#blk_hytree",closeBtn:"#close_hy"});
+				 $.fn.zTree.init($("#hytree"), setting, data);
+	        }    
+		});
+	}
+  	function zTreeOnClick(event, treeId, treeNode) {
+            if(treeNode.id.length >0)
+		   //if(!treeNode.isParent)
+		    {
+		        var node = treeNode ;
+		        var arr1 = new Array(); 
+		        var i =1 ;
+		        arr1[0] = node.name;
+		   		while (true) {
+		    		node = node.getParentNode() ;
+		    		if(node==null){
+		    			break;
+		    		}else{
+		    			arr1[i] =  node.name;
+		    		}
+		    		i++;
+		    	}
+		    	var name_str = arr1[arr1.length-1];
+		    	for(var j=arr1.length-2;j>=0;j--) { 
+					name_str = name_str +" - " + arr1[j];
+				}
+			   // $("#industry").val(treeNode.name);
+			    $("#industry").val(name_str);//显示所有父级名称
+			   	$("#industryId").val(treeNode.id);
+		    }
+        }
+        var nodeList=[];
+        var index_i = 0;
+        function searchNode(namekey,treeId){
+            nodeList = [];
+            index_i=0;
+            var keyValue = $('#'+namekey).val();
+            if(keyValue){
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                nodeList = treeObj.getNodesByParamFuzzy("name", keyValue, null);
+                if(nodeList&&nodeList.length>0){
+                    treeObj.selectNode(nodeList[0]);
+                    treeObj.expandNode(nodeList[0], true, true, true);
+                }
+            }
+        }
+        
+        function searchNextNode(treeId){
+            index_i++;
+            var treeObj = $.fn.zTree.getZTreeObj(treeId);
+            if(index_i<=nodeList.length) {
+                treeObj.selectNode(nodeList[index_i]);
+                treeObj.expandNode(nodeList[index_i], true, true, true);
+            }
+        }
+       function zxzTreeOnClick(event, treeId, node) {
+            
+            var codeTemp = '';          //变量,用来拼接选中树的ID
+            var areaDetial = '';        //所属地区详细
+            var areaDetialCode = '';    //所属地区详细的ID,只存储到所选最后一级
+            var level1num = 0;          //记录有多少个已经选的省区(一级节点)
+            var level2num = 0;          //记录当前省下选中市/区(二级节点个数)
+            var level3num = 0;          //记录当前市下选中区/县(三级节点个数)
+            var divide = '';            //所属地区详细的分隔符,随着级别不同变化 如 A省:a市_1县,2县.3县/b市:4县/C市|B省:c市|C省
+            var codeTempout = '';       //境外标记
+               
+            var treeObj = $.fn.zTree.getZTreeObj("xztree"); //取树
+            var sNodes = treeObj.getCheckedNodes(true);     //取树的节点数组
+            
+            if (sNodes.length > 0) {                                        //如果数组长度大于0
+                for(var i=0;i<sNodes.length;i++){                           //循环取树节点
+                    switch(sNodes[i].level)                                 //判断树绝点级别
+                    {
+                        case 0:                                             //一级节点
+                            level1num++;
+                            if(1 == level1num)                              //一级节点选中一次的情况
+                            {
+                                divide = '';
+                                codeTemp = sNodes[i].id;
+                                $("#projectAddress").val(sNodes[i].id);     //projectAddress保存为选中节点的ID
+                            }else{                                          //一级节点选中一次以上的情况
+                                if(2 == level1num)                          //选中2次在整个函数后边,areaDetialCode已经加上','
+                                {
+                                    areaDetialCode = areaDetialCode +codeTemp;
+                                }else{                                      //选中3次在此加上','分隔
+                                    areaDetialCode = areaDetialCode + ',' +codeTemp;
+                                }
+                                divide = '|';                               //省级分隔符
+                                codeTemp =  sNodes[i].id;       
+                                            
+                                if(codeTemp=="000002")                      //选中多个一级节点,如果同时选中境外,就是跨境
+                                {
+                                    codeTempout = "000002";
+                                }                               
+                            }
+                            level2num = 0;                                  //将当前省下的市/区数量清零
+                            break;
+                        case 1:
+                            level2num++;                                    
+                            if(1 == level2num)                              //二级节点选中一次的情况
+                            {
+                                codeTemp = sNodes[i].id;
+                                divide = ':';
+                                if('000001' != $("#projectAddress").val()||'000000' != $("#projectAddress").val())//如果不是跨省区和跨境,二级节点选中一次以上的情况
+                                {
+                                    $("#projectAddress").val(sNodes[i].id); //取节点ID
+                                }
+                            }else{
+                                codeTemp = codeTemp +','+ sNodes[i].id;
+                                divide = '/';
+                                if('000001' != $("#projectAddress").val()||'000000' != $("#projectAddress").val())//如果不是跨省区和跨境,二级节点选中一次以上的情况
+                                {
+                                    $("#projectAddress").val(sNodes[i].getParentNode().id); //取父级节点ID
+                                }
+                            }
+                            
+                            level3num = 0;
+                            break;
+                        case 2:
+                            level3num++;
+                            if(1 == level3num)                              //三级节点选中一次的情况
+                            {
+                                codeTemp = sNodes[i].id;                    
+                                divide = '_';
+                                if('000001' != $("#projectAddress").val()||'000000' != $("#projectAddress").val())
+                                {
+                                    $("#projectAddress").val(sNodes[i].id);
+                                }
+                                
+                            }else{                                          //三级节点选中一次以上的情况
+                                codeTemp = codeTemp +','+ sNodes[i].id;
+                                divide = ',';
+                                if('000001' != $("#projectAddress").val()||'000000' != $("#projectAddress").val())
+                                {
+                                    $("#projectAddress").val(sNodes[i].getParentNode().id);
+                                }
+                            }
+                            
+                            if(1 != level2num)                          //判断二级节点选中情况,如果超过2个,就取一级节点ID
+                            {
+                                if('000001' != $("#projectAddress").val()||'000000' != $("#projectAddress").val())
+                                {
+                                    $("#projectAddress").val(sNodes[i].getParentNode().getParentNode().id);
+                                }
+                            }                           
+                            break;
+                        default:
+                            divide = '|';
+                            level2num = 0;
+                            break;
+                    }
+                    areaDetial = areaDetial + divide + sNodes[i].name ;
+                }
+                if(1 == level1num)
+                {
+                    areaDetialCode = areaDetialCode +codeTemp;
+                    
+                }else{
+                    areaDetialCode = areaDetialCode + ',' +codeTemp;
+                    if(codeTempout=="000002")                       //选中多个一级节点,如果同时选中境外,就是跨境
+                    {   
+                        $("#projectAddress").val('000001');
+                    }else{                                      //否则,就是跨省
+                        $("#projectAddress").val('000000');
+                    }
+                }   
+            }
+            $("#areaDetial").val(areaDetial);
+            $("#areaDetialCode").val(areaDetialCode);
+        }
+  	//<!--安徽查询条件增加地区和行业 add by luping@neusoft.com 20160624 end-->
+  </script>
+  
+  <style type="text/css">
+  
+  	.blk{position:relative;border: 1px solid #617775;background: #f0f6e4;text-align: left;}
+    .blk h2{padding:5px 5px 2px;color:#85B6E2;font:bold 16px;}
+    a.closeBtn{position:absolute;top:5px;right:10px;display:block;width:60px;padding:2px 0;text-align:center;background:#fff;border:1px solid #85B6E2;color:#333;}
+    a.closeBtn:hover{color:#fff;border:1px solid #85B6E2;background:#85B6E2;}
+    a.busiBtn{position:absolute;top:5px;right:80px;display:block;width:60px;padding:2px 0;text-align:center;background:#fff;border:1px solid #85B6E2;color:#333;}
+    a.busiBtn:hover{color:#fff;border:1px solid #85B6E2;background:#85B6E2;}
+    
+    .liChild{
+	margin:0px;
+	line-height:30px;
+	height:30px;
+	dispaly:block;	
+	float:left;
+	font-family: "微软雅黑";
+	font-size:14px;
+	}
+	li>span,tr>td{
+		cursor:point;
+	}
+	#table_header>td{
+		border-bottom:1px solid #E6E6E6;
+		color:#AFAFAF;
+	}
+	
+	#proTable td{border:1px solid #E6E6E6;}
+	
+</style>
+
+<body class="fw bg0" onload="publicInformation()">
+<!-- logo -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+ 
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="javascript">
+<!--
+function writeDateInfo()
+{
+	var day = "";
+	var month = "";
+	var ampm = "";
+	var ampmhour = "";
+	var myweekday = "";
+	var year = "";                
+	myweekday =(1);  
+	mymonth =(8);
+	myday = (22);
+	myyear = (122);
+	year = (myyear > 200) ? myyear : 1900 + myyear;
+	if(myweekday == 0)
+	weekday=" 星期日";
+	else if(myweekday == 1)
+	weekday=" 星期一";
+	else if(myweekday == 2)
+	weekday=" 星期二";
+	else if(myweekday == 3)
+	weekday=" 星期三";
+	else if(myweekday == 4)
+	weekday=" 星期四";
+	else if(myweekday == 5)
+	weekday=" 星期五";
+	else if(myweekday == 6)
+	weekday=" 星期六";
+	document.write(year+"年"+mymonth+"月"+myday+"日"+weekday);
+}
+//-->
+
+	function openLikesPage() {
+		var url = "/tzxmweb/pages/portal/main_page/gotoevaluate.jsp";
+		var iWidth = window.screen.availWidth > 830 ? 830 : window.screen.availWidth * 0.8; //弹出窗口的宽度;
+		var iHeight = window.screen.availHeight > 530 ? 530 : window.screen.availHeight * 0.8; //弹出窗口的高度;
+		var iTop = (window.screen.availHeight-30-iHeight)/2; //获得窗口的垂直位置;
+		var iLeft = (window.screen.availWidth-10-iWidth)/2; //获得窗口的水平位置;
+		window.open(url, 'newwindow', 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft 
+			+ ',toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+	}
+	// 20160616 wangzhn add start 安徽需求
+	function onlineInteraction(){
+		window.top.location="/onlineInteractionAction.do?method=queryQuestionList";
+	}
+	// 20160616 wangzhn add end 安徽需求
+</script>
+<style>
+	.f12 a:link { font-size:12px; }
+	/*返回顶部*/
+	#gotopbtn { display:block; width:70px; height:80px; top:240px; right: 16px; bottom: 350px; position: fixed; cursor: pointer; text-decoration:none; _position: absolute;z-index:9999; _bottom: "auto"; background:#fff; padding:8px 10px; line-height:25px;font-size:12px;text-align:center;}
+</style>
+
+ 
+
+	<div  class="info_box fix f12 bl rel">
+		<div class="l person_box ml10 rel">
+    <!-- 
+    <div class="l pl10 pr10">
+        <a class="wh loginout" style="color: white;" href="javascript:;" >
+            <span onclick="javascript:window.top.location= '/tzxmweb/pages/portal/regulation/gbwwz.jsp';">友情链接</span>
+        </a>
+    </div>	
+     -->
+		</div>
+			
+			
+				<div class="r pl10 pr10">
+					<a class="wh loginout" style="color: white;" href="javascript:;" >
+						<span onclick="loginin();">登录</span>|<span onclick="register();">注册</span>
+					</a>
+				</div>
+			 
+			
+			<div style="display: none;" class="search_bar abs"></div><!-- /search_bar -->
+			
+			
+				
+				 
+			
+			<div class="r pr10 pr10">
+				<img class="l mt5 mr5" src="/tzxmweb/Resources/webpro/images/lulu.png"/>
+			<a style="color: white;">欢迎您</a>
+				 
+			</div>
+			
+			 	
+			<div class="r pr10"><a style="color: white;"><script>writeDateInfo();</script></a></div>
+			 
+		   	<!-- 20160616 wangzhn add start -->
+		    
+                <div class="r pl10 pr10"><a class="wh loginout" style="color: white;" href="javascript:;" onclick="onlineInteraction();">在线互动</a></div>
+             
+            <!-- 20160616 wangzhn add end -->
+			 
+			<!--  
+			 
+			-->
+			<!-- 
+			<div class="r pl10 pr10">
+                	 <a class="wh loginout" style="color: white;" href="#" >
+                        <span>操作手册</span>
+                    </a>
+            </div>  -->
+		</div><!-- /info_box -->
+ 
+
+		<script>
+			if(340000== "620000"){
+				$("#xgmm").hide();
+				$("#grzhxx").addClass("border0"); 
+			}
+			// 甘肃注册页链接 20160609 peijw
+			function register()
+			{
+				if(340000=="620000"){
+					window.location.href="http://www.gszwfw.gov.cn/gsjis/front/register/corregister.do";
+				}//add by wangwei 2017/10/26 安徽政府服务网对接
+		        else if(340000=="340000"){
+		            var anhuiappcodenew="9fb3d2182da04bf49bf125811ebd3bd0";
+					window.location.href="https://sso.ahzwfw.gov.cn/uccp-server/login?appCode="+anhuiappcodenew+"&service=https%3A%2F%2Fwww.ahzwfw.gov.cn%2Fbog-bsdt%2Ftransition.html";
+				}else
+				{
+					doDestroy1(11);
+				}
+			}
+			//add by wangwei 2017/10/26 安徽政府服务网对接
+			function loginin()
+			{
+				if(340000=="2"){
+		            var anhuiappcodenew="9fb3d2182da04bf49bf125811ebd3bd0";
+					window.location.href="https://sso.ahzwfw.gov.cn/uccp-server/login?appCode="+anhuiappcodenew+"&service=https%3A%2F%2Fwww.ahzwfw.gov.cn%2Fbog-bsdt%2Ftransition.html";
+				}else
+				{
+					doDestroy1(0);
+				}
+			}
+			//安徽统一认证去掉密码修改
+			if(340000== "340000"){
+				$("#xgmm").hide();
+			}
+		</script>
+		
+			<div class="logo_box2"></div><!-- /logo_box -->
+		 
+		
+		<!-- 江苏二期-增加咨询电话浮动层 add by yang_shuo 171115 start -->
+		
+		<!-- 江苏二期-增加咨询电话浮动层 add by yang_shuo 171115 end -->
+<!-- 导航 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/tzxmweb/js/jDialog/jDialog.css" />
+<link type="text/css" rel="stylesheet" href="/tzxmweb/css/gxstylesheets/reset.css" />
+<link type="text/css" rel="stylesheet" href="/tzxmweb/css/gxstylesheets/common.css" />
+<link type="text/css" rel="stylesheet" href="/tzxmweb/css/gxstylesheets/zxx.lib.css" />
+<link type="text/css" rel="stylesheet" href="/tzxmweb/css/gxstylesheets/portal.css" />
+<script type="text/javascript">
+	var js_global_areacode = "340000";
+	$(document).ready(function() {
+		if(js_global_areacode=="620000"){
+			$("#nav_box").hide();
+			$("#gsmenu_title").show();
+		}else{
+			$("#gsmenu_title").hide();
+			$("#nav_box").show();
+		}
+	
+		if(js_global_areacode=="450000"){
+			$("#nav_box").attr("class","nav_boxah");
+		}else if (js_global_areacode=="630000" || js_global_areacode=="340000"){
+			$("#nav_box").attr("class","nav_boxqh");
+		}else{
+		//$("#nav_7").hide();
+		}
+		
+		if(js_global_areacode=="630000"){//青海导航条
+			$("#nav_1").hide();
+			$("#nav_2").hide();
+			$("#nav_3").hide();
+			$("#nav_4").hide();
+			$("#nav_5").hide();
+			$("#nav_6").hide();
+			$("#nav_7").hide();
+			$("#nav_8").hide();
+			$("#nav_9").hide();
+			$("#qhnav_1").show();
+			$("#qhnav_3").show();
+			$("#qhnav_4").show();
+			$("#qhnav_5").show();
+			$("#qhnav_6").show();
+			$("#qhnav_7").show();
+			$("#qhnav_9").show();
+			$("#qhnav_10").show();
+			$("#qhnav_11").show();
+			$("#ahnav_10").hide();
+			$("#ahnav_2").hide();
+			$("#ahnav_5").hide();
+			$("#ahnav_6").hide();
+		}else if(js_global_areacode=="340000"){//安徽导航条
+			$("#nav_1").hide();
+			$("#nav_2").hide();
+			$("#nav_3").hide();
+			$("#nav_4").hide();
+			$("#nav_5").hide();
+			$("#nav_6").hide();
+			$("#nav_7").hide();
+			$("#nav_8").hide();
+			$("#nav_9").hide();
+			$("#qhnav_10").hide();
+			$("#qhnav_11").hide();
+			$("#qhnav_1").show();
+			$("#qhnav_3").show();
+			$("#qhnav_4").show();
+			$("#qhnav_5").hide();
+			$("#qhnav_6").hide();
+			$("#qhnav_7").show();
+			$("#qhnav_9").hide();			
+			$("#ahnav_10").show();
+			$("#ahnav_2").show();
+			$("#ahnav_5").show();
+			$("#ahnav_6").show();
+		}else{//不是青海，将青海相关都隐藏
+			$("#nav_1").show();
+			$("#nav_2").show();
+			$("#nav_3").show();
+			$("#nav_4").show();
+			$("#nav_5").show();
+			$("#nav_6").show();
+			$("#nav_7").show();
+			$("#nav_8").hide();
+			$("#nav_9").hide();
+			$("#qhnav_1").hide();
+			$("#qhnav_3").hide();
+			$("#qhnav_4").hide();
+			$("#qhnav_5").hide();
+			$("#qhnav_6").hide();
+			$("#qhnav_7").hide();
+			$("#qhnav_9").hide();
+			$("#qhnav_10").hide();
+			$("#qhnav_11").hide();
+			$("#ahnav_10").hide();
+			$("#ahnav_2").hide();
+			$("#ahnav_5").hide();
+			$("#ahnav_6").hide();
+		}
+		
+		if(js_global_areacode=="320000") {// 江苏，导航条内容调整  change by huang-n at 2017-09-06
+			$("#nav_2").hide();
+			$("#nav_5").hide();
+			$("#nav_6").hide();
+			$("#nav_8").show();
+		} 
+		if(js_global_areacode=="450000"){
+			$("#nav_9").show();
+		}
+
+		if(js_global_areacode=="540000" || js_global_areacode=="620000"||js_global_areacode=="450000" ){
+			$("#nav_7").hide();
+		}
+	
+	
+	});
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="gsmenu_title" class="gxmenu-box">
+			<div class="gsmenu fix auto">
+			    <a class="db l tc f18" style="width:80px;">
+				<a class="db l tc f18" style="width:195px;" href="javascript:void(0)" onclick="goTRSChannel('firstPage')">首&nbsp;&nbsp;页</a>
+				<a class="db l tc f18" style="width:195px;" href="javascript:void(0)" onclick="goTRSChannel('sbzy')">申报指引</a>
+				<a class="db l tc f18" style="width:195px;"href="javascript:void(0)" onclick="goTRSChannel('bsdt')">办事大厅</a>
+				<a class="db l tc f18" style="width:195px;"href="javascript:void(0)" onclick="goWEBChannel('gsxx')">公示信息</a>
+				<a class="db l tc f18" style="width:195px;"href="javascript:void(0)" onclick="goWEBChannel('jsxxtb')">上报信息</a>
+				<a class="db l tc f18" style="width:195px;"href="javascript:void(0)" onclick="goTRSChannel('wdxm')">项目信息</a>
+			</div>
+		</div><!-- /menu-box -->
+<div id= "nav_box" class="nav_box" style="display:none;">
+				<ul>
+					<li id="nav_1" onclick="goTRSChannel('firstPage');">
+						<img src="/tzxmweb/Resources/webpro/images/nav_1.png" />
+						<span>首页</span>
+					</li>
+					<li id="qhnav_1" onclick="goTRSChannel('firstPage');">
+						<span>首页</span>
+					</li>
+					<li id="nav_2" onclick="goTRSChannel('xwzx');">
+						<img src="/tzxmweb/Resources/webpro/images/nav_2.png" />
+						<span>新闻资讯</span>
+					</li>
+					<li id="ahnav_2" onclick="goTRSChannel('xwzx');">
+						<span>新闻资讯</span>
+					</li>
+					<li id="nav_3" onclick="goTRSChannel('bsdt');">
+						<img src="/tzxmweb/Resources/webpro/images/nav_3.png" />
+						<span>办事大厅</span>
+					</li>
+					<li id="qhnav_3" onclick="goTRSChannel('bsdt');">
+						<span>办事大厅</span>
+					</li>
+					<li id="nav_8" onclick="goWEBChannel('bsznjs');">
+						<img src="/tzxmweb/Resources/webpro/images/nav_9.png" />
+						<span>办事指南</span>
+					</li>
+					<li id="ahnav_10" onclick="goWEBChannel('mjtzxmtj')">
+						<span>民间投资</span>
+					</li>
+					<li id="nav_4" onclick="goWEBChannel('gsxx')">
+						<img src="/tzxmweb/Resources/webpro/images/nav_4.png" />
+						<span>公示信息</span>
+					</li>
+					<li id="qhnav_4" onclick="goWEBChannel('gsxxqh')">
+						<span>公示信息</span>
+					</li>
+					<li id="qhnav_10" onclick="goWEBChannel('mjtzxmtj')">
+						<span>项目推介</span>
+					</li>
+					<li id="qhnav_11" onclick="goWEBChannel('pppxmgs')">
+						<span>PPP项目</span>
+					</li>
+					<li id="nav_5" onclick="goWEBChannel('zjml')">
+						<img src="/tzxmweb/Resources/webpro/images/nav_5.png" />
+						<span>中介服务</span>
+					</li>
+					<li id="ahnav_5" onclick="goWEBChannel('zjml')">
+						<span>中介服务</span>
+					</li>
+					<li id="qhnav_5" onclick="goWEBChannel('zjmlqh')">
+						<span>中介服务</span>
+					</li>
+					<li id="qhnav_9" onclick="goWEBChannel('zbdlqh')">
+						<span>招标代理</span>
+					</li>
+					<li id="nav_6" onclick="goTRSChannel('flfg')">
+						<img src="/tzxmweb/Resources/webpro/images/nav_6.png" />
+						<span>政策法规</span>
+					</li>
+					<li id="qhnav_6" onclick="goTRSChannel('qhzcfg')">
+						<span>政策法规</span>
+					</li>
+					<li id="ahnav_6" onclick="goTRSChannel('flfg')">
+						<span>政策法规</span>
+					</li>
+					<li id="nav_7"  onclick="goTRSChannel('xzzq')">
+						<img src="/tzxmweb/Resources/webpro/images/nav_7.png" />
+						<span>下载专区</span>
+					</li>
+					<li id="qhnav_7"  onclick="goTRSChannel('xzzq')">
+						<span>下载专区</span>
+					</li>
+					<li id="nav_9" onclick="goTRSChannel('sybz')">
+						<img src="/tzxmweb/Resources/webpro/images/nav_7.png" />
+						<span>使用帮助</span>
+					</li>
+				</ul>
+			</div>
+</body>
+</html>
+<!-- 正文 -->
+<div class="clear" />
+<div class="content_main">
+<div class="box_main">
+<div class="box_main_t" style="border: 0;">
+<div class="daoh"><a href="javascript:void(0);"
+	onclick="goTRSChannel('firstPage')" style="color:#1b66c7;">首页</a>&gt;&gt;<a
+	href="javascript:void(0);" onclick="goWEBChannel('gsxx')" style="color:#1b66c7;">公示信息</a></div>
+
+
+
+<div class="flleft">
+<div class="sha_title">公示信息</div>
+<!-- /sha_title -->
+
+
+<div class="nmenubg selected"><a href="javascript:void(0);"
+	onclick="javascript:window.location.href='/portalopenPublicInformation.do?method=queryExamineAll'">办理结果公示</a>
+</div>
+	
+
+	
+
+<div class="nmenubg" id="guizhang"><a href="javascript:void(0);"
+	onclick="javascript:window.location.href='/portalopenPublicInformation.do?method=queryAbnormalListAll'">异常名录</a></div>
+<div class="nmenubg" id="xingzheng"><a href="javascript:void(0);"
+	onclick="javascript:window.location.href='/portalopenPublicInformation.do?method=queryBlackListAll'">黑名单</a></div>
+
+<!-- 安徽-失效项目公示 add on 191129 -->
+<div class="nmenubg" id="del"><a href="javascript:void(0);"
+	onclick="javascript:window.location.href='/portalopenPublicInformation.do?method=goDelProjectPublicPage'">失效项目</a></div>
+
+<div class="nmenubg" id="pppInfo"><a href="javascript:void(0);"
+	onclick="javascript:window.location.href='/portalopenPublicInformation.do?method=goPPPProjectPublicPage'">PPP重点推进项目</a></div>
+<div class="nmenubg" id="pppInfoL"><a href="javascript:void(0);"
+	onclick="javascript:window.location.href='/portalopenPublicInformation.do?method=goLocalPppProjectPage'">PPP项目信息</a></div>
+
+<!--  <div><a href="javascript:void(0)" onclick="javascript:window.parent.location.href ='/tzxmweb/pages/portal/fpages/f_more.jsp'"><img src="/tzxmweb/Resources/images/ren_mo.jpg"
+	width="235" height="70"></a></div>
+-->
+
+<div><a class="" style="color: white;" href="javascript:void(0);"  onclick="window.open('http://220.178.99.216:8092/public/index.jsp?name=&orgNo=?No=&uscc=')" >
+<img src="/tzxmweb/Resources/images/xinyong.png"
+	width="198" height="100"></img></a></div>
+
+</div>
+
+<div class="flright">
+	
+	<div class="haha_box_resultsPublicityAH">
+		<form id="serviceFormAH" name="serviceFormAH"	action="/portalopenPublicInformation.do?method=queryExamineAll" method="post">
+			<input class="haha_form" type="text" placeholder="项目代码/项目名称" name="apply_project_name" value="" ></input>
+			<input class="haha_dq" name="projectInfo.areaDetial" placeholder="地区" onkeydown="stopBack()" id="areaDetial" type="text"  value=""></input>
+            <input name="projectInfo.projectAddress" align = "right" style="width: 150px; display:none;" class="light_in" id="projectAddress" type="hidden"  value=""></input>
+            <input name="projectInfo.areaDetialCode" style="width: 220px; display:none;" class="light_in" id="areaDetialCode" type="hidden"  value=""></input>
+            <a class="haha_chooseDQ" id="zProvinceAddress" href="javascript:void(0);"></a>
+            <input class="haha_hy" name="projectInfo.industry"  placeholder="行业" id="industry" type="text" onkeydown="stopBack()" value=""></input>
+			<a class="haha_chooseHY" id="ele_hy" href="javascript:void(0);"></a>
+            <input type="hidden" id="industryId" name="projectInfo.industryId" value=""></input> &nbsp;&nbsp;
+            <a class="haha_search" href="javascript:void(0);" onClick="doSerachAH()"></a>
+		</form>
+	</div>
+	
+	<!--安徽查询条件增加地区和行业 add by luping@neusoft.com 20160624 end-->
+<div class="fl_title">
+<h1>办理结果公示</h1>
+</div>
+
+<ul style="border-bottom: 0;">
+<table id="proTable" width="740" border="0" cellspacing="0" cellpadding="0">
+  <tr id="table_header">
+    <td width="260" height="32" align="center">项目代码/项目名称</td>
+    <td width="120" align="center">审批事项</td>
+    <td width="100" align="center">审批部门</td>
+    
+    <td width="70" align="center">审批结果</td>
+    
+    <td width="100" align="center">审批时间</td>
+  </tr>
+  <form id="publicInformationForm" name="publicInformationForm" action="/portalopenPublicInformation.do?method=queryExamineAll" method="post">
+		<input id="pageSize" name="pageSize" type="hidden" value="20" /> 
+		<input id="pageNo" name="pageNo" type="hidden" value="1" /> 
+		<input class="haha_form" type="hidden" placeholder="项目名称" name="apply_project_name" value=""></input>
+		<input class="haha_form" type="hidden" placeholder="地区code" name="projectInfo.areaDetialCode" value=""></input>
+		<input class="haha_form" type="hidden" placeholder="地区Address" name="projectInfo.projectAddress" value=""></input>
+		<input class="haha_form" type="hidden" placeholder="地区名称" name="projectInfo.areaDetial" value=""></input>
+		<input class="haha_form" type="hidden" placeholder="行业code" name="projectInfo.industryId" value=""></input>
+		<input class="haha_form" type="hidden" placeholder="行业名称" name="projectInfo.industry" value=""></input>
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341181-04-01-753648年产3万平方米木饰面、2.5万套门及门套和1万米高低柜项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341181-04-01-753648&node_code=天长市&item_id=63541C3F9088473B8C0435EB18337652')">[备案]2208-341181-04-01-753648</br> 年产3万平方米木饰面、2.5...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业、事业单位、社会团体等投资建设的固定资产投资项目备案（内资项目）">企业、事业单位、社...</td>
+    <td width="185" align="center">天长市发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341181-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[审批]2208-341226-04-01-242162颍上县人民医院发热门诊及留观病房工程">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341226-04-01-242162&node_code=颍上县&item_id=C51C8B09C9284FADBB89957C0F41F047')">[审批]2208-341226-04-01-242162</br> 颍上县人民医院发热门诊及留观...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="政府投资项目建议书审批">政府投资项目建议书...</td>
+    <td width="185" align="center">颍上县发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">发改审批【2022】252号</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[审批]2208-340181-04-01-839778巢湖市龟山变配套工程项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-340181-04-01-839778&node_code=巢湖市&item_id=ACC0509C1D294A579289B1D5E875F49B')">[审批]2208-340181-04-01-839778</br> 巢湖市龟山变配套工程项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="县政府出资建设的项目项目建议书审批">县政府出资建设的项...</td>
+    <td width="185" align="center">巢湖市发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">巢发改投字〔2022〕298号</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-340321-04-03-719608安徽宝馨光能新能源高端智能制造(一期)单纯购置项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-340321-04-03-719608&node_code=怀远县&item_id=AE72ED9E88B047EB8E61EAD9E2F182C2')">[备案]2208-340321-04-03-719608</br> 安徽宝馨光能新能源高端智能制...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业投资项目备案（企业、事业单位、社会团体等投资建设的固定资产投资项目备案（内资项目））">企业投资项目备案（...</td>
+    <td width="185" align="center">怀远县发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-340321-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-340100-04-01-901704安徽省森隆新能源有限公司经开区森隆机械公司一期分布式光伏发电项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-340100-04-01-901704&node_code=合肥市&item_id=16CEB755C46346868FD464972AB86DBB')">[备案]2208-340100-04-01-901704</br> 安徽省森隆新能源有限公司经开...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业、事业单位、社会团体等投资建设的固定资产投资项目备案">企业、事业单位、社...</td>
+    <td width="185" align="center">合肥市发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-340100-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-340464-04-01-374455碳四装置优化改造项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-340464-04-01-374455&node_code=淮南市现代煤化工产业园区&item_id=f93897b64d564dc6bee9d2303825bd7f')">[备案]2208-340464-04-01-374455</br> 碳四装置优化改造项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业投资项目备案">企业投资项目备案</td>
+    <td width="185" align="center">淮南现代煤化工产业园区管委员会</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-340464-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341126-07-02-796339烟气深度治理技术改造项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341126-07-02-796339&node_code=凤阳县&item_id=2db39badb16f448eaa40ebd2168d71e7')">[备案]2208-341126-07-02-796339</br> 烟气深度治理技术改造项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="县级权限企业技术改造项目备案">县级权限企业技术改...</td>
+    <td width="185" align="center">凤阳县经信局</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341126-07-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341126-07-02-407884烟气深度治理技术改造项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341126-07-02-407884&node_code=凤阳县&item_id=2db39badb16f448eaa40ebd2168d71e7')">[备案]2208-341126-07-02-407884</br> 烟气深度治理技术改造项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="县级权限企业技术改造项目备案">县级权限企业技术改...</td>
+    <td width="185" align="center">凤阳县经信局</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341126-07-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[审批]2208-341182-04-01-199695女山湖镇垃圾中转站迁建项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341182-04-01-199695&node_code=明光市&item_id=F685647264B54C4D8304C39C5BD3B314')">[审批]2208-341182-04-01-199695</br> 女山湖镇垃圾中转站迁建项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="县级政府投资项目立项审批">县级政府投资项目立...</td>
+    <td width="185" align="center">明光市发展和改革委员会</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">明发改审批〔2022〕393号</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-340121-04-01-385313城改尚景花园项目（暂定名）">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-340121-04-01-385313&node_code=长丰县&item_id=0D6724EA8A3F46C085D8F56FCA9ED72A')">[备案]2208-340121-04-01-385313</br> 城改尚景花园项目（暂定名）</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业、事业单位、社会团体等投资建设的固定资产投资项目备案（内资项目）">企业、事业单位、社...</td>
+    <td width="185" align="center">长丰县发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-340121-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341861-04-01-986681无人机研发及生产项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341861-04-01-986681&node_code=宣城经济技术开发区&item_id=6C52AC2E1A054547ADD85E3741B95AD3')">[备案]2208-341861-04-01-986681</br> 无人机研发及生产项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="开发区属内资项目备案">开发区属内资项目备案</td>
+    <td width="185" align="center">宣城经济技术开发区管理委员会</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341861-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341203-04-01-817693年回收120吨热电偶生产线建设项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341203-04-01-817693&node_code=颍东区&item_id=EB0EA3ADDC0243EF8DF4EAD9F8D578C7')">[备案]2208-341203-04-01-817693</br> 年回收120吨热电偶生产线建...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="（企业投资项目备案）企业、事业单位、社会团体等投资建设的固定资产投资项目变更备案（内资项目）">（企业投资项目备案...</td>
+    <td width="185" align="center">颍东区发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341203-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341861-04-01-104890环境监测实验室项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341861-04-01-104890&node_code=宣城经济技术开发区&item_id=6C52AC2E1A054547ADD85E3741B95AD3')">[备案]2208-341861-04-01-104890</br> 环境监测实验室项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="开发区属内资项目备案">开发区属内资项目备案</td>
+    <td width="185" align="center">宣城经济技术开发区管理委员会</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341861-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2207-341181-04-01-141297年产10万件仪器仪表配件项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2207-341181-04-01-141297&node_code=天长市&item_id=D7BCD0DFBA21493CB7A7BF7BF5C445F3')">[备案]2207-341181-04-01-141297</br> 年产10万件仪器仪表配件项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="新建、改建、扩建建设工程抗震设防要求核定">新建、改建、扩建建...</td>
+    <td width="185" align="center">天长市地震办</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">04-01-141297</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[审批]2203-340223-04-01-100833南陵县龙汇路（涌珠泉路至家发中学大门）道排工程">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2203-340223-04-01-100833&node_code=南陵县&item_id=B143ACB35472499E97F46BA4DF57197F')">[审批]2203-340223-04-01-100833</br> 南陵县龙汇路（涌珠泉路至家发...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="建筑工程施工许可证核发">建筑工程施工许可证...</td>
+    <td width="185" align="center">南陵县住建委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">340223202208190...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341171-04-01-954791中新苏滁高新区苏滁大道与双城路交叉口东南侧150亩地块开发项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341171-04-01-954791&node_code=苏滁现代产业园&item_id=1BFD76D8CFD84CD7815E1BB9913553DC')">[备案]2208-341171-04-01-954791</br> 中新苏滁高新区苏滁大道与双城...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="属地内资项目备案">属地内资项目备案</td>
+    <td width="185" align="center">中新苏滁高新技术产业开发区经济运行局</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341171-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341622-04-01-444502宝业滨河绿苑">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341622-04-01-444502&node_code=蒙城县&item_id=27636B84AEF645418CB1EBB55BBC4952')">[备案]2208-341622-04-01-444502</br> 宝业滨河绿苑</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业投资项目备案（企业、事业单位、社会团体等投资建设的固定资产投资项目备案（内资项目））">企业投资项目备案（...</td>
+    <td width="185" align="center">蒙城县发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341622-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[审批]2208-341722-04-01-717009七都镇银堤村集体经济项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341722-04-01-717009&node_code=石台县&item_id=F4D6A6D4635B42649B899A1DB3616FED')">[审批]2208-341722-04-01-717009</br> 七都镇银堤村集体经济项目</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="政府投资项目建议书审批">政府投资项目建议书...</td>
+    <td width="185" align="center">石台县发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">石发改农经〔2022〕362 号</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-341181-04-01-355792年产1000万米电力电缆和计算机电缆项目（6千伏及以上（陆上用）干法交联电力电缆制造项目除外）">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-341181-04-01-355792&node_code=天长市&item_id=63541C3F9088473B8C0435EB18337652')">[备案]2208-341181-04-01-355792</br> 年产1000万米电力电缆和计...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业、事业单位、社会团体等投资建设的固定资产投资项目备案（内资项目）">企业、事业单位、社...</td>
+    <td width="185" align="center">天长市发展改革委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-341181-04-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td width="280" height="32" align="left" data-toggle="tooltip" title="[备案]2208-340827-07-02-822686望江县安福纸业再生纸技术改造项目">
+        <a href="javascript:void(0);" onclick="window.open('/portalopenPublicInformation.do?method=queryExamineDetailAll&project_code=2208-340827-07-02-822686&node_code=望江县&item_id=e1ea50796eb940139b56ee772e62c5c7')">[备案]2208-340827-07-02-822686</br> 望江县安福纸业再生纸技术改造...</a>
+    </td>
+    <td width="200" align="left" data-toggle="tooltip" title="企业投资项目备案(技术改造项目）">企业投资项目备案(...</td>
+    <td width="185" align="center">望江县经科委</td>
+    <td width="70" align="center">批复</td>
+    <!-- <td width="80" align="center">2208-340827-07-...</td> -->
+    <td width="95" align="center">2022/08/22</td>
+  </tr>
+  
+  
+  </form>
+</table>
+	 
+</ul>
+<!--安徽查询条件增加地区和行业 add by luping@neusoft.com 20160624 start-->
+<div id="blk_hytree" class="blk" style="display:none;width: 350px;">
+    <h2>请选择行业,可以输入名称模糊查找</h2>
+    <a href="javascript:void(0)" id="close_hy" class="closeBtn">关闭</a>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <input  type="text" id="namekey" width="50px"> <a href="javascript:void(0)" onclick="searchNode('namekey','hytree');">查找 </a> | <a href="javascript:void(0)" onclick="searchNextNode('hytree');">下一个</a> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div  style="margin-top: 5px;width:300px;height:400px;overflow-y:auto;overflow-x:auto;"><ul id="hytree" class="ztree"></ul></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+<div id="blk_xztree" class="blk" style="display:none;width: 320px;">
+    <h2>请选择行政区,可以输入名称模糊查找</h2>
+    <a href="javascript:void(0)" id="close_xz" class="closeBtn">关闭</a>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <input  type="text" id="namexzkey" width="50px"> <a href="javascript:void(0)" onclick="searchNode('namexzkey','xztree');">查找 </a> | <a href="javascript:void(0)" onclick="searchNextNode('xztree');">下一个</a> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div  style="margin-top: 5px;width:300px;height:280px;overflow-y:auto;overflow-x:auto;"><ul id="xztree" class="ztree"></ul></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+<!--安徽查询条件增加地区和行业 add by luping@neusoft.com 20160624 end-->
+<div class="qmanu">共&nbsp;&nbsp;
+14259&nbsp;&nbsp;页&nbsp;&nbsp;285179条&nbsp;&nbsp;记录
+&nbsp;&nbsp;&nbsp;&nbsp; 
+	<span class="qdisabled">首页</span>&nbsp;&nbsp;
+									  <span class="qdisabled">上一页</span>
+  &nbsp;&nbsp;1&nbsp;&nbsp; &nbsp;&nbsp; 
+	<a href="#" onclick="goPage('next');return false;">下一页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+									  <a href="#" onclick="goPage('last');return false;">末页</a>
+
+&nbsp;&nbsp;
+<font class='9ptb'>转到第<input type='text' id='pageNum' value="1" style='width:30px;font-size:12px;line-height:14px' />页
+&nbsp;<input style='font-size:12px;line-height:15px' type='submit' value='提交' onclick="goToPage();" /></font>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 安徽增加热点链接 add by luping@neusoft.com 20160623 start -->
+
+<!-- 安徽增加热点链接 add by luping@neusoft.com 20160623 end -->
+<!-- 底部 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+</head>
+<body>
+<center>
+<div class="tfooter" id="foot">
+			<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+			<!--浏览器是IE浏览器时  -->
+<!--[if IE ]>    
+  <tr>
+    <td width="117" align="right" style="display:none;"><img src="/tzxmspweb/tzxmweb/pages/portal/common/images/djg.png" width="52" height="50" align="middle" OLDSRC="djg.png" OLDID="238" RELATED="1" /></td>
+       <td width="510" align="center">
+      <span style="color: #FFFFFF;" id="forGX">
+      网站主办单位：<span class="sproinceClassgx"></span>发展和改革委员会 
+      技术支持单位：<span class="sproinceClass"></span>信息中心 &nbsp;
+      <span class="specialsproince"></span>
+      </span>         
+    </td>
+  </tr>
+</table>
+</div>
+<a href="javascript:void(0)" id="page_auto_scroll" class="scroll" title="返回顶部">
+</a>
+<script type="text/javascript">
+
+$(function(){
+	showScroll();
+	function showScroll(){
+		$(window).scroll( function() { 
+			var scrollValue=$(window).scrollTop();
+			scrollValue > 190 ? $('a[class=scroll]').fadeIn():$('a[class=scroll]').fadeOut();
+		} );	
+		$('#page_auto_scroll').click(function(){
+			$("html,body").animate({scrollTop:0},200);	
+		});	
+	}
+	//设置省份显示
+	setProvinceName();
+	checkPerson();
+	showxzdjg();
+});
+
+function setProvinceName() {
+	if (js_global_areacode == "620000") {
+		//$(".sproinceClass").html("甘肃省");
+		//$(".sproinceClassgx").html("甘肃省");
+		//$('#contactUsID').attr('href','mailto:gansu_tzxm_service' + '@' + 'ndrc.gov.cn');
+		//甘肃省修改底部样式
+		$('#forGX').hide();
+		$('#foot').css('background',"url('/tzxmspweb/tzxmweb/pages/portal/common/images/footerGS.png')center");
+		$('#foot').css('height',"80px"); 
+	} else if (js_global_areacode == "340000") {
+		$(".sproinceClass").html("安徽省");
+		$(".sproinceClassgx").html("安徽省");
+		$('#contactUsID').attr('href','mailto:anhui_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$(".specialsproince").html("<br>网站备案号：皖ICP备09029153号-4&nbsp;&nbsp;"); 
+		$('#foot').attr('style','background:#3f74c0'); 
+	} else if (js_global_areacode == "630000") {
+		$(".sproinceClass").html("青海省");
+		$(".sproinceClassgx").html("青海省");
+		$('#contactUsID').attr('href','mailto:qinghai_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$(".specialsproince").prepend('联系电话：09' + '71-63' + '139' + '75，09' + '71-6' + '305' + '126');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" rel="noopener noreferrer">地方平台友情链接</a><span id = "zan"> | <a href="javascript:void(0)" onclick="openLikesPage()" style="outline: none">本平台评价</a></span><br>');
+	} else if (js_global_areacode == "450000") {
+		$(".sproinceClass").html("广西壮族自治区经济");
+		$(".sproinceClassgx").html("广西壮族自治区");
+		$('#contactUsID').attr('href','mailto:guangxi_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$(".specialsproince").prepend('联系电话：07' + '71-2' + '270' + '569');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" rel="noopener noreferrer">地方平台友情链接</a><span id = "zan"> | <a href="javascript:void(0)" onclick="openLikesPage()" style="outline: none">本平台评价</a></span><br>');
+	} else if (js_global_areacode == "320000") {
+		$(".sproinceClass").html("江苏省");
+		$(".sproinceClassgx").html("江苏省");
+		$('#contactUsID').attr('href','mailto:jiangsu_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" style="color: #FFF;">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" style="color: #FFF;" rel="noopener noreferrer">地方平台友情链接</a><span id = "zan"> | <a href="javascript:void(0)" onclick="openLikesPage()" style="outline: none; color: #FFF;">本平台评价</a></span><br>');
+		$('#foot').css('background',"#1598d5 repeat center -50px");
+	}else if (js_global_areacode == "540000") {
+		$(".sproinceClass").html("西藏自治区");
+		$(".sproinceClassgx").html("西藏自治区");
+		$('#contactUsID').attr('href','mailto:xizhang_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$('#foot').attr('style','line-height: 22px;padding-top: 5px;'); 
+		$("#forGX").prepend('联系我们：  180-8990-5913、 187-8719-7335<br>');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" rel="noopener noreferrer">地方平台友情链接</a><br>');
+	}
+}
+function AddFavorite(sURL, sTitle)
+{
+	  try{  
+            window.external.addFavorite(sURL, sTitle);  
+       }catch(e) {  
+           try{  
+              window.sidebar.addPanel(sTitle, sURL, "");  
+            }catch (e) {  
+              alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+           }  
+               }         
+}
+
+function openLikesPage() {
+	var url = "/gotoevaluate.do";
+	var iWidth = window.screen.availWidth > 830 ? 830 : window.screen.availWidth * 0.8; //弹出窗口的宽度;
+	var iHeight = window.screen.availHeight > 530 ? 530 : window.screen.availHeight * 0.8; //弹出窗口的高度;
+	var iTop = (window.screen.availHeight-30-iHeight)/2; //获得窗口的垂直位置;
+	var iLeft = (window.screen.availWidth-10-iWidth)/2; //获得窗口的水平位置;
+	window.open(url, 'newwindow', 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft 
+		+ ',toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+}
+
+function checkPerson(){
+	if("null" != null && "null" != "null"){
+		$("#zan").css("display","");
+	}else{
+		$("#zan").css("display","none");
+	}
+}
+
+function showxzdjg(){
+	if(js_global_areacode == "540000"){
+		$('#xizang').css("display","");
+	}
+}
+
+</script>
+<![endif]--> 
+<!--浏览器不是IE浏览器时  -->
+		<!--[if !IE]><!-->     
+  <tr>
+    <td width="117" align="right" style="display:none;"><img src="/tzxmweb/pages/portal/common/images/djg.png" width="52" height="50" align="middle" OLDSRC="djg.png" OLDID="238" RELATED="1" /></td>
+   
+    
+    
+       <td width="510" align="center">
+      <span style="color: #FFFFFF;" id="forGX">
+      网站主办单位：<span class="sproinceClassgx"></span>发展和改革委员会
+      技术支持单位：<span class="sproinceClass"></span>信息中心 &nbsp;
+      <span class="specialsproince"></span>
+      </span>       
+      <div id="jiuc" style="margin-left:880px;display:none;">
+						<a href="http://121.43.68.40/exposure/jiucuo.html?site_code=6200000079&url=http%3A%2F%2Fwww.gsdrc.gov.cn%2F" target="_blank" rel="noopener noreferrer">
+							<img src="/tzxmweb/pages/portal/common/images/jiuc.png" height="60" />
+						</a>
+					</div>
+    </td>
+  </tr>
+</table>
+</div>
+</center>
+</body>
+<a href="javascript:void(0)" id="page_auto_scroll" class="scroll" title="返回顶部">
+</a>
+</html>
+<script type="text/javascript">
+
+$(function(){
+	showScroll();
+	function showScroll(){
+		$(window).scroll( function() { 
+			var scrollValue=$(window).scrollTop();
+			scrollValue > 190 ? $('a[class=scroll]').fadeIn():$('a[class=scroll]').fadeOut();
+		} );	
+		$('#page_auto_scroll').click(function(){
+			$("html,body").animate({scrollTop:0},200);	
+		});	
+	}
+	//设置省份显示
+	setProvinceName();
+	checkPerson();
+	showxzdjg();
+	
+});
+
+function setProvinceName() {
+	if (js_global_areacode == "620000") {
+		//$(".sproinceClass").html("甘肃省");
+		//$(".sproinceClassgx").html("甘肃省");
+		//$('#contactUsID').attr('href','mailto:gansu_tzxm_service' + '@' + 'ndrc.gov.cn');
+		//甘肃省修改底部样式
+		$('#forGX').hide();
+		$('#jiuc').show();
+		$('#foot').css('background',"url('/tzxmweb/pages/portal/common/images/footerGS.png')center");
+		$('#foot').css('height',"80px");
+	} else if (js_global_areacode == "340000") {
+		$(".sproinceClass").html("安徽省经济");
+		$(".sproinceClassgx").html("安徽省");
+		$('#contactUsID').attr('href','mailto:anhui_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$(".specialsproince").html("<br>网站备案号：皖ICP备09029153号-4&nbsp;&nbsp;"); 
+		$('#foot').attr('style','background:#3f74c0');
+	} else if (js_global_areacode == "630000") {
+		$(".sproinceClass").html("青海省");
+		$(".sproinceClassgx").html("青海省");
+		$('#contactUsID').attr('href','mailto:qinghai_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$(".specialsproince").prepend('联系电话：09' + '71-6' + '313' + '975，09' + '71-6' + '305' + '126');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" rel="noopener noreferrer">地方平台友情链接</a><span id = "zan"> | <a href="javascript:void(0)" onclick="openLikesPage()" style="outline: none">本平台评价</a></span><br>');
+	} else if (js_global_areacode == "450000") {
+		$(".sproinceClass").html("广西壮族自治区经济");
+		$(".sproinceClassgx").html("广西壮族自治区");
+		$('#contactUsID').attr('href','mailto:guangxi_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$(".specialsproince").prepend('联系电话：07' + '71-2' + '270' + '569');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" rel="noopener noreferrer">地方平台友情链接</a><span id = "zan"> | <a href="javascript:void(0)" onclick="openLikesPage()" style="outline: none">本平台评价</a></span><br>');
+	} else if (js_global_areacode == "320000") {
+		$(".sproinceClass").html("江苏省");
+		$(".sproinceClassgx").html("江苏省");
+		$('#contactUsID').attr('href','mailto:jiangsu_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" style="color: #FFF;" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" style="color: #FFF;" rel="noopener noreferrer">地方平台友情链接</a><span id = "zan"> | <a href="javascript:void(0)" onclick="openLikesPage()" style="outline: none; color: #FFF;">本平台评价</a></span><br>');
+		$('#foot').css('background',"#1598d5 repeat center -50px");
+	}else if (js_global_areacode == "540000") {
+		$(".sproinceClass").html("西藏自治区");
+		$(".sproinceClassgx").html("西藏自治区");
+		$('#contactUsID').attr('href','mailto:xizhang_tzxm_service' + '@' + 'ndrc.gov.cn');
+		$('#foot').attr('style','line-height: 22px;padding-top: 5px;'); 
+		$("#forGX").prepend('联系我们：  180-8990-5913、 187-8719-7335<br>');
+		$("#forGX").prepend('<a href="http://www.tzxm.gov.cn/" target="_blank" rel="noopener noreferrer">中央平台友情链接</a> | <a href="http://www.tzxm.gov.cn/all_links.html" target="_blank" rel="noopener noreferrer">地方平台友情链接</a><br>');
+	}
+}
+function AddFavorite(sURL, sTitle)
+{
+	var isChrome = navigator.userAgent.toLowerCase().indexOf("chrome") != -1;
+	//当浏览器为谷歌浏览器时
+	if(isChrome == true){
+		alert("添加收藏失败，请按ctrl+D手动添加");
+		return false;
+		}
+		//当浏览器不为谷歌浏览器时
+		else{
+ 		window.sidebar.addPanel(sTitle, sURL, "");
+ 		}	
+}
+function openLikesPage() {
+	var url = "/gotoevaluate.do";
+	var iWidth = window.screen.availWidth > 830 ? 830 : window.screen.availWidth * 0.8; //弹出窗口的宽度;
+	var iHeight = window.screen.availHeight > 530 ? 530 : window.screen.availHeight * 0.8; //弹出窗口的高度;
+	var iTop = (window.screen.availHeight-30-iHeight)/2; //获得窗口的垂直位置;
+	var iLeft = (window.screen.availWidth-10-iWidth)/2; //获得窗口的水平位置;
+	window.open(url, 'newwindow', 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft 
+		+ ',toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+}
+
+function checkPerson(){
+	if("null" != null && "null" != "null"){
+		$("#zan").css("display","");
+	}else{
+		$("#zan").css("display","none");
+	}
+}
+
+function showxzdjg(){
+	if(js_global_areacode == "540000"){
+		$('#xizang').css("display","");
+	}
+}
+</script>
+<!--<![endif]-->
+
+</body>
+</html>

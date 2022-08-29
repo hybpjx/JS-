@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>云南省政府采购网</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-dialog.css" rel="stylesheet">
+    <link href="/static/css/other.css" rel="stylesheet">
+    <link href="/static/css/bulletininfo.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-common.js"></script>
+    <script src="/static/js/bootstrap-dialog.js"></script>
+    <script src="/common/config.js"></script>
+    <script src="/staticpage/procurement/showBulletinInfo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5 !important;
+            font-family: "微软雅黑", Helvetica !important;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purPageNew">
+        <!-- 引文件头部信息 -->
+         <!-- header -->
+ <div class="purHeader clear">
+    <div class="purLogo fl">
+        <div class="lo1">云南省政府采购网</div>
+        <div class="lo2">中国政府采购网云南分网<br/>云南省政府购买服务信息平台</div>
+    </div>
+</div>
+        <div class="purContainer">
+
+            <div class="panel panel-default">
+                <div class="tab-content">
+                    <input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+                    <input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+                    <input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+                    <input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+                    <input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+                    <input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+                    <input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0" />
+                    <input type="hidden" id="cur_personid" name="cur_personid" value="" />
+                    <input type="hidden" id="bulletin_id" name="bulletin_id" value="18cb1125.182b5bebffc.1183" />
+                    <input type="hidden" id="completeurl" name="completeurl" value="&#47;bulletinfiles&#47;2022-08-23&#47;1661247960575.pdf" />
+                    <input type="hidden" id="attachFileName" name="attachFileName" value="公告.pdf" />
+                    <html:hidden property="filecontent" name="form" styleId="filecontent" />
+                    <html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+                    <html:hidden property="contentstyle" name="form" />
+                    <div class="main">
+                        <div class="main_container">
+                            <div class="vF_deail_maincontent">
+                                <div class="vF_detail_main">
+                                    <div class="vF_detail_header">
+                                        <h2 class="tc">昭阳区2021年横断山区水源涵养及生物多样性保护（退化林修复）竞争性谈判公告</h2>
+                                        <p class="tc">
+                                            <span id="pubTime">2022-08-23</span> 来源：
+                                            <span id="sourceName">云南省政府采购网</span>
+                                            <span class="displayArti" id="displayGG">【显示公告正文】</span>
+                                            <span class="displayArti" id="hideGG" style="display: none;">【显示公告概要】</span>
+                                        </p>
+                                    </div>
+                                    <div class="table" style="display: block;">
+                                        <h5>公告概要</h5>
+                                        <table width="600" border="0" cellspacing="1" bgcolor="#bfbfbf" style="text-align:left;"><tbody>      <tr>                                                                                                            <td colspan="4"><b>公告信息：</b></td>                                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购项目名称</td>                                                           <td colspan="3" width="430">昭阳区2021年横断山区水源涵养及生物多样性保护（退化林修复）</td>                                             </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位</td>                                                                             <td colspan="3">昭阳区国有林场</td>                                                        </tr>                                                                                                       <tr>                                                                                                            <td class="title">行政区域</td>                                                                             <td width="168">昭通市</td>                                                  <td class="title" width="128">公告时间</td>                                                               <td width="168">2022-08-23</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件的地点</td>                                                                     <td colspan="3">昭通资源配置阳光E平台电子交易服务系统（www.ztygept.com）</td>                                                  </tr>                                                                                                       <tr>                                                                                                            <td class="title">获取采购文件时间</td>                                                                       <td colspan="3">2022-08-23 23:55:00至2022-08-27 00:00:00<br>每日上午:09:00至14:00&nbsp;&nbsp;下午:14:00至17:30（北京时间，法定节假日除外）</td>      </tr>                                                                                                       <tr>                                                                                                            <td class="title">预算金额</td>                                                                             <td colspan="3">￥60万元（人民币）</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td colspan="4"><b>联系人及联系方式：</b></td>                                                            </tr>                                                                                                       <tr>                                                                                                            <td class="title">项目联系人</td>                                                                          <td colspan="3">芶荣成</td>                                                    </tr>                                                                                                      <tr>                                                                                                            <td class="title">项目联系电话</td>                                                                         <td colspan="3">0870-2231122</td>                                                   </tr>                                                                                                       <tr>                                                                                                            <td class="title" width="128">采购单位</td>                                                              <td width="430" colspan="3">昭阳区国有林场</td>                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位地址</td>                                                                         <td colspan="3">昭阳区</td>                                                          </tr>                                                                                                       <tr>                                                                                                            <td class="title">采购单位联系方式</td>                                                                      <td colspan="3">13508703177</td>                                                       </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构名称</td>                                                                         <td colspan="3">中科标禾工程项目管理有限公司</td>                                                         </tr>                                                                                                       <tr>                                                                                                            <td class="title">代理机构地址</td>                                                                         <td colspan="3">昭通市昭阳区怡景花园3幢2单元102号</td>                                                          </tr>                                                                                                           <td class="title">代理机构联系方式</td>                                                                      <td colspan="3">0870-2231122</td>                                                       </tr>                                                                                                   </tbody></table>                                                                                            
+                                    </div>
+                                    <div class="vF_detail_content_container">
+                                        <div class="vF_detail_content" style="display: none;text-align: left;">
+                                            <html>                                                                                                                          <head>                                                                                                                          <style type="text/css">                                                                                                       body {text-align:center;}                                                                                                   p {text-align: left;color: black;font-family: 仿宋;margin-left: 60px;}                                                      h2 {text-align:center;}                                                                                                     h4 {text-align:left;margin-left: 30px}                                                                                      .divcss5{width:900px; align:center;margin:0 auto}                                                                       </style>                                                                                                                </head>                                                                                                                     <body>                                                                                                                      <div class="divcss5">                                                                                                         <br>                                                                                                                        <h2><b>竞争性谈判公告</b></h2>                                                                                              <br>                                                                                                                        <p align="center">                                                                                                        <table border="1" width="780px" align="center"  border rules=none cellspacing=0 align=center>                             <tr>                                                                                                                            <td><font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;项目概况</font><br>                                                          &nbsp;&nbsp;&nbsp;&nbsp;昭阳区2021年横断山区水源涵养及生物多样性保护（退化林修复）采购项目的潜在供应商应在昭通资源配置阳光E平台电子交易服务系统（www.ztygept.com）获取采购文件，并于2022-08-29 14:30（北京时间）前提交响应文件。</td>            </tr>                                                                                                                   </table>                                                                                                                    </p>                                                                                                                        <br>                                                                                                                        <h4><b>一、项目基本情况</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">项目编号：ZKBHXMGLYNZT202200063</font></p>                                                                                               <p><font size="4px">项目名称：昭阳区2021年横断山区水源涵养及生物多样性保护（退化林修复）</font></p>                                                                                               <p><font size="4px">采购方式：竞争性谈判</font></p>                                                                           <p><font size="4px">预算金额（万元）：60</font></p>                                                                                               <p><font size="4px">最高限价（万元）：60</font></p>                                                                                               <p><font size="4px">采购需求：详见竞争性谈判文件“第四章 用户需求书”</font></p>                                                                                               <p><font size="4px">合同履行期限：建设周期：90日历天、养护周期3年</font></p>                                                                                           <p><font size="4px">本项目（否）接受联合体投标。</font></p><br>                                                              <br>                                                                                                                                    <h4><b>二、申请人的资格要求：</b></h4>                                                                                      <br>                                                                                                                            <p><font size="4px">1.满足《中华人民共和国政府采购法》第二十二条规定；</font></p>                                         <p><font size="4px">2.落实政府采购政策需满足的资格要求：详见竞争性谈判文件要求。</font></p>                                                             <p><font size="4px">3.本项目的特定资格要求：3.1需提供《苗木经营许可证》。
+3.2信用查询：按照《政府采购货物和服务招标投标管理办法》(财政部令第87号)、《财政部关于在政府采购活动中查询及使用信用记录有关问题的通知》(财库[2016]125号)相关要求，投标人应在“信用中国”网站(www.creditchina.gov.cn)未被列入失信被执行人记录、重大税收违法案件当事人名单且在中国政府采购网(www.ccgp.gov.cn)没有政府采购严重违法失信行为记录(被禁止在一定期限内参加政府采购活动但期限届满的除外)，参与本项目的投标人信用查询截止时点：本项目招标公告发布之日起至投标截止时间止，提供查询结果网页截图。
+3.3参加投标的供应商须自行登录“信用中国”网站(www.creditchina.gov.cn) 查询企业信用信息，在“供应商资格证明承诺函”中承诺：在竞争性谈判递交截止时间前未被列入“失信被执行人、重大税收违法案件当事人名单、政府采购严重违法失信名单”，并承诺近三年内未拖欠农民工工资，并对承诺的内容负法律责任。</font></p>                                                                     <br>                                                                                                                        <h4><b>三、获取采购文件</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">时间：2022-08-23 23:55至2022-08-27 00:00，每天上午09:00至14:00，下午14:00至17:30（北京时间，法定节假日除外）</font></p>            <p><font size="4px">地点：昭通资源配置阳光E平台电子交易服务系统（www.ztygept.com）</font></p>                                                                                     <p><font size="4px">方式：网上获取，凡有意参加的申请人请在获取时间内登录昭通资源配置阳光E平台电子交易服务系统（www.ztygept.com）凭企业数字证书（CA）在网上获取电子采购文件（采购文件格式为：ZBJ）。未办理企业数字证书（CA）的企业，可按照昭通资源配置阳光E平台的操作流程进行注册，完成注册后可在昭通资源配置阳光E平台办理企业数字证书（CA），获取采购文件。具有云南省公共资源电子交易数字证书（CA）的，注册完成后即可使用，此为获取招标文件的唯一途径（注：请各投标人必须在规定时间内完成网上文件获取，否则视为投标无效，由此造成的所有后果由投标人自行承担。）。注册完成后申请人需上传企业营业执照副本扫描件加盖公章、相关经营许可证、“信用中国”网站查询截图原件、法人证明书、法人代表授权获取标书的授权书原件（授权人身份证正反复印件、授权人签字及加盖公章）、被授权人身份证复印件（加盖公章）至昭通资源配置阳光E平台（www.ztygept.com）审查，审查通过后即可获取采购文件。</font></p>                                                                                     <p><font size="4px">售价（元）：0</font></p>                                                                                 <br>                                                                                                                        <h4><b>四、响应文件提交</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">截止时间：2022-08-29 14:30（北京时间）</font></p>                                            <p><font size="4px">地点：昭通资源配置阳光E平台电子交易服务系统（www.ztygept.com）</font></p>                                                                                 <br>                                                                                                                        <h4><b>五、开启</b></h4>                                                                          <br>                                                                                                                            <p><font size="4px">时间：2022-08-29 14:30（北京时间）</font></p>                                                <p><font size="4px">地点：昭通资源配置阳光E平台电子交易服务系统（www.ztygept.com）</font></p>                                                                                 <br>                                                                                                                        <h4><b>六、公告期限</b></h4>                                                                                                <br>                                                                                                                            <p><font size="4px">自本公告发布之日起3个工作日。</font></p>                                                          <br>                                                                                                                        <h4><b>七、其他补充事宜</b></h4>                                                                                            <br>                                                                                                                            <p><font size="4px">开标方式：网上开标 </br>是否需要缴纳投标保证金：是 </br>（ZKBHXMGLYNZT20220063）昭阳区2021年横断山区水源涵养及生物多样性保护（退化林修复）:</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金金额：12000（元）</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳方式：支票、汇票、本票、保函</br>&nbsp;&nbsp;&nbsp;&nbsp;保证金缴纳截止时间：2022-08-29 14:30</br></font></p>                                                                                 <br>                                                                                                                        <h4><b>八、凡对本次采购提出询问，请按以下方式联系。</b></h4>                                                                <br>                                                                                                                            <p><font size="4px">1.采购人信息</font></p>                                                                                     <p><font size="4px">名 称：昭阳区国有林场</font></p>                                                                                          <p><font size="4px">地址：昭阳区</font></p>                                                                                           <p><font size="4px">联系方式：13508703177</font></p>                                                                                       <p><font size="4px">2.采购代理机构信息</font></p>                                                                               <p><font size="4px">名 称：中科标禾工程项目管理有限公司</font></p>                                                                                          <p><font size="4px">地址：昭通市昭阳区怡景花园3幢2单元102号</font></p>                                                                                           <p><font size="4px">联系方式：0870-2231122</font></p>                                                                                       <p><font size="4px">3.项目联系方式</font></p>                                                                                   <p><font size="4px">项目联系人：&#x82B6;荣成</font></p>                                                                                     <p><font size="4px">电　话：0870-2231122</font></p><br>                                                                                     <br>                                                                                                                    </div>                                                                                                                      </body>                                                                                                                 </html>                                                                                                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--附件列表展示 start -->
+
+                    <div class="panel-body">
+                        <span class="control-label-text text-red pull-right" style="font-size: 14px;">（注：如下载的文件后缀为“.ZCZBJ”，请在网站首页办事指南栏目中下载“.ZCZBJ文件查看工具”）</span>
+                        <table class="table table-hover" id="filelist">
+                            <thead class="bg-default" id="thead" style="font-size: 16px;">
+                                <tr>
+                                    <th data-header-Align="center" data-column-id="file_id" data-visible="false" data-identifier="false">
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="tablefiletype" data-align="center" data-column-id="filetype_name" data-align="center" data-visibletitle="true" data-sortable="false">
+                                        文件类别
+                                    </th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="filename" data-align="center" data-formatter="filename" data-sortable="false">文件名称</th>
+                                    <th data-width="100px" style="text-align:center;" data-column-id="operatordt" data-align="center" data-sortable="false">上传时间</th>
+                                    <th data-width="100px" style="text-align:center;" data-formatter="operation" data-align="center" data-sortable="false">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align:center"> 采购文件</td>
+                                    <td style="text-align:center">公告.pdf</td>
+                                    <td style="text-align:center">2022-08-23</td>
+                                    <td style="text-align:center"><a href="javascript:download('18cb1125.182b5bebffc.1184','/bulletinfiles/2022-08-23/1661247960575.pdf','公告.pdf')">下载</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--附件列表展示end   -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 引入尾部文件信息 -->
+        <div class="purFooter" style="font-size: 14px;">
+    <div>
+        <span>主办单位：云南省财政厅</span>
+        <span>备案：滇ICP备05004092号</span>
+    </div>
+    <div>
+        <span>系统操作及业务咨询电话：0871-65383105、0871-65378716、0871-65391971、0871-65390547</span>
+        <span>网站技术支持：东软集团股份有限公司</span>
+    </div>
+    <div>
+        <span>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处）</span>
+        <span>地址：昆明市五华区华山南路130号4006-4009室</span>
+        <span>邮编：650021</span>
+    </div>
+    <div>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</div>
+</div>
+
+    </div>
+</body>
+
+</html>

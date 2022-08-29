@@ -1,0 +1,4 @@
+[9448:2008:0829/094007.666:INFO:CONSOLE(21)] "slider-8c78c44c-a0f8-4b75-a9f5-083532898ff2", source: http://www.yngp.com/static/js/captcha/verify.js (21)
+[9448:2008:0829/094009.995:INFO:CONSOLE(21)] "slider-8c78c44c-a0f8-4b75-a9f5-083532898ff2", source: http://www.yngp.com/static/js/captcha/verify.js (21)
+[9448:2008:0829/094046.566:INFO:render_frame_host_impl.cc(11654)] RenderFrameHostImpl::MaybeGenerateCrashReport url = http://www.yngp.com/page/procurement/procurementList.html#, status = 4, exit_code = 258
+[9448:2008:0829/094046.815:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
